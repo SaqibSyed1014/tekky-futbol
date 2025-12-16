@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TekkyFutbol — Registration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --tekky-blue: #0074ff;
+      --bg: #000000;
+      --fg: #e9eef7;
+      --muted: #b6c2d3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(180deg, #000 0%, #020b18 100%);
+      color: var(--fg);
+      overflow-x: hidden
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0.9rem 1.25rem;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 116, 255, 0.2);
+      z-index: 100
+    }
+
+    .logo img {
+      height: 50px;
+      width: auto;
+      mix-blend-mode: lighten;
+      filter: brightness(1.2);
+      border-radius: 8px
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      font-family: 'Bebas Neue', sans-serif
+    }
+
+    .nav-links ul {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-left: auto;
+      font-family: 'Bebas Neue', sans-serif;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 1px
+    }
+
+    .nav-links a:hover {
+      color: var(--tekky-blue);
+      text-shadow: 0 0 8px var(--tekky-blue)
+    }
+
+    .nav-links .dropdown-menu {
+      position: relative;
+      z-index: 0;
+    }
+
+    .nav-links .nav-links-dropdown {
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      transform: translate(-50%, -30px);
+      z-index: 1;
+      padding: 20px 0 0;
+      width: max-content;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: all .3s ease-out;
+    }
+
+    .nav-links .dropdown-menu:last-child .nav-links-dropdown {
+      left: auto;
+      right: 0;
+      transform: translate(0, -30px);
+    }
+
+    .nav-links .dropdown-menu:hover .nav-links-dropdown {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, 0);
+    }
+
+    .nav-links .dropdown-menu:last-child:hover .nav-links-dropdown {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(0, 0);
+    }
+
+    .nav-links-dropdown ul {
+      background: #000;
+      border: 2px solid var(--tekky-blue);
+      border-radius: 12px;
+      padding: 1.2rem;
+      text-align: center;
+      box-shadow: 0 0 12px var(--tekky-blue);
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      align-items: start;
+      width: 100%;
+    }
+
+    .nav-links-dropdown ul li a {
+      word-break: keep-all;
+    }
+
+    .nav-links .dropdown-menu a {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .nav-links .dropdown-menu a svg {
+      width: 16px;
+    }
+
+    .logo.logo-mobile {
+      display: none;
+    }
+
+    .logo-desktop .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    header {
+      position: relative;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 6.5rem;
+/*       background: radial-gradient(60% 50% at 50% 35%, rgba(0, 116, 255, 0.32), rgba(0, 0, 0, 0.95) 60%), url('tekky-refund-bg.jpg') center/cover no-repeat fixed; */
+    }
+
+    .hero {
+      position: relative;
+      z-index: 2;
+      max-width: 980px;
+      padding: 0 1rem
+    }
+
+    .tagline {
+      margin-top: 0.4rem;
+      color: var(--tekky-blue);
+      font-weight: 700;
+      text-shadow: 0 0 10px var(--tekky-blue);
+    }
+
+    @keyframes pulseGlow {
+      0% {
+        text-shadow: 0 0 15px var(--tekky-blue)
+      }
+
+      100% {
+        text-shadow: 0 0 40px var(--tekky-blue)
+      }
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 0.7rem;
+      padding: 0.7rem 1.4rem;
+      border: 2px solid var(--tekky-blue);
+      border-radius: 40px;
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 1px;
+      box-shadow: 0 0 10px rgba(0, 116, 255, 0.6);
+      transition: .25s;
+      animation: buttonPulse 2.5s ease-in-out infinite alternate;
+    }
+
+    .cta:hover {
+      background: var(--tekky-blue);
+      transform: translateY(-2px);
+      box-shadow: 0 0 25px rgba(0, 116, 255, 0.9)
+    }
+
+
+
+    .glow-divider {
+      width: 80%;
+      height: 4px;
+      margin: 2.5rem auto;
+      background: linear-gradient(90deg, transparent, var(--tekky-blue), transparent);
+      border-radius: 4px;
+      box-shadow: 0 0 20px var(--tekky-blue);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 3rem auto 5rem;
+      padding: 0 1.25rem;
+      text-align: center
+    }
+
+    form {
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(0, 116, 255, 0.4);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 25px rgba(0, 116, 255, 0.25);
+      transition: opacity 0.4s ease;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin-bottom: 0.4rem;
+      color: var(--fg);
+      font-weight: 600
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1.2rem;
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(0, 116, 255, 0.4);
+      border-radius: 8px;
+      color: var(--fg);
+      font-family: 'Montserrat', sans-serif
+    }
+
+    input:focus,
+    select:focus {
+      outline: none;
+      border-color: var(--tekky-blue);
+      box-shadow: 0 0 8px var(--tekky-blue)
+    }
+
+    .confirmation {
+      display: none;
+      text-align: center;
+      padding: 1.5rem;
+      border-radius: 12px;
+      background: rgba(0, 116, 255, 0.15);
+      border: 1px solid rgba(0, 116, 255, 0.4);
+      color: var(--tekky-blue);
+      font-weight: 600;
+      text-shadow: 0 0 8px var(--tekky-blue);
+      box-shadow: 0 0 20px rgba(0, 116, 255, 0.3);
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95)
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+      text-align: left
+    }
+
+    button.cta {
+      width: 100%;
+      margin-top: 1rem;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 40px;
+      background: var(--tekky-blue);
+      color: #fff;
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 1px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      box-shadow: 0 0 15px var(--tekky-blue);
+      transition: .25s;
+    }
+
+    .season-selector {
+      margin-bottom: 2rem;
+    }
+
+    .season-selector h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      color: var(--tekky-blue);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 15px var(--tekky-blue)
+    }
+
+    .season-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap
+    }
+
+    .season-btn {
+      padding: 0.8rem 1.6rem;
+      border: 2px solid var(--tekky-blue);
+      border-radius: 40px;
+      color: #fff;
+      background: transparent;
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 1px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(0, 116, 255, 0.5);
+      transition: 0.3s;
+    }
+
+    .season-btn:hover {
+      background: var(--tekky-blue);
+      transform: translateY(-2px);
+      box-shadow: 0 0 25px rgba(0, 116, 255, 1)
+    }
+
+
+
+
+
+    .social {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin: 0.6rem 0 0.3rem
+    }
+
+    .social a {
+      color: #dfe7ff;
+      font-size: 1.4rem;
+      transition: .25s
+    }
+
+    .social a:hover {
+      color: var(--tekky-blue);
+      text-shadow: 0 0 8px var(--tekky-blue)
+    }
+
+    .menu-toggler {
+      position: relative;
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 12px rgba(0, 116, 255, 0.18);
+      border-radius: 4px;
+      width: 34px;
+      height: 34px;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      border: 1px solid var(--tekky-blue);
+    }
+
+    .menu-toggler svg {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+    }
+
+    .menu-toggler .menu-toggler-open {
+      opacity: 1;
+      transition: all .3s ease-in-out;
+    }
+
+    .menu-toggler.active .menu-toggler-open {
+      opacity: 0;
+    }
+
+    .menu-toggler .menu-toggler-close {
+      opacity: 0;
+      transition: all .3s ease-in-out;
+    }
+
+    .menu-toggler.active .menu-toggler-close {
+      opacity: 1;
+    }
+
+    .nav-links.active {
+      display: block;
+    }
+
+    @media(max-width:768px) {
+      h1 {
+        font-size: 2.5rem
+      }
+
+      header {
+        min-height: 50vh
+      }
+
+      .logo.logo-mobile {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        background: #000;
+        backdrop-filter: blur(10px);
+      }
+
+      .nav-links ul {
+        align-items: start;
+        flex-direction: column;
+        padding: 20px 20px;
+      }
+
+      .nav-links .logo-desktop {
+        display: none;
+      }
+
+      nav {
+        justify-content: space-between;
+      }
+
+      .menu-toggler {
+        display: flex;
+      }
+
+      .nav-links .nav-links-dropdown {
+        position: static;
+        transform: none;
+        display: none;
+      }
+
+      .nav-links .dropdown-menu.active .nav-links-dropdown {
+        display: block;
+      }
+
+      .nav-links .dropdown-menu:hover .nav-links-dropdown {
+        position: static;
+        transform: none;
+      }
+    }
+  </style>
+
+  <link rel="stylesheet" href="styles.css" />
+  <script src="components/nav.js" type="text/javascript" defer></script>
+  <script src="components/footer.js" type="text/javascript" defer></script>
+
+</head>
+
+<body>
+    <div id="nav"></div>
+
+
+  <header>
+    <div class="hero">
+      <h1>REGISTRATION</h1>
+      <p class="tagline">For Ballers Who Create</p>
+      <a class="cta" href="#register">Start Registration</a>
+    </div>
+  </header>
+
+  <div class="glow-divider"></div>
+
+  <main id="register">
+    <div class="season-selector">
+      <h2>Choose Your Season</h2>
+      <div class="season-buttons">
+        <button class="season-btn" id="mensBtn">Men’s Season</button>
+        <button class="season-btn" id="womensBtn">Women’s Season</button>
+      </div>
+    </div>
+
+    <section id="mensRegistration">
+      <h2
+        style="font-family:'Bebas Neue',sans-serif;color:var(--tekky-blue);font-size:1.8rem;text-shadow:0 0 15px var(--tekky-blue);margin-bottom:1.2rem;">
+        Coach / Team Registration</h2>
+      <form id="teamForm">
+        <label for="teamName">Team Name</label>
+        <input type="text" id="teamName" name="teamName" placeholder="Enter your team name" required>
+        <label for="coachName">Coach Name</label>
+        <input type="text" id="coachName" name="coachName" placeholder="Coach full name" required>
+        <label for="email">Coach Email</label>
+        <input type="email" id="email" name="email" placeholder="coach@email.com" required>
+        <label for="rosterSize">Roster Size</label>
+        <input type="number" id="rosterSize" name="rosterSize" placeholder="Number of players" min="1" max="20"
+          required>
+        <p class="note">💡 Coaches register and pay individually — the same as players. Each person completes their own
+          registration and payment to confirm their spot.</p>
+        <button type="submit" class="cta">Register Team</button>
+      </form>
+      <div id="teamConfirm" class="confirmation">✅ Your team has been registered successfully!</div>
+    </section>
+
+    <div class="glow-divider"></div>
+
+    <section>
+      <h2
+        style="font-family:'Bebas Neue',sans-serif;color:var(--tekky-blue);font-size:1.8rem;text-shadow:0 0 15px var(--tekky-blue);margin-bottom:1.2rem;">
+        Player Registration</h2>
+      <form id="playerForm">
+        <label for="playerName">Player Name</label>
+        <input type="text" id="playerName" name="playerName" placeholder="Your full name" required>
+        <label for="playerEmail">Email</label>
+        <input type="email" id="playerEmail" name="playerEmail" placeholder="player@email.com" required>
+        <label for="teamSelect">Team Name</label>
+        <input type="text" id="teamSelect" name="teamSelect" placeholder="Your approved team" required>
+        <label for="jerseySize">Jersey Size</label>
+        <select id="jerseySize" name="jerseySize" required>
+          <option value="">Select jersey size</option>
+          <option>Small</option>
+          <option>Medium</option>
+          <option>Large</option>
+          <option>X-Large</option>
+        </select>
+        <label for="shortsSize">Shorts Size</label>
+        <select id="shortsSize" name="shortsSize" required>
+          <option value="">Select shorts size</option>
+          <option>Small</option>
+          <option>Medium</option>
+          <option>Large</option>
+          <option>X-Large</option>
+        </select>
+        <p class="note">💡 Every player registers and pays separately. Custom sizing (different jersey and shorts sizes)
+          may incur an extra charge.</p>
+        <button type="submit" class="cta">Register Player</button>
+      </form>
+      <div id="playerConfirm" class="confirmation">✅ Player registration received successfully!</div>
+    </section>
+
+    <div class="glow-divider"></div>
+
+    <div class="sec-cta" style="margin-top:2rem;">
+      <a class="cta" href="Request-access.html">Request Access</a>
+      <a class="cta" href="Rules.html">View League Rules</a>
+      <a class="cta" href="League-schedule.html">View Schedule</a>
+    </div>
+  </main>
+
+  <div class="coming-soon-overlay" id="comingSoonOverlay">
+    <div class="overlay-content">
+      <h3>She’s Got Next</h3>
+      <p>Women’s Registration Opens June 15, 2026.</p>
+      <button class="close-overlay">Close</button>
+    </div>
+  </div>
+
+  <div class="coming-soon-overlay" id="menComingSoonOverlay">
+      <div class="overlay-content">
+        <h3>He’s Got Next</h3>
+        <p>Men’s Registration Opens June 15, 2026.</p>
+        <button class="close-overlay">Close</button>
+      </div>
+    </div>
+
+   <div id="footer"></div>
+
+
+  <script>
+    // Handle overlay popup for Women's button
+    const womensBtn = document.getElementById('womensBtn');
+    const overlay = document.getElementById('comingSoonOverlay');
+    const closeOverlay = document.querySelector('.close-overlay');
+    womensBtn.addEventListener('click', () => { overlay.style.display = 'flex'; });
+    closeOverlay.addEventListener('click', () => { overlay.style.display = 'none'; });
+
+    // Handle overlay popup for Men's button
+        const mensBtn = document.getElementById('mensBtn');
+        const mensOverlay = document.getElementById('menComingSoonOverlay');
+        const mensCloseOverlay = document.querySelector('#menComingSoonOverlay .close-overlay');
+        mensBtn.addEventListener('click', () => { mensOverlay.style.display = 'flex'; });
+        mensCloseOverlay.addEventListener('click', () => { mensOverlay.style.display = 'none'; });
+
+    // Team and Player form confirmation animations
+    const teamForm = document.getElementById('teamForm');
+    const teamConfirm = document.getElementById('teamConfirm');
+    teamForm.addEventListener('submit', e => {
+      e.preventDefault();
+      teamForm.style.opacity = '0';
+      setTimeout(() => {
+        teamForm.style.display = 'none';
+        teamConfirm.style.display = 'block';
+      }, 400);
+    });
+
+    const playerForm = document.getElementById('playerForm');
+    const playerConfirm = document.getElementById('playerConfirm');
+    playerForm.addEventListener('submit', e => {
+      e.preventDefault();
+      playerForm.style.opacity = '0';
+      setTimeout(() => {
+        playerForm.style.display = 'none';
+        playerConfirm.style.display = 'block';
+      }, 400);
+    });
+
+  </script>
+</body>
+
+</html>

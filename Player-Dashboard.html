@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TekkyFutbol — Player Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --tekky-blue: #0074ff;
+      --bg: #000000;
+      --fg: #e9eef7;
+      --muted: #b6c2d3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(180deg, #000 0%, #020b18 100%);
+      color: var(--fg);
+      overflow-x: hidden
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0.9rem 1.25rem;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 116, 255, 0.2);
+      z-index: 100
+    }
+
+    .logo img {
+      height: 50px;
+      width: auto;
+      mix-blend-mode: lighten;
+      filter: brightness(1.2);
+      border-radius: 8px
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      font-family: 'Bebas Neue', sans-serif
+    }
+
+    .nav-links ul {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: 'Bebas Neue', sans-serif;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 1px
+    }
+
+    .nav-links a:hover {
+      color: var(--tekky-blue);
+      text-shadow: 0 0 8px var(--tekky-blue)
+    }
+
+    .nav-links .dropdown-menu {
+      position: relative;
+      z-index: 0;
+    }
+
+    .nav-links .nav-links-dropdown {
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      transform: translate(-50%, -30px);
+      z-index: 1;
+      padding: 20px 0 0;
+      width: max-content;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: all .3s ease-out;
+    }
+
+    .nav-links .dropdown-menu:last-child .nav-links-dropdown {
+      left: auto;
+      right: 0;
+      transform: translate(0, -30px);
+    }
+
+    .nav-links .dropdown-menu:hover .nav-links-dropdown {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, 0);
+    }
+
+    .nav-links .dropdown-menu:last-child:hover .nav-links-dropdown {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(0, 0);
+    }
+
+    .nav-links-dropdown ul {
+      background: #000;
+      border: 2px solid var(--tekky-blue);
+      border-radius: 12px;
+      padding: 1.2rem;
+      text-align: center;
+      box-shadow: 0 0 12px var(--tekky-blue);
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      align-items: start;
+      width: 100%;
+    }
+
+    .nav-links-dropdown ul li a {
+      word-break: keep-all;
+    }
+
+    .nav-links .dropdown-menu a {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .nav-links .dropdown-menu a svg {
+      width: 16px;
+    }
+
+    .logo.logo-mobile {
+      display: none;
+    }
+
+    .logo-desktop .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    header {
+      position: relative;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 6.5rem;
+/*       background: radial-gradient(60% 50% at 50% 35%, rgba(0, 116, 255, 0.32), rgba(0, 0, 0, 0.95) 60%), url('tekky-refund-bg.jpg') center/cover no-repeat fixed; */
+    }
+
+    .hero {
+      position: relative;
+      z-index: 2;
+      max-width: 980px;
+      padding: 0 1rem
+    }
+
+
+
+    .tagline {
+      margin-top: 0.4rem;
+      color: var(--tekky-blue);
+      font-weight: 700;
+      text-shadow: 0 0 10px var(--tekky-blue);
+    }
+
+    @keyframes pulseGlow {
+      0% {
+        text-shadow: 0 0 15px var(--tekky-blue)
+      }
+
+      100% {
+        text-shadow: 0 0 40px var(--tekky-blue)
+      }
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 0.7rem;
+      padding: 0.7rem 1.4rem;
+      border: 2px solid var(--tekky-blue);
+      border-radius: 40px;
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 1px;
+      box-shadow: 0 0 12px var(--tekky-blue);
+      transition: .25s;
+      animation: buttonPulse 2s infinite alternate;
+    }
+
+    .cta:hover {
+      background: var(--tekky-blue);
+      transform: translateY(-2px)
+    }
+
+
+
+    .glow-divider {
+      width: 80%;
+      height: 4px;
+      margin: 2.5rem auto;
+      background: linear-gradient(90deg, transparent, var(--tekky-blue), transparent);
+      border-radius: 4px;
+      box-shadow: 0 0 20px var(--tekky-blue);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 3rem auto 5rem;
+      padding: 0 1.25rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(0, 116, 255, 0.4);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 0 25px rgba(0, 116, 255, 0.25);
+      line-height: 1.8;
+      color: #e2e8f3
+    }
+
+    .card h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      color: var(--tekky-blue);
+      font-size: 1.8rem;
+      text-shadow: 0 0 15px var(--tekky-blue);
+      margin-bottom: 1rem
+    }
+
+    .card p {
+      margin-bottom: 0.6rem
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem
+    }
+
+    .stat {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(0, 116, 255, 0.4);
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.3rem;
+      color: var(--tekky-blue)
+    }
+
+    .sec-cta {
+      text-align: center;
+      margin-top: 2rem;
+      grid-column: 1/-1
+    }
+
+
+
+    .social {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin: 0.6rem 0 0.3rem
+    }
+
+    .social a {
+      color: #dfe7ff;
+      font-size: 1.4rem;
+      transition: .25s
+    }
+
+    .social a:hover {
+      color: var(--tekky-blue);
+      text-shadow: 0 0 8px var(--tekky-blue)
+    }
+
+    .menu-toggler {
+      position: relative;
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 12px rgba(0, 116, 255, 0.18);
+      border-radius: 4px;
+      width: 34px;
+      height: 34px;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      border: 1px solid var(--tekky-blue);
+    }
+
+    .menu-toggler svg {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+    }
+
+    .menu-toggler .menu-toggler-open {
+      opacity: 1;
+      transition: all .3s ease-in-out;
+    }
+
+    .menu-toggler.active .menu-toggler-open {
+      opacity: 0;
+    }
+
+    .menu-toggler .menu-toggler-close {
+      opacity: 0;
+      transition: all .3s ease-in-out;
+    }
+
+    .menu-toggler.active .menu-toggler-close {
+      opacity: 1;
+    }
+
+    .nav-links.active {
+      display: block;
+    }
+
+    @media(max-width:768px) {
+      h1 {
+        font-size: 2.5rem
+      }
+
+      header {
+        min-height: 50vh
+      }
+
+      .nav-links {
+        display: none
+      }
+
+      main {
+        display: block
+      }
+
+      .logo.logo-mobile {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        background: #000;
+        backdrop-filter: blur(10px);
+      }
+
+      .nav-links ul {
+        align-items: start;
+        flex-direction: column;
+        padding: 20px 20px;
+      }
+
+      .nav-links .logo-desktop {
+        display: none;
+      }
+
+      nav {
+        justify-content: space-between;
+      }
+
+      .menu-toggler {
+        display: flex;
+      }
+
+      .nav-links .nav-links-dropdown {
+        position: static;
+        transform: none;
+        display: none;
+      }
+
+      .nav-links .dropdown-menu.active .nav-links-dropdown {
+        display: block;
+      }
+
+      .nav-links .dropdown-menu:hover .nav-links-dropdown {
+        position: static;
+        transform: none;
+      }
+    }
+  </style>
+
+  <link rel="stylesheet" href="styles.css" />
+  <script src="components/nav.js" type="text/javascript" defer></script>
+  <script src="components/footer.js" type="text/javascript" defer></script>
+
+</head>
+
+<body>
+    <div id="nav"></div>
+
+
+  <header>
+    <div class="hero">
+      <h1>PLAYER DASHBOARD</h1>
+      <p class="tagline">For Ballers Who Create</p>
+      <a class="cta" href="update-player.html">Update My Info</a>
+    </div>
+  </header>
+
+  <div class="glow-divider"></div>
+
+  <main id="dashboard">
+    <div class="card">
+      <h2>Player Info</h2>
+      <p><strong>Name:</strong> Diego Santos</p>
+      <p><strong>Team:</strong> Tekky Titans</p>
+      <p><strong>Jersey #:</strong> 10</p>
+      <p><strong>Status:</strong> Active</p>
+      <a class="cta" href="update-player.html">Update My Info</a>
+    </div>
+
+    <div class="card">
+      <h2>Stats Overview</h2>
+      <div class="stat-grid">
+        <div class="stat"><strong>14</strong>Goals</div>
+        <div class="stat"><strong>9</strong>Assists</div>
+        <div class="stat"><strong>18</strong>Matches</div>
+        <div class="stat"><strong>5</strong>MVPs</div>
+      </div>
+      <a class="cta" href="Teams.html">View My Team</a>
+    </div>
+
+    <div class="card">
+      <h2>Upcoming Match</h2>
+      <p><strong>Opponent:</strong> Street Runners</p>
+      <p><strong>Date:</strong> Sunday, Nov 16</p>
+      <p><strong>Kickoff:</strong> 7:00 PM</p>
+      <p><strong>Location:</strong> Tekky Arena (Pitch 3)</p>
+      <a class="cta" href="League-schedule.html">View Schedule</a>
+    </div>
+
+    <div class="card">
+      <h2>Team Standing</h2>
+      <p><strong>Rank:</strong> 2nd</p>
+      <p><strong>Record:</strong> 12W - 4L - 2D</p>
+      <p><strong>Goal Difference:</strong> +18</p>
+    </div>
+
+    <div class="sec-cta">
+      <a class="cta" href="registration.html">Register for Next Season</a>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+</body>
+
+
+</html>

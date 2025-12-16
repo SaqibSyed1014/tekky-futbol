@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TekkyFutbol — Standings</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --tekky-blue: #0074ff;
+      --bg: #000;
+      --fg: #e9eef7;
+      --muted: #8ea0b8;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    nav {
+      padding: 1rem 2rem;
+      background: rgba(0, 0, 0, 0.6);
+      border-bottom: 1px solid rgba(0, 116, 255, 0.3);
+      backdrop-filter: blur(10px);
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 1px;
+    }
+
+    .hero {
+      padding: 90px 20px 70px;
+      text-align: center;
+      background: radial-gradient(circle at 50% 30%, rgba(0, 116, 255, 0.35), rgba(0, 0, 0, 0.95));
+      border-bottom: 1px solid rgba(0, 116, 255, 0.25);
+    }
+
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3.4rem;
+      letter-spacing: 2px;
+      text-shadow: 0 0 25px var(--tekky-blue);
+      color: white;
+    }
+
+    table {
+      width: 90%;
+      max-width: 900px;
+      margin: 40px auto;
+      border-collapse: collapse;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(0, 116, 255, 0.35);
+      box-shadow: 0 0 25px rgba(0, 116, 255, 0.25);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th,
+    td {
+      padding: 14px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    th {
+      background: rgba(0, 116, 255, 0.25);
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 1px;
+      font-size: 1.1rem;
+    }
+
+    tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    tr:hover {
+      background: rgba(0, 116, 255, 0.15);
+      transition: 0.25s;
+    }
+  </style>
+
+  <link rel="stylesheet" href="styles.css" />
+
+</head>
+
+<body>
+
+  <nav>TEKKYFUTBOL — SEASON STANDINGS</nav>
+
+  <div class="hero">
+    <h1>STANDINGS</h1>
+  </div>
+    <div class="table-wrap">
+  <table>
+    <tr>
+      <th>Pos</th>
+      <th>Team</th>
+      <th>GP</th>
+      <th>W</th>
+      <th>L</th>
+      <th>GF</th>
+      <th>GA</th>
+      <th>GD</th>
+      <th>PTS</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>North FC</td>
+      <td>13</td>
+      <td>8</td>
+      <td>5</td>
+      <td>22</td>
+      <td>7</td>
+      <td>15</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Tekky United</td>
+      <td>14</td>
+      <td>14</td>
+      <td>0</td>
+      <td>23</td>
+      <td>17</td>
+      <td>6</td>
+      <td>42</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Flow FC</td>
+      <td>14</td>
+      <td>7</td>
+      <td>7</td>
+      <td>17</td>
+      <td>9</td>
+      <td>8</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Drip FC</td>
+      <td>10</td>
+      <td>3</td>
+      <td>7</td>
+      <td>17</td>
+      <td>5</td>
+      <td>12</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>East Kings</td>
+      <td>10</td>
+      <td>9</td>
+      <td>1</td>
+      <td>36</td>
+      <td>30</td>
+      <td>6</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>West Legends</td>
+      <td>10</td>
+      <td>5</td>
+      <td>5</td>
+      <td>32</td>
+      <td>7</td>
+      <td>25</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>City Stars</td>
+      <td>13</td>
+      <td>6</td>
+      <td>7</td>
+      <td>10</td>
+      <td>22</td>
+      <td>-12</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Rebels</td>
+      <td>12</td>
+      <td>9</td>
+      <td>3</td>
+      <td>13</td>
+      <td>32</td>
+      <td>-19</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Alpha Squad</td>
+      <td>14</td>
+      <td>13</td>
+      <td>1</td>
+      <td>30</td>
+      <td>26</td>
+      <td>4</td>
+      <td>39</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Tekky Wolves</td>
+      <td>13</td>
+      <td>0</td>
+      <td>13</td>
+      <td>24</td>
+      <td>29</td>
+      <td>-5</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Iron Eleven</td>
+      <td>10</td>
+      <td>9</td>
+      <td>1</td>
+      <td>29</td>
+      <td>18</td>
+      <td>11</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>Street Lions</td>
+      <td>11</td>
+      <td>6</td>
+      <td>5</td>
+      <td>19</td>
+      <td>12</td>
+      <td>7</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>Ballistic FC</td>
+      <td>10</td>
+      <td>10</td>
+      <td>0</td>
+      <td>14</td>
+      <td>10</td>
+      <td>4</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>Phantom XI</td>
+      <td>14</td>
+      <td>10</td>
+      <td>4</td>
+      <td>25</td>
+      <td>11</td>
+      <td>14</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>Crew 23</td>
+      <td>8</td>
+      <td>6</td>
+      <td>2</td>
+      <td>27</td>
+      <td>26</td>
+      <td>1</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>South Crew</td>
+      <td>9</td>
+      <td>3</td>
+      <td>6</td>
+      <td>36</td>
+      <td>9</td>
+      <td>27</td>
+      <td>9</td>
+    </tr>
+  </table>
+  </div>
+</body>
+
+</html>

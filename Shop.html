@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TekkyFutbol — The Drip</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --tekky-blue: #0074ff;
+      --bg: #000000;
+      --fg: #e9eef7;
+      --muted: #b6c2d3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(180deg, #000 0%, #020b18 100%);
+      color: var(--fg);
+      overflow-x: hidden
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0.9rem 1.25rem;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 116, 255, 0.2);
+      z-index: 100
+    }
+
+    .logo img {
+      height: 50px;
+      width: auto;
+      mix-blend-mode: lighten;
+      filter: brightness(1.2);
+      border-radius: 8px
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      font-family: 'Bebas Neue', sans-serif
+    }
+
+    .nav-links ul {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-left: auto;
+      font-family: 'Bebas Neue', sans-serif;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 1px
+    }
+
+    .nav-links a:hover {
+      color: var(--tekky-blue);
+      text-shadow: 0 0 8px var(--tekky-blue)
+    }
+
+    .nav-links .dropdown-menu {
+      position: relative;
+      z-index: 0;
+    }
+
+    .nav-links .nav-links-dropdown {
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      transform: translate(-50%, -30px);
+      z-index: 1;
+      padding: 20px 0 0;
+      width: max-content;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: all .3s ease-out;
+    }
+
+    .nav-links .dropdown-menu:last-child .nav-links-dropdown {
+      left: auto;
+      right: 0;
+      transform: translate(0, -30px);
+    }
+
+    .nav-links .dropdown-menu:hover .nav-links-dropdown {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, 0);
+    }
+
+    .nav-links .dropdown-menu:last-child:hover .nav-links-dropdown {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(0, 0);
+    }
+
+    .nav-links-dropdown ul {
+      background: #000;
+      border: 2px solid var(--tekky-blue);
+      border-radius: 12px;
+      padding: 1.2rem;
+      text-align: center;
+      box-shadow: 0 0 12px var(--tekky-blue);
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      align-items: start;
+      width: 100%;
+    }
+
+    .nav-links-dropdown ul li a {
+      word-break: keep-all;
+    }
+
+    .nav-links .dropdown-menu a {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .nav-links .dropdown-menu a svg {
+      width: 16px;
+    }
+
+    .logo.logo-mobile {
+      display: none;
+    }
+
+    .logo-desktop .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    header {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 6.5rem;
+/*       background: radial-gradient(60% 50% at 50% 35%, rgba(0, 116, 255, 0.32), rgba(0, 0, 0, 0.95) 60%), url('tekky-party-bg-glow.png') center/cover no-repeat fixed; */
+    }
+
+    .hero {
+      position: relative;
+      z-index: 2;
+      max-width: 980px;
+      padding: 0 1rem
+    }
+
+
+
+    .tagline {
+      margin-top: 0.4rem;
+      color: var(--tekky-blue);
+      font-weight: 700;
+      text-shadow: 0 0 10px var(--tekky-blue);
+    }
+
+    .subtext {
+      margin: 0.9rem auto 1.2rem;
+      color: var(--muted);
+      max-width: 70ch;
+      line-height: 1.7
+    }
+
+    @keyframes pulseGlow {
+      0% {
+        text-shadow: 0 0 15px var(--tekky-blue)
+      }
+
+      100% {
+        text-shadow: 0 0 40px var(--tekky-blue)
+      }
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 0.7rem;
+      padding: 0.7rem 1.4rem;
+      border: 2px solid var(--tekky-blue);
+      border-radius: 40px;
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 1px;
+      box-shadow: 0 0 12px var(--tekky-blue);
+      transition: .25s;
+      animation: buttonPulse 2s infinite alternate;
+    }
+
+    .cta:hover {
+      background: var(--tekky-blue);
+      transform: translateY(-2px)
+    }
+
+
+
+    .glow-divider {
+      width: 80%;
+      height: 4px;
+      margin: 2.5rem auto;
+      background: linear-gradient(90deg, transparent, var(--tekky-blue), transparent);
+      border-radius: 4px;
+      box-shadow: 0 0 20px var(--tekky-blue);
+    }
+
+    main {
+      max-width: 1080px;
+      margin: 2.8rem auto 4rem;
+      padding: 0 1.25rem
+    }
+
+    section {
+      margin: 3rem 0;
+      text-align: center
+    }
+
+    section h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--tekky-blue);
+      margin-bottom: 0.5rem
+    }
+
+    section p {
+      color: #d3d9e3;
+      margin: 0.6rem auto;
+      max-width: 70ch;
+      line-height: 1.8
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.3rem
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(0, 116, 255, 0.25);
+      border-radius: 12px;
+      padding: 1.2rem;
+      text-align: center;
+      box-shadow: 0 0 12px rgba(0, 116, 255, 0.18);
+      transition: .25s
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 22px rgba(0, 116, 255, 0.35)
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 0.3rem
+    }
+
+    .card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      margin-bottom: 0.3rem
+    }
+
+    .card .muted {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 0.4rem
+    }
+
+    .price {
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      color: #fff
+    }
+
+    .sec-cta {
+      margin-top: 1rem;
+      text-align: center
+    }
+
+
+
+    .social {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin: 0.6rem 0 0.3rem
+    }
+
+    .social a {
+      color: #dfe7ff;
+      font-size: 1.4rem;
+      transition: .25s
+    }
+
+    .social a:hover {
+      color: var(--tekky-blue);
+      text-shadow: 0 0 8px var(--tekky-blue)
+    }
+
+    .menu-toggler {
+      position: relative;
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 12px rgba(0, 116, 255, 0.18);
+      border-radius: 4px;
+      width: 34px;
+      height: 34px;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      border: 1px solid var(--tekky-blue);
+    }
+
+    .menu-toggler svg {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+    }
+
+    .menu-toggler .menu-toggler-open {
+      opacity: 1;
+      transition: all .3s ease-in-out;
+    }
+
+    .menu-toggler.active .menu-toggler-open {
+      opacity: 0;
+    }
+
+    .menu-toggler .menu-toggler-close {
+      opacity: 0;
+      transition: all .3s ease-in-out;
+    }
+
+    .menu-toggler.active .menu-toggler-close {
+      opacity: 1;
+    }
+
+    .nav-links.active {
+      display: block;
+    }
+
+    @media (max-width:768px) {
+      h1 {
+        font-size: 2.4rem
+      }
+
+      header {
+        min-height: 62vh
+      }
+
+      .logo.logo-mobile {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        background: #000;
+        backdrop-filter: blur(10px);
+      }
+
+      .nav-links ul {
+        align-items: start;
+        flex-direction: column;
+        padding: 20px 20px;
+      }
+
+      .nav-links .logo-desktop {
+        display: none;
+      }
+
+      nav {
+        justify-content: space-between;
+      }
+
+      .menu-toggler {
+        display: flex;
+      }
+
+      .nav-links .nav-links-dropdown {
+        position: static;
+        transform: none;
+        display: none;
+      }
+
+      .nav-links .dropdown-menu.active .nav-links-dropdown {
+        display: block;
+      }
+
+      .nav-links .dropdown-menu:hover .nav-links-dropdown {
+        position: static;
+        transform: none;
+      }
+    }
+  </style>
+
+  <link rel="stylesheet" href="styles.css" />
+  <script src="components/nav.js" type="text/javascript" defer></script>
+  <script src="components/footer.js" type="text/javascript" defer></script>
+
+</head>
+
+<body>
+    <div id="nav"></div>
+
+
+  <header>
+    <div class="hero">
+      <h1>THE DRIP</h1>
+      <p class="tagline">For Ballers Who Create</p>
+      <p class="subtext">Limited seasonal drops built for the pitch, the street, and everything in between.</p>
+      <a class="cta" href="#products">Shop the Current Drop</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="intro">
+      <p>Each TekkyFutbol season brings its own limited drop. No restocks. No repeats. Just gear built for the creators
+        who live it. Every hoodie, jersey, and accessory represents a season, a story, a moment.</p>
+      <div class="sec-cta">
+        <a class="cta" href="#products">Browse the Collection</a>
+      </div>
+    </section>
+
+    <div class="glow-divider"></div>
+
+    <section id="products">
+      <h2>Season Drop — For Ballers Who Create</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="images/Jersey.png" alt="Jersey">
+          <h3>Tekky North Jersey</h3><span class="muted">Drop 01 / Spring</span>
+          <p class="price">$65</p><div class="cta coming-soon">Buy Now</div>
+        </div>
+        <div class="card">
+          <img src="images/Jacket.png" alt="Jacket">
+          <h3>South Division Jacket</h3><span class="muted">Limited Stock</span>
+          <p class="price">$80</p><div class="cta coming-soon">Buy Now</div>
+        </div>
+        <div class="card">
+          <img src="images/Hoodie.png" alt="Hoodie">
+          <h3>Finale Hoodie</h3><span class="muted">Drop 01 / Spring</span>
+          <p class="price">$70</p><div class="cta coming-soon">Buy Now</div>
+        </div>
+        <div class="card">
+          <img src="images/Pants.png" alt="Pants">
+          <h3>Creator Pants</h3><span class="muted">Limited Edition</span>
+          <p class="price">$60</p><div class="cta coming-soon">Buy Now</div>
+        </div>
+        <div class="card">
+          <img src="images/Shorts.png" alt="Shorts">
+          <h3>Glow Shorts</h3><span class="muted">Season Exclusive</span>
+          <p class="price">$45</p><div class="cta coming-soon">Buy Now</div>
+        </div>
+      </div>
+      <div class="sec-cta">
+        <a class="cta" href="#collabs">Own the Look</a>
+        <a class="cta" href="registration.html">Register to Play in Tekky Gear</a>
+      </div>
+    </section>
+
+    <div class="glow-divider"></div>
+
+    <section id="collabs">
+      <h2>Collabs — For Ballers Who Create</h2>
+      <p>Partnerships that amplify the culture. Coming soon.</p>
+      <div class="sec-cta">
+        <a class="cta" href="Partners.html">Partner with TekkyFutbol</a>
+      </div>
+    </section>
+
+    <div class="glow-divider"></div>
+
+    <section id="subscribe">
+      <h2>Stay Connected — For Ballers Who Create</h2>
+      <p>Subscribe to stay in the loop — new drops, finale events, and culture updates straight from the league.</p>
+      <div class="sec-cta">
+        <div class="cta coming-soon">Get Updates on Future Drops</div>
+      </div>
+    </section>
+  </main>
+
+    <div id="footer"></div>
+
+</body>
+
+
+</html>
