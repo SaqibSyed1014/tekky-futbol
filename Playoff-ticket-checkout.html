@@ -9,51 +9,6 @@
     rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
-    :root {
-      --tekky-blue: #0074ff;
-      --bg: #000;
-      --fg: #e9eef7;
-      --muted: #b6c2d3;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0
-    }
-
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(180deg, #000 0%, #020b18 100%);
-      color: var(--fg);
-      overflow-x: hidden
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 999;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      padding: 0.9rem 1.25rem;
-      background: rgba(0, 0, 0, 0.65);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0, 116, 255, 0.2);
-      z-index: 100
-    }
-
-    .logo img {
-      height: 50px;
-      width: auto;
-      mix-blend-mode: lighten;
-      filter: brightness(1.2);
-      border-radius: 8px
-    }
-
     .nav-links {
       display: flex;
       gap: 1rem;
@@ -260,47 +215,7 @@
       text-shadow: 0 0 8px var(--tekky-blue)
     }
 
-    .menu-toggler {
-      position: relative;
-      background: rgba(255, 255, 255, 0.05);
-      box-shadow: 0 0 12px rgba(0, 116, 255, 0.18);
-      border-radius: 4px;
-      width: 34px;
-      height: 34px;
-      display: none;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      border: 1px solid var(--tekky-blue);
-    }
 
-    .menu-toggler svg {
-      width: 20px;
-      height: 20px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-
-    }
-
-    .menu-toggler .menu-toggler-open {
-      opacity: 1;
-      transition: all .3s ease-in-out;
-    }
-
-    .menu-toggler.active .menu-toggler-open {
-      opacity: 0;
-    }
-
-    .menu-toggler .menu-toggler-close {
-      opacity: 0;
-      transition: all .3s ease-in-out;
-    }
-
-    .menu-toggler.active .menu-toggler-close {
-      opacity: 1;
-    }
 
     .nav-links.active {
       display: block;
@@ -390,9 +305,9 @@
       <h2>Playoff Ticket</h2>
       <p><strong>$15</strong> — Both semifinal games. One pass. Witness the intensity of Tekky's Final Four.</p>
       <div class="eventbrite-widget">
-        <iframe src="https://www.eventbrite.com/e/placeholder/embed" allowfullscreen></iframe>
+<!--         <iframe src="https://www.eventbrite.com/e/placeholder/embed" allowfullscreen></iframe> -->
       </div>
-      <div class="cta coming-soon">Open on Eventbrite</div>
+      <div class="cta coming-soon">Coming Soon</div>
     </section>
   </main>
 

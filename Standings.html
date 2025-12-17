@@ -8,34 +8,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600&display=swap"
     rel="stylesheet">
   <style>
-    :root {
-      --tekky-blue: #0074ff;
-      --bg: #000;
-      --fg: #e9eef7;
-      --muted: #8ea0b8;
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--fg);
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    nav {
-      padding: 1rem 2rem;
-      background: rgba(0, 0, 0, 0.6);
-      border-bottom: 1px solid rgba(0, 116, 255, 0.3);
-      backdrop-filter: blur(10px);
-      font-family: 'Bebas Neue', sans-serif;
-      letter-spacing: 1px;
-    }
+      header {
+            position: relative;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 6.5rem;
+          }
 
     .hero {
       padding: 90px 20px 70px;
       text-align: center;
-      background: radial-gradient(circle at 50% 30%, rgba(0, 116, 255, 0.35), rgba(0, 0, 0, 0.95));
-      border-bottom: 1px solid rgba(0, 116, 255, 0.25);
     }
 
     .hero h1 {
@@ -83,16 +68,23 @@
   </style>
 
   <link rel="stylesheet" href="styles.css" />
+  <script src="components/nav.js" type="text/javascript" defer></script>
 
 </head>
 
 <body>
+    <div id="nav"></div>
 
-  <nav>TEKKYFUTBOL — SEASON STANDINGS</nav>
+     <header>
+        <div class="hero">
+          <h1>STANDINGS</h1>
+          <p class="tagline">For Ballers Who Create</p>
+<!--           <p class="subtext">See what’s coming up next week across Tekky North and South.</p> -->
+        </div>
+      </header>
 
-  <div class="hero">
-    <h1>STANDINGS</h1>
-  </div>
+  <div class="glow-divider"></div>
+
     <div class="table-wrap">
   <table>
     <tr>

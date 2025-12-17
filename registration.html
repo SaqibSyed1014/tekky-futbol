@@ -9,152 +9,6 @@
     rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
-    :root {
-      --tekky-blue: #0074ff;
-      --bg: #000000;
-      --fg: #e9eef7;
-      --muted: #b6c2d3;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0
-    }
-
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(180deg, #000 0%, #020b18 100%);
-      color: var(--fg);
-      overflow-x: hidden
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 999;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      padding: 0.9rem 1.25rem;
-      background: rgba(0, 0, 0, 0.65);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0, 116, 255, 0.2);
-      z-index: 100
-    }
-
-    .logo img {
-      height: 50px;
-      width: auto;
-      mix-blend-mode: lighten;
-      filter: brightness(1.2);
-      border-radius: 8px
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-      font-family: 'Bebas Neue', sans-serif
-    }
-
-    .nav-links ul {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-left: auto;
-      font-family: 'Bebas Neue', sans-serif;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      letter-spacing: 1px
-    }
-
-    .nav-links a:hover {
-      color: var(--tekky-blue);
-      text-shadow: 0 0 8px var(--tekky-blue)
-    }
-
-    .nav-links .dropdown-menu {
-      position: relative;
-      z-index: 0;
-    }
-
-    .nav-links .nav-links-dropdown {
-      position: absolute;
-      left: 50%;
-      top: 100%;
-      transform: translate(-50%, -30px);
-      z-index: 1;
-      padding: 20px 0 0;
-      width: max-content;
-      white-space: nowrap;
-      opacity: 0;
-      pointer-events: none;
-      transition: all .3s ease-out;
-    }
-
-    .nav-links .dropdown-menu:last-child .nav-links-dropdown {
-      left: auto;
-      right: 0;
-      transform: translate(0, -30px);
-    }
-
-    .nav-links .dropdown-menu:hover .nav-links-dropdown {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translate(-50%, 0);
-    }
-
-    .nav-links .dropdown-menu:last-child:hover .nav-links-dropdown {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translate(0, 0);
-    }
-
-    .nav-links-dropdown ul {
-      background: #000;
-      border: 2px solid var(--tekky-blue);
-      border-radius: 12px;
-      padding: 1.2rem;
-      text-align: center;
-      box-shadow: 0 0 12px var(--tekky-blue);
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-      align-items: start;
-      width: 100%;
-    }
-
-    .nav-links-dropdown ul li a {
-      word-break: keep-all;
-    }
-
-    .nav-links .dropdown-menu a {
-      display: flex;
-      align-items: center;
-      gap: 2px;
-    }
-
-    .nav-links .dropdown-menu a svg {
-      width: 16px;
-    }
-
-    .logo.logo-mobile {
-      display: none;
-    }
-
-    .logo-desktop .logo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
     header {
       position: relative;
       min-height: 60vh;
@@ -163,7 +17,6 @@
       justify-content: center;
       text-align: center;
       padding-top: 6.5rem;
-/*       background: radial-gradient(60% 50% at 50% 35%, rgba(0, 116, 255, 0.32), rgba(0, 0, 0, 0.95) 60%), url('tekky-refund-bg.jpg') center/cover no-repeat fixed; */
     }
 
     .hero {
@@ -171,23 +24,6 @@
       z-index: 2;
       max-width: 980px;
       padding: 0 1rem
-    }
-
-    .tagline {
-      margin-top: 0.4rem;
-      color: var(--tekky-blue);
-      font-weight: 700;
-      text-shadow: 0 0 10px var(--tekky-blue);
-    }
-
-    @keyframes pulseGlow {
-      0% {
-        text-shadow: 0 0 15px var(--tekky-blue)
-      }
-
-      100% {
-        text-shadow: 0 0 40px var(--tekky-blue)
-      }
     }
 
     .cta {
@@ -493,7 +329,7 @@
     <div class="hero">
       <h1>REGISTRATION</h1>
       <p class="tagline">For Ballers Who Create</p>
-      <a class="cta" href="#register">Start Registration</a>
+<!--       <a class="cta" href="#register">Start Registration</a> -->
     </div>
   </header>
 
