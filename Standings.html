@@ -8,26 +8,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600&display=swap"
     rel="stylesheet">
   <style>
-      header {
-            position: relative;
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding-top: 6.5rem;
-          }
+    header {
+        position: relative;
+        min-height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding-top: 6.5rem;
+    }
 
     .hero {
-      padding: 90px 20px 70px;
+      padding: 0 1rem;
       text-align: center;
     }
 
-    .hero h1 {
+    h1 {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 3.4rem;
       letter-spacing: 2px;
-      text-shadow: 0 0 25px var(--tekky-blue);
       color: white;
     }
 
@@ -36,35 +35,31 @@
       max-width: 900px;
       margin: 40px auto;
       border-collapse: collapse;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(0, 116, 255, 0.35);
-      box-shadow: 0 0 25px rgba(0, 116, 255, 0.25);
-      border-radius: 10px;
+            background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(0, 116, 255, 0.4);
+      box-shadow: 0 0 25px rgba(0, 116, 255, 0.2);
+      border-radius: 8px;
       overflow: hidden;
     }
 
     th,
     td {
-      padding: 14px;
-      text-align: center;
-      font-size: 0.9rem;
+      padding: 1.5rem 0.8rem;
+      border-bottom: 1px solid rgba(0, 116, 255, 0.25)
     }
 
     th {
-      background: rgba(0, 116, 255, 0.25);
+      background: rgba(0, 116, 255, 0.15);
+      color: var(--tekky-blue);
       font-family: 'Bebas Neue', sans-serif;
       letter-spacing: 1px;
       font-size: 1.1rem;
-    }
-
-    tr:nth-child(even) {
-      background: rgba(255, 255, 255, 0.03);
+      text-transform: uppercase
     }
 
     tr:hover {
-      background: rgba(0, 116, 255, 0.15);
-      transition: 0.25s;
-    }
+          background: rgba(0, 116, 255, 0.08)
+        }
   </style>
 
   <link rel="stylesheet" href="styles.css" />
@@ -79,7 +74,6 @@
         <div class="hero">
           <h1>STANDINGS</h1>
           <p class="tagline">For Ballers Who Create</p>
-<!--           <p class="subtext">See what’s coming up next week across Tekky North and South.</p> -->
         </div>
       </header>
 

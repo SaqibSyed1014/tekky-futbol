@@ -4,7 +4,7 @@ navElement.innerHTML = `
 <div>
     <nav>
         <a class="logo logo-mobile" href="index.html" aria-label="TekkyFutbol Home">
-        <img src="images/logo.png" alt="TekkyFutbol Logo"></a>
+        <img src="images/logo.webp" alt="TekkyFutbol Logo"></a>
         <!-- Menu Toggler -->
         <button type="button" class="menu-toggler">
           <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none"
@@ -22,6 +22,9 @@ navElement.innerHTML = `
         </button>
         <div class="nav-links">
           <ul>
+            <li>
+               <a href="index.html">Home</a>
+            </li>
             <li class="dropdown-menu">
               <div class="nav-dropdown-trigger">
                 <span>Shop</span>
@@ -95,10 +98,10 @@ navElement.innerHTML = `
                     <a href="Rules.html">Rules</a>
                   </li>
                   <li>
-                    <a href="Staff.html">Staff</a>
+                    <a href="Staff.html">Staff & Volunteers</a>
                   </li>
                   <li>
-                    <div class="disabled">Hall of Fame</div>
+                    <div class="coming-soon nav-link">Hall of Fame</div>
                   </li>
                 </ul>
               </div>
@@ -106,7 +109,7 @@ navElement.innerHTML = `
             
              <li class="logo-desktop">
               <a class="logo" href="index.html" aria-label="TekkyFutbol Home">
-                <img src="images/logo.png" alt="TekkyFutbol Logo">
+                <img src="images/logo.webp" alt="TekkyFutbol Logo">
               </a>
             </li>
             

@@ -162,36 +162,11 @@
       }
     }
 
-    .cta {
-      display: inline-block;
-      margin-top: 0.7rem;
-      padding: 0.7rem 1.4rem;
-      border: 2px solid var(--tekky-blue);
-      border-radius: 40px;
-      color: #fff;
-      text-decoration: none;
-      font-family: 'Bebas Neue', sans-serif;
-      letter-spacing: 1px;
-      box-shadow: 0 0 12px var(--tekky-blue);
-      transition: .25s;
-      animation: buttonPulse 2s infinite alternate;
-    }
-
-    .cta:hover {
-      background: var(--tekky-blue);
-      transform: translateY(-2px)
-    }
 
 
 
-    .glow-divider {
-      width: 80%;
-      height: 4px;
-      margin: 2.5rem auto;
-      background: linear-gradient(90deg, transparent, var(--tekky-blue), transparent);
-      border-radius: 4px;
-      box-shadow: 0 0 20px var(--tekky-blue);
-    }
+
+
 
     main {
       max-width: 1080px;
@@ -226,7 +201,7 @@
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.05);
+      background: black;
       border: 1px solid rgba(0, 116, 255, 0.25);
       border-radius: 12px;
       padding: 1.2rem;
@@ -243,7 +218,7 @@
     .card img {
       width: 100%;
       height: 200px;
-      object-fit: cover;
+      object-fit: contain;
       border-radius: 12px;
       margin-bottom: 0.3rem
     }
@@ -273,66 +248,6 @@
 
 
 
-    .social {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      margin: 0.6rem 0 0.3rem
-    }
-
-    .social a {
-      color: #dfe7ff;
-      font-size: 1.4rem;
-      transition: .25s
-    }
-
-    .social a:hover {
-      color: var(--tekky-blue);
-      text-shadow: 0 0 8px var(--tekky-blue)
-    }
-
-    .menu-toggler {
-      position: relative;
-      background: rgba(255, 255, 255, 0.05);
-      box-shadow: 0 0 12px rgba(0, 116, 255, 0.18);
-      border-radius: 4px;
-      width: 34px;
-      height: 34px;
-      display: none;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      border: 1px solid var(--tekky-blue);
-    }
-
-    .menu-toggler svg {
-      width: 20px;
-      height: 20px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-
-    }
-
-    .menu-toggler .menu-toggler-open {
-      opacity: 1;
-      transition: all .3s ease-in-out;
-    }
-
-    .menu-toggler.active .menu-toggler-open {
-      opacity: 0;
-    }
-
-    .menu-toggler .menu-toggler-close {
-      opacity: 0;
-      transition: all .3s ease-in-out;
-    }
-
-    .menu-toggler.active .menu-toggler-close {
-      opacity: 1;
-    }
-
     .nav-links.active {
       display: block;
     }
@@ -346,9 +261,7 @@
         min-height: 62vh
       }
 
-      .logo.logo-mobile {
-        display: block;
-      }
+
 
       .nav-links {
         display: none;
@@ -429,33 +342,32 @@
       <h2>Season Drop</h2>
       <div class="grid">
         <div class="card">
-          <img src="images/Jersey.png" alt="Jersey">
+          <img src="images/Jersey.webp" alt="Jersey" fetchpriority="high">
           <h3>Tekky North Jersey</h3><span class="muted">Drop 01 / Spring</span>
           <p class="price">$65</p><div class="cta coming-soon">Buy Now</div>
         </div>
         <div class="card">
-          <img src="images/Jacket.png" alt="Jacket">
+          <img src="images/Jacket.webp" alt="Jacket" fetchpriority="high">
           <h3>South Division Jacket</h3><span class="muted">Limited Stock</span>
           <p class="price">$80</p><div class="cta coming-soon">Buy Now</div>
         </div>
         <div class="card">
-          <img src="images/Hoodie.png" alt="Hoodie">
+          <img src="images/Hoodie.webp" alt="Hoodie" fetchpriority="high">
           <h3>Finale Hoodie</h3><span class="muted">Drop 01 / Spring</span>
           <p class="price">$70</p><div class="cta coming-soon">Buy Now</div>
         </div>
         <div class="card">
-          <img src="images/Pants.png" alt="Pants">
+          <img src="images/Pants.webp" alt="Pants" fetchpriority="high">
           <h3>Creator Pants</h3><span class="muted">Limited Edition</span>
           <p class="price">$60</p><div class="cta coming-soon">Buy Now</div>
         </div>
         <div class="card">
-          <img src="images/Shorts.png" alt="Shorts">
+          <img src="images/Shorts.webp" alt="Shorts" fetchpriority="high">
           <h3>Glow Shorts</h3><span class="muted">Season Exclusive</span>
           <p class="price">$45</p><div class="cta coming-soon">Buy Now</div>
         </div>
       </div>
       <div class="sec-cta">
-        <a class="cta" href="#collabs">Own the Look</a>
         <a class="cta" href="registration.html">Register to Play in Tekky Gear</a>
       </div>
     </section>

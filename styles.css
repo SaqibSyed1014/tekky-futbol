@@ -170,9 +170,7 @@ nav {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
 }
-
 .menu-toggler .menu-toggler-open {
   opacity: 1;
   transition: all .3s ease-in-out;
@@ -195,15 +193,15 @@ h1 {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 3.4rem;
   letter-spacing: 2px;
-  text-shadow: 0 0 20px var(--tekky-blue), 0 0 5px var(--tekky-blue);
-  animation: pulseGlow 3s ease-in-out infinite alternate;
+  text-shadow: 0 0 50px var(--tekky-blue), 0 0 10px var(--tekky-blue);
+  /*animation: pulseGlow 3s ease-in-out infinite alternate;*/
 }
 .tagline{
   margin-top: 0.4rem;
   color: var(--tekky-blue);
   font-weight: 700;
-  text-shadow: 0 0 3px var(--tekky-blue), 0 0 1px var(--tekky-blue);
-  animation: pulseGlow 3s ease-in-out infinite alternate;
+  text-shadow: 0 0 8px var(--tekky-blue), 0 0 1px var(--tekky-blue);
+  /*animation: pulseGlow 3s ease-in-out infinite alternate;*/
 }
 .subtext{
   text-shadow: 0 0 7px white;
@@ -234,6 +232,15 @@ footer {
   justify-content: center;
   margin: 0.6rem 0 0.3rem;
 }
+.social a {
+  color: #dfe7ff;
+  font-size: 1.4rem;
+  transition: .25s
+}
+.social a:hover {
+  color: var(--tekky-blue);
+  text-shadow: 0 0 8px var(--tekky-blue)
+}
 .legal-footer-links{
   display: flex;
   justify-content: center;
@@ -248,8 +255,24 @@ table{
   min-width: 700px;
 }
 
-.cta{
+.cta {
+  display: inline-block;
   cursor: pointer;
+  margin: 0.5rem;
+  padding: 0.7rem 1.4rem;
+  border: 2px solid var(--tekky-blue);
+  border-radius: 40px;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+  box-shadow: 0 0 12px var(--tekky-blue);
+  transition: .25s;
+  animation: buttonPulse 1s infinite alternate;
+}
+.cta:hover {
+  background: var(--tekky-blue);
+  transform: translateY(-2px)
 }
 
 
@@ -305,6 +328,10 @@ table{
     padding: 20px 20px;
   }
 
+  .nav-links .logo-desktop {
+    display: none;
+  }
+
   nav {
     padding: 1.25rem;
     justify-content: space-between;
@@ -328,6 +355,9 @@ table{
   .nav-links .dropdown-menu:hover .nav-links-dropdown {
     position: static;
     transform: none;
+  }
+  .nav-links.active {
+    display: block;
   }
 
   footer{
