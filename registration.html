@@ -33,7 +33,7 @@
       text-align: center
     }
 
-    form {
+    form#teamForm, form#playerForm {
       background: rgba(0, 0, 0, 0.45);
       border: 1px solid rgba(0, 116, 255, 0.4);
       border-radius: 16px;
@@ -76,7 +76,7 @@
       text-align: left
     }
 
-    button.cta {
+    form#teamForm button.cta, form#playerForm button.cta {
       width: 100%;
       margin-top: 1rem;
       padding: 0.8rem;
@@ -130,74 +130,6 @@
       box-shadow: 0 0 25px rgba(0, 116, 255, 1)
     }
 
-
-
-
-
-    .social {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      margin: 0.6rem 0 0.3rem
-    }
-
-    .social a {
-      color: #dfe7ff;
-      font-size: 1.4rem;
-      transition: .25s
-    }
-
-    .social a:hover {
-      color: var(--tekky-blue);
-      text-shadow: 0 0 8px var(--tekky-blue)
-    }
-
-    .menu-toggler {
-      position: relative;
-      background: rgba(255, 255, 255, 0.05);
-      box-shadow: 0 0 12px rgba(0, 116, 255, 0.18);
-      border-radius: 4px;
-      width: 34px;
-      height: 34px;
-      display: none;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      border: 1px solid var(--tekky-blue);
-    }
-
-    .menu-toggler svg {
-      width: 20px;
-      height: 20px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-
-    }
-
-    .menu-toggler .menu-toggler-open {
-      opacity: 1;
-      transition: all .3s ease-in-out;
-    }
-
-    .menu-toggler.active .menu-toggler-open {
-      opacity: 0;
-    }
-
-    .menu-toggler .menu-toggler-close {
-      opacity: 0;
-      transition: all .3s ease-in-out;
-    }
-
-    .menu-toggler.active .menu-toggler-close {
-      opacity: 1;
-    }
-
-    .nav-links.active {
-      display: block;
-    }
-
     @media(max-width:768px) {
       h1 {
         font-size: 2.5rem
@@ -205,53 +137,6 @@
 
       header {
         min-height: 50vh
-      }
-
-      .logo.logo-mobile {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        left: 0;
-        top: 100%;
-        width: 100%;
-        background: #000;
-        backdrop-filter: blur(10px);
-      }
-
-      .nav-links ul {
-        align-items: start;
-        flex-direction: column;
-        padding: 20px 20px;
-      }
-
-      .nav-links .logo-desktop {
-        display: none;
-      }
-
-      nav {
-        justify-content: space-between;
-      }
-
-      .menu-toggler {
-        display: flex;
-      }
-
-      .nav-links .nav-links-dropdown {
-        position: static;
-        transform: none;
-        display: none;
-      }
-
-      .nav-links .dropdown-menu.active .nav-links-dropdown {
-        display: block;
-      }
-
-      .nav-links .dropdown-menu:hover .nav-links-dropdown {
-        position: static;
-        transform: none;
       }
     }
   </style>
@@ -280,8 +165,8 @@
     <div class="season-selector">
       <h2>Choose Your Season</h2>
       <div class="season-buttons">
-        <button class="season-btn" id="mensBtn">Men’s Season</button>
-        <button class="season-btn" id="womensBtn">Women’s Season</button>
+        <button class="season-btn coming-soon-registration">Men’s Season</button>
+        <button class="season-btn coming-soon-registration">Women’s Season</button>
       </div>
     </div>
 
@@ -345,7 +230,7 @@
     <div class="glow-divider"></div>
 
     <div class="sec-cta" style="margin-top:2rem;">
-      <a class="cta" href="Request-access.html">Request Access</a>
+<!--       <a class="cta" href="Request-access.html">Request Access</a> -->
       <a class="cta" href="Rules.html">View League Rules</a>
       <a class="cta" href="League-schedule.html">View Schedule</a>
     </div>
@@ -369,6 +254,34 @@
 
    <div id="footer"></div>
 
+
+   <div id="comingSoonRegistrationPopup" class="coming-soon-overlay">
+         <div class="overlay-content">
+           <h3>Season starts Before You Think</h3>
+           <p class="subtext">Get notified when registration opens, teams fill, and spots go live.</p>
+           <form id="rsvpForm">
+           <!--                 <label for="teamName">First Name</label> -->
+               <input type="text" id="firstName" name="firstName" placeholder="Enter your First name" required>
+           <!--                 <label for="teamName">Last Name</label> -->
+               <input type="text" id="lastName" name="lastName" placeholder="Enter your Last name" required>
+           <!--                 <label for="email">Email</label> -->
+               <input type="email" id="email" name="email" placeholder="Enter your email" required>
+               <button type="submit" class="cta close-overlay">Notify Me</button>
+           </form>
+         </div>
+     </div>
+
+
+    <script>
+        const comingSoonTriggers = document.querySelectorAll('.coming-soon-registration');
+        const registrationPopupOverlay = document.querySelector('#comingSoonRegistrationPopup.coming-soon-overlay');
+        const closeRegistrationPopup = document.querySelector('#comingSoonRegistrationPopup .close-overlay');
+
+        comingSoonTriggers.forEach((ele) => {
+            ele.addEventListener('click', () => { registrationPopupOverlay.style.display = 'flex'; });
+        })
+        closeRegistrationPopup.addEventListener('click', () => { registrationPopupOverlay.style.display = 'none'; });
+    </script>
 
   <script>
     // Handle overlay popup for Women's button

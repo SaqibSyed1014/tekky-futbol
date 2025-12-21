@@ -193,14 +193,14 @@ h1 {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 3.4rem;
   letter-spacing: 2px;
-  text-shadow: 0 0 40px var(--tekky-blue), 0 0 10px var(--tekky-blue);
+  text-shadow: 0 0 20px var(--tekky-blue), 0 0 5px var(--tekky-blue);
   /*animation: pulseGlow 3s ease-in-out infinite alternate;*/
 }
 .tagline{
   margin-top: 0.4rem;
   color: var(--tekky-blue);
   font-weight: 700;
-  text-shadow: 0 0 5px var(--tekky-blue), 0 0 1px var(--tekky-blue);
+  text-shadow: 0 0 10px var(--tekky-blue);
   /*animation: pulseGlow 3s ease-in-out infinite alternate;*/
 }
 .subtext {
@@ -456,4 +456,17 @@ select:focus {
   outline: none;
   border-color: var(--tekky-blue);
   box-shadow: 0 0 8px var(--tekky-blue)
+}
+
+
+#futureUpdatesForm, #rsvpForm{
+  padding-top: 1.5rem;
+}
+#futureUpdatesForm input,
+#rsvpForm input{
+  padding: 0.6rem;
+}
+#futureUpdatesForm .close-overlay,
+#rsvpForm .close-overlay{
+  margin-top: .3rem;
 }

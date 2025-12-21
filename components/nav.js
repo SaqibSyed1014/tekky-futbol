@@ -48,9 +48,9 @@ navElement.innerHTML = `
                   <li>
                     <a href="Playoff-ticket-checkout.html">Playoff Ticket</a>
                   </li>
-                  <li>
-                    <div class="coming-soon nav-link">Finale Ticket</div>
-                  </li>
+<!--                  <li>-->
+<!--                    <div class="coming-soon nav-link">Finale Ticket</div>-->
+<!--                  </li>-->
                 </ul>
               </div>
             </li>
@@ -79,9 +79,9 @@ navElement.innerHTML = `
                   <li>
                     <a href="Next.html">Next Fixtures</a>
                   </li>
-                  <li>
-                    <div class="coming-soon nav-link">Past Matchdays</div>
-                  </li>
+<!--                  <li>-->
+<!--                    <div class="coming-soon nav-link">Past Matchdays</div>-->
+<!--                  </li>-->
                 </ul>
               </div>
             </li>

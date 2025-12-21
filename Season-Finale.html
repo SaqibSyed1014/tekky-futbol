@@ -17,7 +17,6 @@
       justify-content: center;
       text-align: center;
       padding-top: 6.5rem;
-/*       background: radial-gradient(60% 50% at 50% 35%, rgba(0, 116, 255, 0.32), rgba(0, 0, 0, 0.95) 60%), url('night-pitch.jpg') center/cover no-repeat fixed; */
     }
 
     .hero {
@@ -26,15 +25,6 @@
       max-width: 980px;
       padding: 0 1rem
     }
-
-    .subtext {
-      margin: 0.9rem auto 1.2rem;
-      color: var(--muted);
-      max-width: 70ch;
-      line-height: 1.7
-    }
-
-
 
     main {
       max-width: 1080px;
@@ -66,72 +56,6 @@
       text-align: center
     }
 
-
-
-    .social {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      margin: 0.6rem 0 0.3rem
-    }
-
-    .social a {
-      color: #dfe7ff;
-      font-size: 1.4rem;
-      transition: .25s
-    }
-
-    .social a:hover {
-      color: var(--tekky-blue);
-      text-shadow: 0 0 8px var(--tekky-blue)
-    }
-
-    .menu-toggler {
-      position: relative;
-      background: rgba(255, 255, 255, 0.05);
-      box-shadow: 0 0 12px rgba(0, 116, 255, 0.18);
-      border-radius: 4px;
-      width: 34px;
-      height: 34px;
-      display: none;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      border: 1px solid var(--tekky-blue);
-    }
-
-    .menu-toggler svg {
-      width: 20px;
-      height: 20px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-
-    }
-
-    .menu-toggler .menu-toggler-open {
-      opacity: 1;
-      transition: all .3s ease-in-out;
-    }
-
-    .menu-toggler.active .menu-toggler-open {
-      opacity: 0;
-    }
-
-    .menu-toggler .menu-toggler-close {
-      opacity: 0;
-      transition: all .3s ease-in-out;
-    }
-
-    .menu-toggler.active .menu-toggler-close {
-      opacity: 1;
-    }
-
-    .nav-links.active {
-      display: block;
-    }
-
     @media (max-width:768px) {
       h1 {
         font-size: 2.4rem
@@ -139,51 +63,6 @@
 
       header {
         min-height: 62vh
-      }
-
-
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        left: 0;
-        top: 100%;
-        width: 100%;
-        background: #000;
-        backdrop-filter: blur(10px);
-      }
-
-      .nav-links ul {
-        align-items: start;
-        flex-direction: column;
-        padding: 20px 20px;
-      }
-
-      .nav-links .logo-desktop {
-        display: none;
-      }
-
-      nav {
-        justify-content: space-between;
-      }
-
-      .menu-toggler {
-        display: flex;
-      }
-
-      .nav-links .nav-links-dropdown {
-        position: static;
-        transform: none;
-        display: none;
-      }
-
-      .nav-links .dropdown-menu.active .nav-links-dropdown {
-        display: block;
-      }
-
-      .nav-links .dropdown-menu:hover .nav-links-dropdown {
-        position: static;
-        transform: none;
       }
     }
   </style>
@@ -238,7 +117,7 @@
       <p>The finale captures the spirit of TekkyFutbol — community, creativity, and competition. It's more than a game;
         it's the culture’s heartbeat.</p>
       <div class="sec-cta">
-        <a class="cta" href="Newsletter.html">RSVP</a>
+        <div id="comingSoonRSVP" class="cta">RSVP</div>
         <a class="cta" href="Staff.html">Become a Volunteer</a>
       </div>
     </section>
@@ -254,6 +133,31 @@
   </main>
 
   <div id="footer"></div>
+
+  <div id="comingSoonRSVPPopup" class="coming-soon-overlay">
+      <div class="overlay-content">
+        <h3>Finale Night. Don't Miss It.</h3>
+        <p class="subtext">RSVP for updates, tickets, and exclusive Finale announcements.</p>
+        <form id="rsvpForm">
+        <!--                 <label for="teamName">First Name</label> -->
+            <input type="text" id="firstName" name="firstName" placeholder="Enter your First name" required>
+        <!--                 <label for="teamName">Last Name</label> -->
+            <input type="text" id="lastName" name="lastName" placeholder="Enter your Last name" required>
+        <!--                 <label for="email">Email</label> -->
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <button type="submit" class="cta close-overlay">RSVP for Final Updates</button>
+        </form>
+      </div>
+  </div>
+
+  <script>
+      const comingSoonTrigger = document.getElementById('comingSoonRSVP');
+      const overlay = document.querySelector('#comingSoonRSVPPopup.coming-soon-overlay');
+      const closeOverlay = document.querySelector('#comingSoonRSVPPopup .close-overlay');
+      comingSoonTrigger.addEventListener('click', () => { overlay.style.display = 'flex'; });
+
+      closeOverlay.addEventListener('click', () => { overlay.style.display = 'none'; });
+  </script>
 </body>
 
 
