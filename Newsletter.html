@@ -4,14 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TekkyFutbol — Season Pass</title>
+  <title>TekkyFutbol — Newsletter</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600&display=swap"
     rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
     header {
       position: relative;
-      min-height: 60vh;
+      min-height: 70vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -26,10 +26,21 @@
       padding: 0 1rem
     }
 
+    .subtext {
+      margin: 0.9rem auto 1.2rem;
+      color: var(--muted);
+      max-width: 70ch;
+      line-height: 1.7
+    }
+
     main {
-      max-width: 900px;
-      margin: 3rem auto 5rem;
-      padding: 0 1.25rem;
+      max-width: 1080px;
+      margin: 2.8rem auto 4rem;
+      padding: 0 1.25rem
+    }
+
+    section {
+      margin: 3rem 0;
       text-align: center
     }
 
@@ -37,35 +48,33 @@
       font-family: 'Bebas Neue', sans-serif;
       font-size: 2rem;
       color: var(--tekky-blue);
-      text-shadow: 0 0 15px var(--tekky-blue);
-      margin-bottom: 0.6rem
+      margin-bottom: 0.5rem
     }
 
-    p {
-      color: var(--fg);
-      margin-bottom: 1rem;
-      line-height: 1.7
-    }
-
-    .eventbrite-widget iframe {
-      width: 100%;
-      height: 650px;
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 116, 255, 0.4);
-    }
-
-    .nav-links.active {
-      display: block;
+    section p {
+      color: #d3d9e3;
+      margin: 0.6rem auto;
+      max-width: 70ch;
+      line-height: 1.8
     }
 
     @media(max-width:768px) {
       h1 {
-        font-size: 2.5rem
+        font-size: 2.4rem
       }
 
       header {
-        min-height: 50vh
+        min-height: 62vh
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        background: #000;
+        backdrop-filter: blur(10px);
       }
 
       .nav-links ul {
@@ -88,24 +97,16 @@
 
   <header>
     <div class="hero">
-      <h1>Season Pass</h1>
+      <h1>Newsletter</h1>
       <p class="tagline">For Ballers Who Create</p>
-      <p class="subtext">Built for the regular season grind.</p>
     </div>
   </header>
 
   <main>
-    <section id="checkout">
-      <h2>Season Pass</h2>
-      <p><strong>$80</strong> — All regular-season matches. Full access. No compromises.</p>
-      <div class="eventbrite-widget">
-<!--         <iframe src="https://www.eventbrite.com/e/placeholder/embed" allowfullscreen></iframe> -->
-      </div>
-      <div class="cta coming-soon">Coming Soon</div>
-    </section>
+
   </main>
 
-    <div id="footer"></div>
+   <div id="footer"></div>
 
 </body>
 

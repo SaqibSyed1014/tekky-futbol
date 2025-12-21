@@ -193,17 +193,21 @@ h1 {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 3.4rem;
   letter-spacing: 2px;
-  text-shadow: 0 0 50px var(--tekky-blue), 0 0 10px var(--tekky-blue);
+  text-shadow: 0 0 40px var(--tekky-blue), 0 0 10px var(--tekky-blue);
   /*animation: pulseGlow 3s ease-in-out infinite alternate;*/
 }
 .tagline{
   margin-top: 0.4rem;
   color: var(--tekky-blue);
   font-weight: 700;
-  text-shadow: 0 0 8px var(--tekky-blue), 0 0 1px var(--tekky-blue);
+  text-shadow: 0 0 5px var(--tekky-blue), 0 0 1px var(--tekky-blue);
   /*animation: pulseGlow 3s ease-in-out infinite alternate;*/
 }
-.subtext{
+.subtext {
+  margin: 0.9rem auto 0.3rem;
+  color: var(--muted);
+  max-width: 70ch;
+  line-height: 1.7;
   text-shadow: 0 0 7px white;
 }
 section h2{
@@ -426,3 +430,29 @@ table{
   background: var(--tekky-blue);
 }
 
+
+input,
+select {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1.2rem;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 116, 255, 0.4);
+  border-radius: 8px;
+  color: var(--fg);
+  font-family: 'Montserrat', sans-serif
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 0.4rem;
+  color: var(--fg);
+  font-weight: 600
+}
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--tekky-blue);
+  box-shadow: 0 0 8px var(--tekky-blue)
+}
