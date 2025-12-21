@@ -272,6 +272,7 @@ table{
   letter-spacing: 1px;
   box-shadow: 0 0 12px var(--tekky-blue);
   transition: .25s;
+  background: black;
   animation: buttonPulse 1s infinite alternate;
 }
 .cta:hover {
