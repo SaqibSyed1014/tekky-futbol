@@ -60,11 +60,17 @@
     tr:hover {
       background: rgba(0, 116, 255, 0.08)
     }
+.sec-cta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+}
   </style>
 
   <link rel="stylesheet" href="styles.css" />
   <script src="components/nav.js" type="text/javascript" defer></script>
-
+<script src="components/footer.js" type="text/javascript" defer></script>
 </head>
 
 <body>
@@ -271,6 +277,53 @@
     </tr>
   </table>
   </div>
+
+  <div class="glow-divider"></div>
+
+      <section id="cta">
+        <div class="sec-cta">
+          <a class="cta" href="registration.html">Register for the Next Season</a>
+          <div class="cta" id="comingSoonUpdates">Get League Updates</div>
+        </div>
+      </section>
+
+    <div id="footer"></div>
+
+    <div id="comingSoonUpdatesPopup" class="coming-soon-overlay">
+            <div class="overlay-content">
+              <h3>Stay in the Game</h3>
+              <p class="subtext">Get league updates, fixtures, drops, and announcements — straight to your inbox.</p>
+              <form id="futureUpdatesForm">
+                    <input type="text" id="firstName" name="firstName" placeholder="Enter your First name" required>
+                    <input type="text" id="lastName" name="lastName" placeholder="Enter your Last name" required>
+                    <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+                    <button type="submit" class="cta close-overlay">Get Updates</button>
+              </form>
+
+              <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="cross-icon"
+                  style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+                  viewBox="0 0 1024 1024"
+                  version="1.1"
+              >
+                  <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>
+              </svg>
+            </div>
+        </div>
+
+
+        <script>
+            const comingSoonTrigger = document.getElementById('comingSoonUpdates');
+            const overlay = document.querySelector('#comingSoonUpdatesPopup.coming-soon-overlay');
+            const closeOverlay = document.querySelector('#comingSoonUpdatesPopup .close-overlay');
+            const closePopup = document.querySelector('#comingSoonUpdatesPopup .cross-icon');
+            comingSoonTrigger.addEventListener('click', () => { overlay.style.display = 'flex'; });
+
+            closeOverlay.addEventListener('click', () => { overlay.style.display = 'none'; });
+            closePopup.addEventListener('click', () => { overlay.style.display = 'none'; });
+        </script>
+
 </body>
 
 </html>

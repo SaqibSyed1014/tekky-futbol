@@ -186,7 +186,7 @@
           required>
         <p class="note">💡 Coaches register and pay individually — the same as players. Each person completes their own
           registration and payment to confirm their spot.</p>
-        <button type="submit" class="cta">Register Team</button>
+        <button type="button" class="cta coming-soon-registration">Register Team</button>
       </form>
       <div id="teamConfirm" class="confirmation">✅ Your team has been registered successfully!</div>
     </section>
@@ -222,7 +222,7 @@
         </select>
         <p class="note">💡 Every player registers and pays separately. Custom sizing (different jersey and shorts sizes)
           may incur an extra charge.</p>
-        <button type="submit" class="cta">Register Player</button>
+        <button type="button" class="cta coming-soon-registration">Register Player</button>
       </form>
       <div id="playerConfirm" class="confirmation">✅ Player registration received successfully!</div>
     </section>
@@ -265,9 +265,19 @@
            <!--                 <label for="teamName">Last Name</label> -->
                <input type="text" id="lastName" name="lastName" placeholder="Enter your Last name" required>
            <!--                 <label for="email">Email</label> -->
-               <input type="email" id="email" name="email" placeholder="Enter your email" required>
+               <input type="email" id="email" name="email" placeholder="Enter your Email" required>
                <button type="submit" class="cta close-overlay">Notify Me</button>
            </form>
+
+             <svg
+                 xmlns="http://www.w3.org/2000/svg"
+                 class="cross-icon"
+                 style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+                 viewBox="0 0 1024 1024"
+                 version="1.1"
+             >
+                 <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>
+             </svg>
          </div>
      </div>
 
@@ -276,27 +286,29 @@
         const comingSoonTriggers = document.querySelectorAll('.coming-soon-registration');
         const registrationPopupOverlay = document.querySelector('#comingSoonRegistrationPopup.coming-soon-overlay');
         const closeRegistrationPopup = document.querySelector('#comingSoonRegistrationPopup .close-overlay');
+        const closePopup = document.querySelector('#comingSoonRegistrationPopup .cross-icon');
 
         comingSoonTriggers.forEach((ele) => {
             ele.addEventListener('click', () => { registrationPopupOverlay.style.display = 'flex'; });
         })
         closeRegistrationPopup.addEventListener('click', () => { registrationPopupOverlay.style.display = 'none'; });
+        closePopup.addEventListener('click', () => { registrationPopupOverlay.style.display = 'none'; });
     </script>
 
   <script>
     // Handle overlay popup for Women's button
-    const womensBtn = document.getElementById('womensBtn');
-    const overlay = document.getElementById('comingSoonOverlay');
-    const closeOverlay = document.querySelector('.close-overlay');
-    womensBtn.addEventListener('click', () => { overlay.style.display = 'flex'; });
-    closeOverlay.addEventListener('click', () => { overlay.style.display = 'none'; });
+//     const womensBtn = document.getElementById('womensBtn');
+//     const overlay = document.getElementById('comingSoonOverlay');
+//     const closeOverlay = document.querySelector('.close-overlay');
+//     womensBtn.addEventListener('click', () => { overlay.style.display = 'flex'; });
+//     closeOverlay.addEventListener('click', () => { overlay.style.display = 'none'; });
 
     // Handle overlay popup for Men's button
-        const mensBtn = document.getElementById('mensBtn');
-        const mensOverlay = document.getElementById('menComingSoonOverlay');
-        const mensCloseOverlay = document.querySelector('#menComingSoonOverlay .close-overlay');
-        mensBtn.addEventListener('click', () => { mensOverlay.style.display = 'flex'; });
-        mensCloseOverlay.addEventListener('click', () => { mensOverlay.style.display = 'none'; });
+//         const mensBtn = document.getElementById('mensBtn');
+//         const mensOverlay = document.getElementById('menComingSoonOverlay');
+//         const mensCloseOverlay = document.querySelector('#menComingSoonOverlay .close-overlay');
+//         mensBtn.addEventListener('click', () => { mensOverlay.style.display = 'flex'; });
+//         mensCloseOverlay.addEventListener('click', () => { mensOverlay.style.display = 'none'; });
 
     // Team and Player form confirmation animations
     const teamForm = document.getElementById('teamForm');
