@@ -193,7 +193,7 @@ h1 {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 3.4rem;
   letter-spacing: 2px;
-  text-shadow: 0 0 20px var(--tekky-blue), 0 0 5px var(--tekky-blue);
+  text-shadow: 0 0 15px var(--tekky-blue), 0 0 5px var(--tekky-blue);
   /*animation: pulseGlow 3s ease-in-out infinite alternate;*/
 }
 .tagline{
