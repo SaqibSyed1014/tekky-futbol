@@ -211,7 +211,7 @@ h1 {
   text-shadow: 0 0 7px white;
 }
 section h2{
-  animation: lightPulseGlow 3s ease-in-out infinite alternate;
+  /*animation: lightPulseGlow 3s ease-in-out infinite alternate;*/
 }
 
 .glow-divider {
@@ -309,8 +309,8 @@ table{
 }
 
 @media (max-width:768px) {
-  h1{
-    text-shadow: 0 0 5px var(--tekky-blue), 0 0 5px var(--tekky-blue);
+  h1, section h2{
+    text-shadow: 0 0 10px var(--tekky-blue);
   }
   .logo.logo-mobile {
     display: block;
