@@ -313,7 +313,7 @@ table{
     text-shadow: 0 0 8px var(--tekky-blue);
   }
   section h2{
-    text-shadow: 0 0 0px var(--tekky-blue);
+    text-shadow: 0 0 1px var(--tekky-blue);
   }
   .logo.logo-mobile {
     display: block;
