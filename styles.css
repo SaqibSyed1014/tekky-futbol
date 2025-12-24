@@ -210,7 +210,8 @@ h1 {
   line-height: 1.7;
   text-shadow: 0 0 7px white;
 }
-section h2{
+h2{
+  text-shadow: 0 0 15px var(--tekky-blue);
   /*animation: lightPulseGlow 3s ease-in-out infinite alternate;*/
 }
 
@@ -312,7 +313,7 @@ table{
   h1{
     text-shadow: 0 0 8px var(--tekky-blue);
   }
-  section h2{
+  h2{
     text-shadow: 0 0 2px var(--tekky-blue);
   }
   .logo.logo-mobile {
