@@ -290,6 +290,12 @@ table{
   background: var(--tekky-blue);
   transform: translateY(-2px)
 }
+.cta.focused:focus{
+  background: var(--tekky-blue);
+}
+.social a:focus .fab{
+  color: var(--tekky-blue);
+}
 
 
 @keyframes lightPulseGlow {
