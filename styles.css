@@ -17,23 +17,33 @@ body {
   font-family: 'Montserrat', sans-serif;
   background: black;
   color: var(--fg);
-  overflow-x: hidden;
+  /*overflow-x: hidden;*/
+}
+
+#nav{
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 116, 255, 0.2);
+  z-index: 100;
 }
 
 nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
   padding: 0.9rem 1.25rem;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 116, 255, 0.2);
-  z-index: 100;
+}
+
+header{
+  padding-top: 56px;
+}
+header.no-space{
+  padding-top: 0 !important;
+  margin-top: 0 !important;
 }
 
 .logo img {
@@ -193,7 +203,7 @@ h1 {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 3.4rem;
   letter-spacing: 2px;
-  text-shadow: 0 0 15px var(--tekky-blue), 0 0 5px var(--tekky-blue);
+  text-shadow: 0 0 8px var(--tekky-blue);
   /*animation: pulseGlow 3s ease-in-out infinite alternate;*/
 }
 .tagline{
@@ -310,6 +320,9 @@ table{
 }
 
 @media (max-width:768px) {
+  header{
+    padding-top: 36px;
+  }
   h1{
     text-shadow: 0 0 8px var(--tekky-blue);
   }
@@ -380,6 +393,12 @@ table{
   }
   .legal-footer-links a{
     font-size: 12px;
+  }
+}
+
+@media (max-width:768px) {
+  header {
+    padding-top: 50px;
   }
 }
 

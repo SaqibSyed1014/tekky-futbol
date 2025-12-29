@@ -16,7 +16,6 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding-top: 6.5rem;
     }
 
     .hero {
@@ -93,6 +92,8 @@
     </div>
   </header>
 
+  <div class="glow-divider"></div>
+
   <main>
     <section id="checkout">
       <h2>Season Pass</h2>
@@ -100,11 +101,45 @@
       <div class="eventbrite-widget">
 <!--         <iframe src="https://www.eventbrite.com/e/placeholder/embed" allowfullscreen></iframe> -->
       </div>
-      <div class="cta coming-soon">Coming Soon</div>
+      <div id="comingSoonUpdates" class="cta">Get Season Access</div>
     </section>
   </main>
 
     <div id="footer"></div>
+
+    <div id="comingSoonUpdatesPopup" class="coming-soon-overlay">
+            <div class="overlay-content">
+              <h3>Lock In The Season</h3>
+              <p class="subtext">Be first to access Season Passes, schedules, and league drops.</p>
+              <form id="futureUpdatesForm">
+                    <input type="text" id="firstName" name="firstName" placeholder="Enter your First name" required>
+                    <input type="text" id="lastName" name="lastName" placeholder="Enter your Last name" required>
+                    <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+                    <button type="submit" class="cta close-overlay">Join the Season List</button>
+              </form>
+
+              <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="cross-icon"
+                  style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+                  viewBox="0 0 1024 1024"
+                  version="1.1"
+              >
+                  <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>
+              </svg>
+            </div>
+        </div>
+
+        <script>
+            const comingSoonTrigger = document.getElementById('comingSoonUpdates');
+            const overlay = document.querySelector('#comingSoonUpdatesPopup.coming-soon-overlay');
+            const closeOverlay = document.querySelector('#comingSoonUpdatesPopup .close-overlay');
+            const closePopup = document.querySelector('#comingSoonUpdatesPopup .cross-icon');
+            comingSoonTrigger.addEventListener('click', () => { overlay.style.display = 'flex'; });
+
+            closeOverlay.addEventListener('click', () => { overlay.style.display = 'none'; });
+            closePopup.addEventListener('click', () => { overlay.style.display = 'none'; });
+        </script>
 
 </body>
 

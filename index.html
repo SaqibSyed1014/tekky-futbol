@@ -27,7 +27,6 @@
       align-items: stretch;
       justify-content: center;
       text-align: center;
-      margin-top: 50px;
     }
 
     .hero {
@@ -47,7 +46,7 @@
       position: absolute;
       background: url('images/hero-bg.webp') no-repeat;
       background-size: cover;
-            background-position: center;
+      background-position: 100% 46%;
       left: 0;
       top: 0;
       z-index: -1;
@@ -137,6 +136,9 @@
       header {
         min-height: 62vh
       }
+      .hero::before {
+        background-position: center;
+      }
 
       .nav-links {
         display: none;
@@ -169,7 +171,7 @@
 <body>
   <div id="nav"></div>
 
-  <header>
+  <header class="no-space">
     <div class="hero">
       <div class="hero-wrapper">
         <h1>TEKKYFUTBOL</h1>
@@ -231,7 +233,7 @@
     <section id="finale">
       <h2>The Finale</h2>
       <p>The season ends where the energy peaks — trophy lifted one week, party the next.</p>
-      <div class="sec-cta"><div class="cta coming-soon" aria-disabled="true">RSVP Coming Soon</div></div>
+      <div class="sec-cta"><a class="cta" href="Season-Finale.html" aria-disabled="true">Enter the Finale</a></div>
     </section>
 
     <div class="glow-divider"></div>
@@ -246,7 +248,7 @@
       <h2>Join the Movement</h2>
       <p>Players. Creators. Sponsors. Be part of the Tekky era.</p>
       <div class="sec-cta">
-        <a class="cta" href="mailto:info@TekkyFutbol.net">Sponsor the Movement</a>
+        <a class="cta" href="Partners.html">Sponsor the Movement</a>
         <a class="cta" style="margin-left:0.8rem" href="Staff.html">Volunteer / Join Staff</a>
       </div>
     </section>
