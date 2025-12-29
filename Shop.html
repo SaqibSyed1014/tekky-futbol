@@ -151,12 +151,12 @@
         <div class="card">
           <img src="images/Jersey.webp" alt="Jersey" fetchpriority="high">
           <h3>Tekky North Jersey</h3><span class="muted">Drop 01 / Spring</span>
-          <p class="price">$65</p><div class="cta coming-soon">Buy Now</div>
+          <p class="price">$65</p><div class="cta">Get Early Access</div>
         </div>
         <div class="card">
           <img src="images/Jacket.webp" alt="Jacket" fetchpriority="high">
           <h3>South Division Jacket</h3><span class="muted">Limited Stock</span>
-          <p class="price">$80</p><div class="cta coming-soon">Buy Now</div>
+          <p class="price">$80</p><div class="cta">Get Early Access</div>
         </div>
 <!--         <div class="card"> -->
 <!--           <img src="images/Hoodie.webp" alt="Hoodie" fetchpriority="high"> -->
@@ -166,12 +166,12 @@
         <div class="card">
           <img src="images/Pants.webp" alt="Pants" fetchpriority="high">
           <h3>Creator Pants</h3><span class="muted">Limited Edition</span>
-          <p class="price">$60</p><div class="cta coming-soon">Buy Now</div>
+          <p class="price">$60</p><div class="cta">Get Early Access</div>
         </div>
         <div class="card">
           <img src="images/Shorts.webp" alt="Shorts" fetchpriority="high">
           <h3>Glow Shorts</h3><span class="muted">Season Exclusive</span>
-          <p class="price">$45</p><div class="cta coming-soon">Buy Now</div>
+          <p class="price">$45</p><div class="cta">Get Early Access</div>
         </div>
       </div>
       <div class="sec-cta">
@@ -195,7 +195,7 @@
       <h2>Stay Connected</h2>
       <p>Subscribe to stay in the loop — new drops, finale events, and culture updates straight from the league.</p>
       <div class="sec-cta">
-        <div id="comingSoonUpdates" class="cta">Get Early Access</div>
+        <div id="comingSoonUpdates" class="cta">Get updates on future drops</div>
       </div>
     </section>
   </main>
@@ -210,7 +210,7 @@
                 <input type="text" id="firstName" name="firstName" placeholder="Enter your First name" required>
                 <input type="text" id="lastName" name="lastName" placeholder="Enter your Last name" required>
                 <input type="email" id="email" name="email" placeholder="Enter your Email" required>
-                <button type="submit" class="cta close-overlay">Unlock Access</button>
+                <button type="button" class="cta close-overlay open-success-popup">Get Early Access</button>
           </form>
 
           <svg
@@ -225,16 +225,110 @@
         </div>
     </div>
 
-    <script>
-        const comingSoonTrigger = document.getElementById('comingSoonUpdates');
-        const overlay = document.querySelector('#comingSoonUpdatesPopup.coming-soon-overlay');
-        const closeOverlay = document.querySelector('#comingSoonUpdatesPopup .close-overlay');
-        const closePopup = document.querySelector('#comingSoonUpdatesPopup .cross-icon');
-        comingSoonTrigger.addEventListener('click', () => { overlay.style.display = 'flex'; });
 
-        closeOverlay.addEventListener('click', () => { overlay.style.display = 'none'; });
-        closePopup.addEventListener('click', () => { overlay.style.display = 'none'; });
+    <div id="getEarlyAccessPopup" class="coming-soon-overlay">
+        <div class="overlay-content">
+          <p class="subtext">Limited drops. No restocks. Be the first to know when TeckyFutbol merch goes live.</p>
+          <form id="futureUpdatesForm">
+                <input type="text" id="firstName" name="firstName" placeholder="Enter your First name" required>
+                <input type="text" id="lastName" name="lastName" placeholder="Enter your Last name" required>
+                <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+                <button type="button" class="cta close-overlay open-success-popup">Unlock Access</button>
+          </form>
+
+          <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="cross-icon"
+              style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+              viewBox="0 0 1024 1024"
+              version="1.1"
+          >
+              <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>
+          </svg>
+        </div>
+    </div>
+
+    <div id="successPopup" class="coming-soon-overlay">
+        <div class="overlay-content">
+          <h3>Access Secured</h3>
+          <p class="subtext">You are on list for future drops and league updates. No spam. Just releases that matter.</p>
+          <button class="cta close-overlay close-success-popup">Back to site</button>
+
+          <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="cross-icon"
+              style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+              viewBox="0 0 1024 1024"
+              version="1.1"
+          >
+              <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>
+          </svg>
+        </div>
+    </div>
+
+    <script>
+      // Helpers
+      function openPopup(popup) {
+        popup.style.display = 'flex';
+      }
+
+      function closePopup(popup) {
+        popup.style.display = 'none';
+      }
+
+      // Popups
+      const comingSoonPopup = document.getElementById('comingSoonUpdatesPopup');
+      const earlyAccessPopup = document.getElementById('getEarlyAccessPopup');
+      const successPopup = document.getElementById('successPopup');
+
+      // Triggers
+      const comingSoonTrigger = document.getElementById('comingSoonUpdates');
+      const earlyAccessTriggers = document.querySelectorAll('.card .cta');
+
+      // Success triggers (from both popups)
+      const openSuccessButtons = document.querySelectorAll('.open-success-popup');
+
+      // Close icons
+      const closeIcons = document.querySelectorAll('.cross-icon');
+      const closeSuccessButton = document.querySelector('.close-success-popup');
+
+      /* ---------- OPEN POPUPS ---------- */
+
+      // Coming Soon popup (single button)
+      comingSoonTrigger?.addEventListener('click', () => {
+        openPopup(comingSoonPopup);
+      });
+
+      // Get Early Access popup (multiple buttons)
+      earlyAccessTriggers.forEach(btn => {
+        btn.addEventListener('click', () => {
+          openPopup(earlyAccessPopup);
+        });
+      });
+
+      /* ---------- SUCCESS POPUP ---------- */
+
+      openSuccessButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          closePopup(comingSoonPopup);
+          closePopup(earlyAccessPopup);
+          openPopup(successPopup);
+        });
+      });
+
+      /* ---------- CLOSE POPUPS ---------- */
+
+      closeIcons.forEach(icon => {
+        icon.addEventListener('click', () => {
+          closePopup(icon.closest('.coming-soon-overlay'));
+        });
+      });
+
+      closeSuccessButton?.addEventListener('click', () => {
+        closePopup(successPopup);
+      });
     </script>
+
 
 </body>
 

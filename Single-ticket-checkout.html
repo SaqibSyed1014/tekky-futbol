@@ -257,11 +257,91 @@
       <div class="eventbrite-widget">
 <!--         <iframe src="https://www.eventbrite.com/e/placeholder/embed" allowfullscreen></iframe> -->
       </div>
-      <div class="cta coming-soon">Coming Soon</div>
+      <div id="comingSoonUpdates" class="cta">Get Match Access</div>
     </section>
   </main>
 
    <div id="footer"></div>
+
+   <div id="comingSoonUpdatesPopup" class="coming-soon-overlay">
+       <div class="overlay-content">
+         <h3>Don't Miss a Match</h3>
+         <p class="subtext">Get notified when single game tickets drop and matchups are announced.</p>
+         <form id="futureUpdatesForm">
+               <input type="text" id="firstName" name="firstName" placeholder="Enter your First name" required>
+               <input type="text" id="lastName" name="lastName" placeholder="Enter your Last name" required>
+               <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+               <button type="button" class="cta close-overlay open-success-popup">Notify Me</button>
+         </form>
+
+         <svg
+             xmlns="http://www.w3.org/2000/svg"
+             class="cross-icon"
+             style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+             viewBox="0 0 1024 1024"
+             version="1.1"
+         >
+             <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>
+         </svg>
+       </div>
+   </div>
+
+   <div id="successPopup" class="coming-soon-overlay">
+       <div class="overlay-content">
+         <h3>You're In</h3>
+         <p class="subtext">Match alerts and ticket drops will be sent straight to you.</p>
+         <button class="cta close-overlay close-success-popup">Explore the League</button>
+
+         <svg
+             xmlns="http://www.w3.org/2000/svg"
+             class="cross-icon"
+             style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+             viewBox="0 0 1024 1024"
+             version="1.1"
+         >
+             <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>
+         </svg>
+       </div>
+   </div>
+
+
+       <script>
+             function openPopup(popup) {
+               popup.style.display = 'flex';
+             }
+
+             function closePopup(popup) {
+               popup.style.display = 'none';
+             }
+
+             // Popups
+             const comingSoonPopup = document.getElementById('comingSoonUpdatesPopup');
+             const successPopup = document.getElementById('successPopup');
+
+             // Triggers
+             const openComingSoonButtons = document.querySelector('#comingSoonUpdates');
+             const openSuccessButtons = document.querySelector('.open-success-popup');
+
+             // Close buttons
+             const closeIcons = document.querySelectorAll('.cross-icon');
+             const closeSuccessButton = document.querySelector('.close-success-popup');
+
+             openComingSoonButtons.addEventListener('click', () => openPopup(comingSoonPopup));
+
+             /* Open Success */
+             openSuccessButtons.addEventListener('click', () => {
+               closePopup(comingSoonPopup);
+               openPopup(successPopup);
+             });
+
+             /* Close any popup */
+             closeIcons.forEach(icon => {
+               icon.addEventListener('click', () => closePopup(icon.closest('.coming-soon-overlay')));
+             });
+
+             /* Close success popup */
+             closeSuccessButton?.addEventListener('click', () => closePopup(successPopup));
+       </script>
 
 </body>
 
