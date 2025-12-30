@@ -408,6 +408,12 @@ table{
   }
 }
 
+@media (min-width: 1440px) {
+  .logo img{
+    height: 75px;
+  }
+}
+
 .coming-soon-overlay {
   display: none;
   position: fixed;
