@@ -321,50 +321,6 @@
       header {
         min-height: 50vh
       }
-
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        left: 0;
-        top: 100%;
-        width: 100%;
-        background: #000;
-        backdrop-filter: blur(10px);
-      }
-
-      .nav-links ul {
-        align-items: start;
-        flex-direction: column;
-        padding: 20px 20px;
-      }
-
-      .nav-links .logo-desktop {
-        display: none;
-      }
-
-      nav {
-        justify-content: space-between;
-      }
-
-      .menu-toggler {
-        display: flex;
-      }
-
-      .nav-links .nav-links-dropdown {
-        position: static;
-        transform: none;
-        display: none;
-      }
-
-      .nav-links .dropdown-menu.active .nav-links-dropdown {
-        display: block;
-      }
-
-      .nav-links .dropdown-menu:hover .nav-links-dropdown {
-        position: static;
-        transform: none;
-      }
     }
   </style>
 
@@ -387,9 +343,10 @@
     </div>
   </header>
 
-  <div class="glow-divider"></div>
 
   <main>
+  <div class="glow-divider"></div>
+
     <section id="teams" class="teams-grid">
       <div class="team-card"><img src="team-placeholder.png">
         <div class="team-name">North FC</div>
