@@ -226,7 +226,8 @@ h2{
 }
 
 .glow-divider {
-  width: 80%;
+  width: 100%;
+  max-width: 832px;
   height: 4px;
   margin: 2.5rem auto;
   background: linear-gradient(90deg, transparent, var(--tekky-blue), transparent);
