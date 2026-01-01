@@ -404,6 +404,12 @@ table{
   .legal-footer-links a{
     font-size: 12px;
   }
+  .social a:focus .fab{
+    color: #dfe7ff !important;
+  }
+  .home-page .social a:focus .fab{
+    color: var(--tekky-blue) !important;
+  }
 }
 
 @media (max-width:768px) {
