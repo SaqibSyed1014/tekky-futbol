@@ -255,7 +255,7 @@ footer {
 }
 .social a:hover {
   color: var(--tekky-blue);
-  text-shadow: 0 0 8px var(--tekky-blue)
+  text-shadow: 0 0 8px var(--tekky-blue);
 }
 .legal-footer-links{
   display: flex;
@@ -309,7 +309,7 @@ table{
   100% {
     text-shadow: 0 0 30px var(--tekky-blue);
   }
-}
+}F
 
 @keyframes pulseGlow {
   0% {
@@ -407,8 +407,13 @@ table{
   .social a:focus .fab{
     color: #dfe7ff !important;
   }
-  .home-page .social a:focus .fab{
+  .home-page .social a:hover{
     color: var(--tekky-blue) !important;
+    text-shadow: 0 0 8px var(--tekky-blue) !important;
+  }
+  .social a:hover {
+    color: #dfe7ff !important;
+    text-shadow: 0 0 8px #dfe7ff !important;
   }
 }
 
