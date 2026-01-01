@@ -203,7 +203,7 @@ h1 {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 3.4rem;
   letter-spacing: 2px;
-  text-shadow: 0 0 12px var(--tekky-blue);
+  text-shadow: 0 0 10px var(--tekky-blue), 0 0 6px var(--tekky-blue);
   /*animation: pulseGlow 3s ease-in-out infinite alternate;*/
 }
 .tagline{
@@ -294,11 +294,11 @@ table{
 .cta.focused:focus{
   background: var(--tekky-blue);
 }
-.home-page .social a:focus .fab{
-  color: var(--tekky-blue);
-}
 .social a:focus .fab{
-  color: #dfe7ff;
+  color: #dfe7ff !important;
+}
+.home-page .social a:focus .fab{
+  color: var(--tekky-blue) !important;
 }
 
 
