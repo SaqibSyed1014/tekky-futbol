@@ -297,6 +297,9 @@ table{
 .home-page .social a:focus .fab{
   color: var(--tekky-blue);
 }
+.social a:focus .fab{
+  color: #dfe7ff;
+}
 
 
 @keyframes lightPulseGlow {
