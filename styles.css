@@ -221,7 +221,7 @@ h1 {
   text-shadow: 0 0 7px white;
 }
 h2{
-  text-shadow: 0 0 5px var(--tekky-blue);
+  text-shadow: 0 0 2px var(--tekky-blue);
   /*animation: lightPulseGlow 3s ease-in-out infinite alternate;*/
 }
 
