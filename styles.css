@@ -426,15 +426,15 @@ table{
     padding: 0.2rem 1.25rem;
   }
   .logo img{
-    width: 110px;
-    height: 110px;
+    width: 95px;
+    height: 95px;
   }
-  .nav-links{
-    font-size: 22px;
-  }
-  .nav-links ul{
-    gap: 1.5rem;
-  }
+  /*.nav-links{*/
+  /*  font-size: 22px;*/
+  /*}*/
+  /*.nav-links ul{*/
+  /*  gap: 1.5rem;*/
+  /*}*/
 }
 
 .coming-soon-overlay {
