@@ -406,6 +406,7 @@ table{
   }
   .social a:hover {
     color: #dfe7ff !important;
+    text-shadow: none;
   }
   .cta.un-focused:hover{
     background: black;
