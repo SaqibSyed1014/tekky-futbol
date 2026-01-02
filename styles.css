@@ -255,7 +255,7 @@ footer {
 }
 .social a:hover {
   color: var(--tekky-blue);
-  text-shadow: 0 0 8px var(--tekky-blue);
+  /*text-shadow: 0 0 8px var(--tekky-blue);*/
 }
 .legal-footer-links{
   display: flex;
@@ -289,7 +289,12 @@ table{
 }
 .cta:hover {
   background: var(--tekky-blue);
-  transform: translateY(-2px)
+  transform: translateY(-2px);
+}
+.cta.un-focused:hover{
+  background: black;
+  color: #fff;
+  transform: translateY(0px);
 }
 .cta.focused:focus{
   background: var(--tekky-blue);
