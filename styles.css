@@ -291,11 +291,6 @@ table{
   background: var(--tekky-blue);
   transform: translateY(-2px);
 }
-.cta.un-focused:hover{
-  background: black;
-  color: #fff;
-  transform: translateY(0px);
-}
 .cta.focused:focus{
   background: var(--tekky-blue);
 }
@@ -411,6 +406,11 @@ table{
   }
   .social a:hover {
     color: #dfe7ff !important;
+  }
+  .cta.un-focused:hover{
+    background: black;
+    color: #fff;
+    transform: translateY(0px);
   }
 }
 
