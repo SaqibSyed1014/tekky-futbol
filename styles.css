@@ -47,7 +47,7 @@ header.no-space{
 }
 
 .logo img {
-  height: 50px;
+  height: 60px;
   width: auto;
   mix-blend-mode: lighten;
   filter: brightness(1.2);
@@ -421,8 +421,17 @@ table{
 }
 
 @media (min-width: 1440px) {
+  nav{
+    padding: 0.3rem 1.25rem;
+  }
   .logo img{
-    height: 75px;
+    height: 95px;
+  }
+  .nav-links{
+    font-size: 20px;
+  }
+  .nav-links ul{
+    gap: 1.5rem;
   }
 }
 
