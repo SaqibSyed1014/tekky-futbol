@@ -19,9 +19,11 @@ body {
   color: var(--fg);
   /*overflow-x: hidden;*/
 }
-
 #nav{
-  position: sticky;
+  height: 93px;
+}
+nav{
+  position: fixed;
   top: 0;
   width: 100%;
   background: rgba(0, 0, 0, 0.65);
@@ -364,6 +366,9 @@ table{
     display: none;
   }
 
+  #nav{
+    height: 74px;
+  }
   nav {
     padding: 1.25rem;
     justify-content: space-between;
@@ -422,6 +427,9 @@ table{
 }
 
 @media (min-width: 1440px) {
+  #nav{
+    height: 102px;
+  }
   nav{
     padding: 0.2rem 1.25rem;
   }

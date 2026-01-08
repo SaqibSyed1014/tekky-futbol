@@ -118,7 +118,6 @@ navElement.innerHTML = `
                 <img src="images/logo.webp" alt="TekkyFutbol Logo">
               </a>
             </li>
-            
             <li>
               <a href="Partners.html">Partners</a>
             </li>
@@ -135,12 +134,18 @@ navElement.innerHTML = `
         </div>
       </nav>
       
-      <div class="coming-soon-overlay">
-        <div class="overlay-content">
-          <h3>Coming Soon</h3>
-          <button class="close-overlay">Close</button>
-        </div>
-      </div>
+    <div class="coming-soon-overlay">
+    <div class="overlay-content">
+      <h3>The Hall of Fame Is Coming</h3>
+      <p>Celebrate the players, moments, and legacy that define TekkyFutbol. Be the first to know when the Hall of Fame officially opens</p>
+      <form id="futureUpdatesForm">
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <button type="submit" class="cta close-overlay">Get Updates</button>
+          </form>
+    <!--          <button class="close-overlay">Enter the legacy</button>-->
+    </div>
+    </div>
   </div>
 `
 

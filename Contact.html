@@ -82,7 +82,7 @@
       min-height: 120px
     }
 
-    button {
+    button.submit-btn {
       margin-top: 1rem;
       padding: 0.8rem;
       border: none;
@@ -97,7 +97,7 @@
       transition: .25s
     }
 
-    button:hover {
+    button.submit-btn:hover {
       transform: translateY(-2px);
       box-shadow: 0 0 25px var(--tekky-blue)
     }
@@ -182,7 +182,7 @@
         <input type="email" name="email" placeholder="Your Email" required>
         <input type="text" name="subject" placeholder="Subject" required>
         <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
+        <button type="submit" class="submit-btn">Send Message</button>
         <div class="success-message">✅ Your message has been sent!</div>
       </form>
     </section>
