@@ -387,6 +387,7 @@ table{
 
   .nav-links .dropdown-menu.active .nav-links-dropdown {
     display: block;
+    opacity: 1;
   }
 
   .nav-links .dropdown-menu:hover .nav-links-dropdown {

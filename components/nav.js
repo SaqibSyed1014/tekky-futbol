@@ -107,7 +107,7 @@ navElement.innerHTML = `
                     <a href="Staff.html">Staff & Volunteers</a>
                   </li>
                   <li>
-                    <div class="coming-soon nav-link">Hall of Fame</div>
+                    <div class="coming-soon-hof nav-link">Hall of Fame</div>
                   </li>
                 </ul>
               </div>
@@ -134,17 +134,61 @@ navElement.innerHTML = `
         </div>
       </nav>
       
-    <div class="coming-soon-overlay">
-    <div class="overlay-content">
-      <h3>The Hall of Fame Is Coming</h3>
-      <p>Celebrate the players, moments, and legacy that define TekkyFutbol. Be the first to know when the Hall of Fame officially opens</p>
-      <form id="futureUpdatesForm">
+    <div id="hallOfFamePopup" class="coming-soon-overlay">
+        <div class="overlay-content">
+          <h3>The Hall of Fame Is Coming</h3>
+          <p>Celebrate the players, moments, and legacy that define TekkyFutbol. Be the first to know when the Hall of Fame officially opens</p>
+          <form id="futureUpdatesForm">
                 <input type="text" id="name" name="name" placeholder="Enter your name" required>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                <button type="submit" class="cta close-overlay">Get Updates</button>
+                <button type="button" class="cta close-overlay open-hof-success">Enter the legacy</button>
           </form>
-    <!--          <button class="close-overlay">Enter the legacy</button>-->
+          
+          <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="cross-icon"
+              style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+              viewBox="0 0 1024 1024"
+              version="1.1"
+          >
+              <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>
+          </svg>
+        </div>
     </div>
+    
+    <div id="successHallOfFamePopup" class="coming-soon-overlay">
+        <div class="overlay-content">
+          <h3>You’re Part of the Legacy</h3>
+          <p class="subtext">You’ll be notified when the Hall of Fame goes live and new inductions are revealed.</p>
+          <button class="cta close-overlay close-success-popup">Explore the League</button>
+
+          <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="cross-icon"
+              style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+              viewBox="0 0 1024 1024"
+              version="1.1"
+          >
+              <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>
+          </svg>
+        </div>
+    </div>
+    
+    <div id="comingSoonPopup" class="coming-soon-overlay">
+        <div class="overlay-content">
+          <h3>Coming Soon</h3>
+          <button class="close-overlay">Close</button>
+          
+          <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="cross-icon"
+              style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+              viewBox="0 0 1024 1024"
+              version="1.1"
+          >
+              <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>
+          </svg>
+        </div>
     </div>
   </div>
 `
@@ -152,12 +196,43 @@ navElement.innerHTML = `
 
 // Handle overlay popup for Media & Highlights option
 const comingSoonElements = document.querySelectorAll('.coming-soon');
-const mediaOverlay = document.querySelector('.coming-soon-overlay');
-const closeMediaOverlay = document.querySelector('.close-overlay');
+const comingSoonGlobalPopup = document.getElementById('comingSoonPopup');
+const closeMediaOverlay = document.querySelector('#comingSoonPopup .close-overlay');
+
 comingSoonElements.forEach((ele) => {
-    ele.addEventListener('click', () => { mediaOverlay.style.display = 'flex'; });
+    ele.addEventListener('click', () => { comingSoonGlobalPopup.style.display = 'flex'; });
 })
-closeMediaOverlay.addEventListener('click', () => { mediaOverlay.style.display = 'none'; });
+closeMediaOverlay.addEventListener('click', () => { comingSoonGlobalPopup.style.display = 'none'; });
+
+// Triggers
+const comingSoonHOFTrigger = document.querySelector('.coming-soon-hof');
+const hallOfFameSuccessTrigger = document.querySelector('.open-hof-success');
+const closeHofSuccessTrigger = document.querySelector('.close-success-popup');
+
+// Popups
+const hofPopup = document.getElementById('hallOfFamePopup')
+const successHofPopup = document.getElementById('successHallOfFamePopup');
+
+comingSoonHOFTrigger.addEventListener('click', () => {
+    hofPopup.style.display = 'flex';
+});
+
+hallOfFameSuccessTrigger.addEventListener('click', () => {
+    successHofPopup.style.display = 'flex';
+    hofPopup.style.display = 'none';
+});
+
+closeHofSuccessTrigger.addEventListener('click', () => {
+    successHofPopup.style.display = 'none';
+});
+
+const closePopups = document.querySelectorAll('.cross-icon');
+closePopups.forEach(icon => {
+    icon.addEventListener('click', () => {
+        icon.closest('.coming-soon-overlay').style.display = 'none';
+    });
+});
+
 
 // Open navbar mobile
 const menuTogglerBtn = document.querySelector('.menu-toggler');
