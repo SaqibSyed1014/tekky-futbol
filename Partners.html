@@ -56,120 +56,9 @@
       line-height: 1.8
     }
 
-
-
-    .social {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      margin: 0.6rem 0 0.3rem
-    }
-
-    .social a {
-      color: #dfe7ff;
-      font-size: 1.4rem;
-      transition: .25s
-    }
-
-
-    .menu-toggler {
-      position: relative;
-      background: rgba(255, 255, 255, 0.05);
-      box-shadow: 0 0 12px rgba(0, 116, 255, 0.18);
-      border-radius: 4px;
-      width: 34px;
-      height: 34px;
-      display: none;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      border: 1px solid var(--tekky-blue);
-    }
-
-    .menu-toggler svg {
-      width: 20px;
-      height: 20px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-
-    }
-
-    .menu-toggler .menu-toggler-open {
-      opacity: 1;
-      transition: all .3s ease-in-out;
-    }
-
-    .menu-toggler.active .menu-toggler-open {
-      opacity: 0;
-    }
-
-    .menu-toggler .menu-toggler-close {
-      opacity: 0;
-      transition: all .3s ease-in-out;
-    }
-
-    .menu-toggler.active .menu-toggler-close {
-      opacity: 1;
-    }
-
-    .nav-links.active {
-      display: block;
-    }
-
     @media (max-width:768px) {
       h1 {
         font-size: 2.4rem
-      }
-
-
-      .nav-links {
-        display: none
-      }
-
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        left: 0;
-        top: 100%;
-        width: 100%;
-        background: #000;
-        backdrop-filter: blur(10px);
-      }
-
-      .nav-links ul {
-        align-items: start;
-        flex-direction: column;
-        padding: 20px 20px;
-      }
-
-      .nav-links .logo-desktop {
-        display: none;
-      }
-
-      nav {
-        justify-content: space-between;
-      }
-
-      .menu-toggler {
-        display: flex;
-      }
-
-      .nav-links .nav-links-dropdown {
-        position: static;
-        transform: none;
-        display: none;
-      }
-
-      .nav-links .dropdown-menu.active .nav-links-dropdown {
-        display: block;
-      }
-
-      .nav-links .dropdown-menu:hover .nav-links-dropdown {
-        position: static;
-        transform: none;
       }
     }
   </style>
@@ -188,8 +77,7 @@
     <div class="hero">
       <h1>PARTNER WITH TEKKYFUTBOL</h1>
       <p class="tagline">For Ballers Who Create</p>
-      <p class="subtext">Join a movement that merges football, street culture, and innovation. TekkyFutbol builds
-        platforms that connect brands to authentic urban energy.</p>
+      <p class="subtext">TekkyFutbol collaborates with forward-thinking brands, venues, and creators to build culture-driven football experiences. From limited-run kits to live events and digital storytelling, we partner with those aligned with creativity, ambition, and authenticity.</p>
     </div>
   </header>
 
@@ -199,8 +87,7 @@
 
     <section id="vision">
       <h2>Vision</h2>
-      <p>We elevate football culture with authenticity — merging brand partners with the next wave of creators, players,
-        and street energy. Our partnerships are built on shared ambition and lasting impact.</p>
+      <p>We elevate football culture through authenticity — connecting brand partners with the next wave of creators, players, and street-level energy. Every partnership is built on shared ambition and long-term impact.</p>
       <div class="sec-cta">
         <a class="cta un-focused" href="mailto:tekkyfutbol@gmail.com">Request the Partnership Deck</a>
       </div>
@@ -210,8 +97,11 @@
 
     <section id="opportunities">
       <h2>Opportunities</h2>
-      <p>Collaborate with us through seasonal events, branded kits, digital content, and on-pitch activations.
-        TekkyFutbol partners drive engagement through unique player and fan experiences.</p>
+      <ul class="custom-list bottom-space">
+          <li>Seasonal events & live activations</li>
+          <li>Branded kits & limited-run collaborations</li>
+          <li>Digital content & cultural storytelling</li>
+      </ul>
       <div class="sec-cta">
         <a class="cta un-focused" href="mailto:tekkyfutbol@gmail.com">Partnership Inquiry</a>
       </div>
@@ -221,8 +111,7 @@
 
     <section id="reach">
       <h2>Our Reach</h2>
-      <p>Our digital footprint stretches from the pitch to the street — connecting players, fans, and culture through
-        social media, event coverage, and collaborations that resonate.</p>
+      <p>Our digital footprint stretches from the pitch to the street — connecting players, fans, and culture through social media, live events, and creator-driven collaborations.</p>
 <!--       <div class="sec-cta"> -->
 <!--         <a class="cta" href="#connect">Become a Tekky Partner</a> -->
 <!--       </div> -->

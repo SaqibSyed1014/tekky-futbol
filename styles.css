@@ -562,6 +562,9 @@ ul.custom-list{
 ul.custom-list li{
   text-align: left;
 }
+ul.custom-list.bottom-space{
+  margin-bottom: 1rem;
+}
 
 .label-heading{
   text-align: left;
