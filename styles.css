@@ -558,3 +558,11 @@ select:focus {
 #rsvpForm .close-overlay{
   margin-top: .3rem;
 }
+
+ul.custom-list{
+  margin: 0 auto;
+  display: inline-block;
+}
+ul.custom-list li{
+  text-align: left;
+}

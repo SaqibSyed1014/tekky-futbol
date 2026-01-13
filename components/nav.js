@@ -236,6 +236,14 @@ closePopups.forEach(icon => {
     });
 });
 
+// Close buttons
+const closeIcons = document.querySelectorAll('.cross-icon');
+
+/* Close any popup */
+closeIcons.forEach(icon => {
+    icon.addEventListener('click', () => icon.closest('.coming-soon-overlay').style.display = 'none');
+});
+
 
 // Open navbar mobile
 const menuTogglerBtn = document.querySelector('.menu-toggler');
