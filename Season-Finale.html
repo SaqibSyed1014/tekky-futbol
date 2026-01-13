@@ -58,7 +58,31 @@
       h1 {
         font-size: 2.4rem
       }
+    }
 
+    textarea {
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(0, 116, 255, 0.4);
+      border-radius: 8px;
+      padding: 0.8rem;
+      color: var(--fg);
+      font-size: 1rem;
+      font-family: 'Montserrat', sans-serif;
+      width: 100%;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: var(--tekky-blue);
+      box-shadow: 0 0 8px var(--tekky-blue)
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px
+    }
+    form{
+        margin-top: 1.2rem;
     }
   </style>
 
@@ -157,7 +181,7 @@
             <li>Experiential activations during the finale</li>
         </ul>
         <div class="sec-cta">
-              <div class="cta">PARTNER WITH THE FINALE</a>
+            <div class="cta partner-finale-popup-trigger">PARTNER WITH THE FINALE</a>
         </div>
     </section>
 
@@ -357,6 +381,81 @@
         </div>
     </div>
 
+    <!-- Partner with the Finale Popup -->
+    <div id="partnerWithFinalePopup" class="coming-soon-overlay">
+        <div class="overlay-content">
+          <h3>Partner With the Finale</h3>
+          <p class="subtext">The championship moment of TekkyFutbol. Limited brand placements for the most visible night of the season.</p>
+          <form id="becomeSponsorForm">
+              <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+              <input type="text" id="brandName" name="brandName" placeholder="Enter your company/brand name" required>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required>
+              <input type="text" id="website" name="website" placeholder="Enter your website/instagram" required>
+              <select id="typeOfBrand" name="typeOfBrand">
+                  <option value="">Select type of brand</option>
+                  <option value="apparel">Apparel / Fashion</option>
+                  <option value="food-beverage">Food & Beverage</option>
+                  <option value="fitness-wellness">Fitness / Wellness</option>
+                  <option value="media-creative">Media / Creative</option>
+                  <option value="local-business">Local Business</option>
+                  <option value="other">Other</option>
+              </select>
+              <div class="form-group">
+                  <p class="label-heading">What are you interested in?</p>
+                  <div class="checkbox-group">
+                    <label>
+                      <input type="checkbox" name="interest" value="visibility"> Finale Event Visibility
+                    </label>
+                    <label>
+                      <input type="checkbox" name="interest" value="activation"> Finale Party Activation
+                    </label>
+                    <label>
+                      <input type="checkbox" name="interest" value="branding"> On-Site Branding
+                    </label>
+                    <label>
+                      <input type="checkbox" name="interest" value="digital"> Digital / Social Exposure
+                    </label>
+                  </div>
+                </div>
+
+            <textarea id="message" name="message" placeholder="Tell us briefly how you’d like to be involved." rows="4"></textarea>
+
+              <button type="button" class="cta close-overlay partner-finale-success">
+                  Request Finale Partnership
+              </button>
+          </form>
+
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="cross-icon"
+                style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+                viewBox="0 0 1024 1024"
+                version="1.1"
+            >
+                <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Partner with Finale Success Popup -->
+    <div id="partnerWithFinaleSuccessPopup" class="coming-soon-overlay">
+        <div class="overlay-content">
+          <h3>Request Received</h3>
+          <p class="subtext">Finale sponsorship placements are limited. Our team will review your inquiry and follow up shortly.</p>
+          <button class="cta close-overlay close-success-popup">View the Finale</button>
+
+          <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="cross-icon"
+              style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+              viewBox="0 0 1024 1024"
+              version="1.1"
+          >
+              <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>
+          </svg>
+        </div>
+    </div>
+
   <script>
 //       const comingSoonTrigger = document.getElementById('comingSoonRSVP');
 //       const overlay = document.querySelector('#comingSoonRSVPPopup.coming-soon-overlay');
@@ -380,12 +479,17 @@
             const becomeSponsorSuccessPopup = document.getElementById('becomeSponsorSuccessPopup');
             const requestAccessPopup = document.getElementById('requestAccessPopup');
             const requestAccessSuccessPopup = document.getElementById('requestAccessSuccessPopup');
+            const partnerWithFinalePopup = document.getElementById('partnerWithFinalePopup');
+            const partnerWithFinaleSuccessPopup = document.getElementById('partnerWithFinaleSuccessPopup');
 
             // Triggers
             const becomeASponsorPopupTrigger = document.querySelectorAll('.become-sponsor-popup-trigger');
             const becomeSponsorSuccessPopupTrigger = document.querySelector('.become-sponsor-success');
             const requestAccessPopupTrigger = document.querySelectorAll('.request-access-popup-trigger');
             const requestAccessSuccessPopupTrigger = document.querySelector('.request-access-success');
+            const partnerWithFinalePopupTrigger = document.querySelectorAll('.partner-finale-popup-trigger');
+            const partnerWithFinaleSuccessPopupTrigger = document.querySelector('.partner-finale-success');
+
             const closeSuccessTrigger = document.querySelectorAll('.close-success-popup');
 
 
@@ -407,6 +511,16 @@
             requestAccessSuccessPopupTrigger?.addEventListener('click', () => {
                 closePopup(requestAccessPopup);
                 openPopup(requestAccessSuccessPopup);
+            });
+
+            partnerWithFinalePopupTrigger?.forEach(icon => {
+                icon.addEventListener('click', () => {
+                    openPopup(partnerWithFinalePopup);
+                })
+            });
+            partnerWithFinaleSuccessPopupTrigger?.addEventListener('click', () => {
+                closePopup(partnerWithFinalePopup);
+                openPopup(partnerWithFinaleSuccessPopup);
             });
 
 

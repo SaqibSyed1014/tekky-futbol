@@ -566,3 +566,21 @@ ul.custom-list{
 ul.custom-list li{
   text-align: left;
 }
+
+.label-heading{
+  text-align: left;
+  margin-bottom: .8rem;
+}
+.checkbox-group{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 1.2rem;
+}
+.checkbox-group label{
+  display: flex;
+  gap: .5rem;
+  font-size: 14px;
+}
+input[type="checkbox"]{
+  width: auto;
+}
