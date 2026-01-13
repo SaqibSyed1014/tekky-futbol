@@ -48,6 +48,9 @@ navElement.innerHTML = `
                   <li>
                     <a href="Playoff-ticket-checkout.html">Playoff Ticket</a>
                   </li>
+                  <li>
+                    <a href="Single-ticket-checkout.html">Single Ticket</a>
+                  </li>
 <!--                  <li>-->
 <!--                    <div class="coming-soon nav-link">Finale Ticket</div>-->
 <!--                  </li>-->

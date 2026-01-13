@@ -74,11 +74,14 @@
 
   <header>
     <div class="hero">
-      <h1>SEASON FINALE</h1>
+      <h1>SEASON FINALE EXPERIENCE</h1>
       <p class="tagline">For Ballers Who Create</p>
-      <p class="subtext">The night where everything comes together — the culture, the players, and the champions of
-        TekkyFutbol. Expect lights, music, energy, and unforgettable moments.</p>
-      <a class="cta" href="Partners.html">Become a Sponsor</a>
+      <p class="subtext">Where competition, culture, and creativity converge.</p>
+      <p>The TekkyFutbol Season Finale is the culmination of the league — a championship night and cultural experience where players, creators, partners, and champions come together. Expect high-energy matches, awards, music, and a finale atmosphere that defines the TekkyFutbol identity.</p>
+      <div class="sec-cta">
+          <a class="cta" id="becomeASponsorPopupTrigger" class="">Become a Sponsor</a>
+          <a class="cta" class="">Request Access</a>
+      </div>
     </div>
   </header>
 
@@ -151,8 +154,73 @@
           >
               <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>
           </svg>
-        </div>
+      </div>
   </div>
+
+<!-- Become A Sponsor Popup -->
+  <div id="becomeASponsorPopup" class="coming-soon-overlay">
+        <div class="overlay-content">
+          <h3>Become a Sponsor</h3>
+          <p class="subtext">Partner with the Season Finale and the culture behind TekkyFutbol.</p>
+          <form id="becomeSponsorForm">
+              <input type="text" id="firstName" name="firstName" placeholder="Enter your name" required>
+              <input type="text" id="brandName" name="brandName" placeholder="Enter your company/brand name" required>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required>
+              <input type="tel" id="phone" name="phone" placeholder="Enter your phone">
+              <input type="text" id="website" name="website" placeholder="Enter your website/instagram" required>
+              <select id="sponsorshipInterest" name="sponsorshipInterest" required>
+                <option value="">Select sponsorship interest</option>
+                <option>Event Sponsorship (Season Finale)</option>
+                <option>League Sponsorship (Season / Division)</option>
+                <option>Content Partnership</option>
+                <option>Product / Activation Partnership</option>
+                <option>Not Sure (Open to Ideas)</option>
+              </select>
+              <select id="budgetRange" name="budgetRange">
+                  <option value="">Select budget range</option>
+                  <option>Under $1,000</option>
+                  <option>$1,000 – $2,500</option>
+                  <option>$2,500 – $5,000</option>
+                  <option>$5,000+</option>
+                  <option>Prefer to discuss</option>
+                </select>
+
+              <button type="button" class="cta close-overlay become-sponsor-success">
+                  Submit Sponsorship Inquiry
+                  </button>
+              <p class="disclaimer">All sponsorships are curated to align with TekkyFutbol’s culture and audience.</p>
+          </form>
+
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="cross-icon"
+                style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+                viewBox="0 0 1024 1024"
+                version="1.1"
+            >
+                <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>
+            </svg>
+        </div>
+    </div>
+
+
+    <div id="becomeSponsorSuccessPopup" class="coming-soon-overlay">
+        <div class="overlay-content">
+          <h3>Sponsorship Inquiry Received</h3>
+          <p class="subtext">Thanks for your interest in partnering with TekkyFutbol. Our team will review your inquiry and follow up with next steps if there’s alignment.</p>
+          <button class="cta close-overlay close-success-popup">Back to Season Finale</button>
+
+          <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="cross-icon"
+              style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+              viewBox="0 0 1024 1024"
+              version="1.1"
+          >
+              <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>
+          </svg>
+        </div>
+    </div>
 
   <script>
       const comingSoonTrigger = document.getElementById('comingSoonRSVP');
@@ -164,6 +232,23 @@
 
       closeOverlay.addEventListener('click', () => { overlay.style.display = 'none'; });
       closePopup.addEventListener('click', () => { overlay.style.display = 'none'; });
+
+
+      // Popups
+            const becomeASponsorPopup = document.getElementById('becomeASponsorPopup');
+            const becomeSponsorSuccessPopup = document.getElementById('becomeSponsorSuccessPopup');
+//             const successPopup = document.getElementById('successPopup');
+
+            // Triggers
+            const becomeASponsorPopupTrigger = document.getElementById('becomeASponsorPopupTrigger');
+            const becomeSponsorSuccessPopupTrigger = document.querySelector('.become-sponsor-success');
+
+            becomeASponsorPopupTrigger?.addEventListener('click', () => {
+                becomeASponsorPopup.style.display = 'flex'
+            });
+            becomeSponsorSuccessPopupTrigger?.addEventListener('click', () => {
+                becomeSponsorSuccessPopup.style.display = 'flex'
+            });
   </script>
 </body>
 

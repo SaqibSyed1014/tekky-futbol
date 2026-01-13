@@ -469,6 +469,10 @@ table{
   text-align: center;
   box-shadow: 0 0 12px var(--tekky-blue);
   max-width: 420px;
+  max-height: 80vh;
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 .overlay-content .cross-icon{
   position: absolute;
@@ -494,6 +498,9 @@ table{
 .overlay-content p {
   color: var(--fg);
   line-height: 1.6
+}
+.overlay-content .disclaimer{
+  font-size: 14px;
 }
 .close-overlay {
   margin-top: 1.5rem;
