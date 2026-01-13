@@ -421,11 +421,7 @@ table{
   }
 }
 
-@media (max-width:768px) {
-  header {
-    padding-top: 50px;
-  }
-}
+
 
 @media (min-width: 1440px) {
   #nav{
@@ -583,4 +579,15 @@ ul.custom-list li{
 }
 input[type="checkbox"]{
   width: auto;
+}
+
+
+@media (max-width:768px) {
+  header {
+    padding-top: 50px;
+  }
+  .overlay-content{
+    width: 95%;
+    padding: 2rem 1.5rem;
+  }
 }
