@@ -133,7 +133,7 @@ navElement.innerHTML = `
               <div class="nav-links-dropdown">
                 <ul>
                   <li>
-                    <a href="Patners.html">Partner with TekkyFutbol</a>
+                    <a href="Partners.html">Partner with TekkyFutbol</a>
                   </li>
                   <li>
                     <a href="Partnership-Inquiry.html">Partnership Inquiry</a>
