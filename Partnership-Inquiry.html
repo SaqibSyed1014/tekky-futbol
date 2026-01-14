@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TekkyFutbol — Partners Inquiry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero {
+      position: relative;
+      z-index: 2;
+      max-width: 980px;
+      padding: 0 1rem
+    }
+
+    .subtext {
+      margin: 0.9rem auto 1.2rem;
+      color: var(--muted);
+      max-width: 70ch;
+      line-height: 1.7
+    }
+.hero.form{
+    max-width: 700px;
+}
+
+    main {
+      max-width: 1080px;
+      margin: 2.8rem auto 4rem;
+      padding: 0 1.25rem
+    }
+
+    section {
+      margin: 3rem 0;
+      text-align: center
+    }
+
+    section h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--tekky-blue);
+      margin-bottom: 0.5rem
+    }
+
+    section p {
+      color: #d3d9e3;
+      margin: 0.6rem auto;
+      max-width: 70ch;
+      line-height: 1.8
+    }
+
+    @media (max-width:768px) {
+      h1 {
+        font-size: 2.4rem
+      }
+    }
+      textarea {
+          width: 100%;
+          padding: 0.8rem;
+          margin-bottom: 1.2rem;
+          background: rgba(0, 0, 0, 0.6);
+          border: 1px solid rgba(0, 116, 255, 0.4);
+          border-radius: 8px;
+          color: var(--fg);
+          font-family: 'Montserrat', sans-serif
+      }
+
+      textarea:focus {
+          outline: none;
+          border-color: var(--tekky-blue);
+          box-shadow: 0 0 8px var(--tekky-blue)
+      }
+  </style>
+
+  <link rel="stylesheet" href="styles.css" />
+  <script src="components/nav.js" type="text/javascript" defer></script>
+  <script src="components/footer.js" type="text/javascript" defer></script>
+
+</head>
+
+<body>
+   <div id="nav"></div>
+
+
+  <main class="hero form">
+   <section id="form">
+      <h2>Partnership Inquiry</h2>
+      <form id="partnershipInquiryForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        <label for="brandName">Company/Brand Name</label>
+        <input type="text" id="brandName" name="brandName" placeholder="Enter your company/brand name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <label for="website">Website Link</label>
+        <input type="text" id="website" name="website" placeholder="Enter your website link" required>
+        <label for="interest">What best describes your interest?</label>
+        <select id="interest" name="interest">
+            <option value="">Select budget range</option>
+            <option>Brand / Product Collaboration</option>
+            <option>Event or Venue Partnership</option>
+            <option>Sponsorship Opportunity</option>
+            <option>Creative / Media Collaboration</option>
+            <option>Community or Cultural Partner</option>
+            <option>Other</option>
+        </select>
+        <div class="form-group">
+          <div class="label-heading">Partnership Scope - Select all that apply</div>
+          <div class="checkbox-group">
+            <label>
+              <input type="checkbox" value="liveEvents" name="scope"> Live events / activations
+            </label>
+            <label>
+              <input type="checkbox" value="brandedKits" name="scope"> Branded kits or merchandise
+            </label>
+            <label>
+              <input type="checkbox" value="digitalContent" name="scope"> Digital content / media
+            </label>
+            <label>
+              <input type="checkbox" value="onSitePresence" name="scope"> On-site presence / signage
+            </label>
+            <label>
+              <input type="checkbox" value="longTermPartnership" name="scope"> Long-term partnership
+            </label>
+          </div>
+        </div>
+        <label for="budgetRange">Do you have an estimated partnership budget?</label>
+        <select id="budgetRange" name="budgetRange">
+          <option value="">Select budget range</option>
+          <option>Exploring / not defined yet</option>
+          <option>Under $2,500</option>
+          <option>$2,500 – $7,500</option>
+          <option>$7,500 – $15,000</option>
+          <option>$15,000+</option>
+        </select>
+        <label for="message">Briefly tell us why you’d like to partner with TekkyFutbol (2–4 sentences max)</label>
+        <textarea id="message" name="message" placeholder="tell us why you’d like to partner with TekkyFutbol" rows="4"></textarea>
+        <label for="timeline">Timeline</label>
+        <select id="timeline" name="timeline">
+          <option value="">Select timeline</option>
+          <option>Immediate / upcoming season</option>
+          <option>Next 3 months</option>
+          <option>Later this year</option>
+          <option>Just exploring</option>
+        </select>
+
+        <button type="button" class="cta coming-soon-registration">Send Partnership Inquiry</button>
+      </form>
+      <div id="formConfirmation" class="confirmation">
+          ✅ Thanks for reaching out
+          <div>We review partnership inquiries on a rolling basis. If there’s alignment, our team will follow up within 5–7 business days.</div>
+       </div>
+
+    </section>
+
+    <div class="glow-divider"></div>
+  </main>
+
+  <div id="footer"></div>
+
+</body>
+
+
+</html>
