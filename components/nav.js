@@ -139,7 +139,7 @@ navElement.innerHTML = `
                     <a href="Partnership-Inquiry.html">Partnership Inquiry</a>
                   </li>
                   <li>
-                    <a href="Staff.html">Request partnership deck</a>
+                    <a href="Partnership-Deck.html">Request partnership deck</a>
                   </li>
                 </ul>
               </div>
