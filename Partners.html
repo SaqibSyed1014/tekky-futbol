@@ -61,6 +61,7 @@
         font-size: 2.4rem
       }
     }
+    #footer p a{ display: none; }
   </style>
 
   <link rel="stylesheet" href="styles.css" />
@@ -89,7 +90,7 @@
       <h2>Vision</h2>
       <p>We elevate football culture through authenticity — connecting brand partners with the next wave of creators, players, and street-level energy. Every partnership is built on shared ambition and long-term impact.</p>
       <div class="sec-cta">
-        <a class="cta un-focused" href="mailto:tekkyfutbol@gmail.com">Request the Partnership Deck</a>
+        <a class="cta request-partnership-popup-trigger">Request the Partnership Deck</a>
       </div>
     </section>
 
@@ -103,7 +104,7 @@
           <li>Digital content & cultural storytelling</li>
       </ul>
       <div class="sec-cta">
-        <a class="cta un-focused" href="mailto:tekkyfutbol@gmail.com">Partnership Inquiry</a>
+        <a class="cta" href="Partnership-Inquiry.html">Partnership Inquiry</a>
       </div>
     </section>
 
@@ -133,38 +134,30 @@
   <div id="footer"></div>
 
 
-      <!-- Become A Sponsor Popup -->
-      <div id="becomeASponsorPopup" class="coming-soon-overlay">
+      <!-- Request Partnership Popup -->
+      <div id="requestPartnershipPopup" class="coming-soon-overlay">
           <div class="overlay-content">
-            <h3>Become a Sponsor</h3>
-            <p class="subtext">Partner with the Season Finale and the culture behind TekkyFutbol.</p>
+            <h3>Request partnership deck</h3>
+            <p class="subtext">Get an overview of how TekkyFutbol collaborates with brands, venues, and creators through culture-driven football experiences.</p>
             <form id="becomeSponsorForm">
-                <input type="text" id="firstName" name="firstName" placeholder="Enter your name" required>
-                <input type="text" id="brandName" name="brandName" placeholder="Enter your company/brand name" required>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <input type="text" id="brandName" name="brandName" placeholder="Enter your company/organization name" required>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 <input type="tel" id="phone" name="phone" placeholder="Enter your phone">
                 <input type="text" id="website" name="website" placeholder="Enter your website/instagram" required>
                 <select id="sponsorshipInterest" name="sponsorshipInterest" required>
-                  <option value="">Select sponsorship interest</option>
-                  <option>Event Sponsorship (Season Finale)</option>
-                  <option>League Sponsorship (Season / Division)</option>
-                  <option>Content Partnership</option>
-                  <option>Product / Activation Partnership</option>
-                  <option>Not Sure (Open to Ideas)</option>
+                  <option value="">Select type of partnership are you interested in</option>
+                  <option>Brand collaboration</option>
+                  <option>Event activation</option>
+                  <option>Kit or merchandise collaboration</option>
+                  <option>Content / media partnership</option>
+                  <option>Venue partnership</option>
+                  <option>Other</option>
                 </select>
-                <select id="budgetRange" name="budgetRange">
-                    <option value="">Select budget range</option>
-                    <option>Under $1,000</option>
-                    <option>$1,000 – $2,500</option>
-                    <option>$2,500 – $5,000</option>
-                    <option>$5,000+</option>
-                    <option>Prefer to discuss</option>
-                  </select>
 
-                <button type="button" class="cta close-overlay become-sponsor-success">
-                    Submit Sponsorship Inquiry
+                <button type="button" class="cta close-overlay request-deck-success">
+                    Request deck
                 </button>
-                <p class="disclaimer">All sponsorships are curated to align with TekkyFutbol’s culture and audience.</p>
             </form>
 
               <svg
@@ -180,11 +173,11 @@
       </div>
 
       <!-- Become A Sponsor Success Popup -->
-      <div id="becomeSponsorSuccessPopup" class="coming-soon-overlay">
+      <div id="requestDeckSuccessPopup" class="coming-soon-overlay">
           <div class="overlay-content">
-            <h3>Sponsorship Inquiry Received</h3>
-            <p class="subtext">Thanks for your interest in partnering with TekkyFutbol. Our team will review your inquiry and follow up with next steps if there’s alignment.</p>
-            <button class="cta close-overlay close-success-popup">Back to Season Finale</button>
+            <h3>Request received</h3>
+            <p class="subtext">Thanks for reaching out. We’ll review your request and send the partnership deck shortly if there’s a fit. For aligned partners, we follow up with next steps and collaboration options.</p>
+            <button class="cta close-overlay close-success-popup">Explore TekkyFutbol</button>
 
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -198,6 +191,30 @@
           </div>
       </div>
 
+
+    <script>
+         // Triggers
+         const requestPartnershipPopupTrigger = document.querySelector('.request-partnership-popup-trigger');
+         const requestDeckSuccessPopupTrigger = document.querySelector('.request-deck-success');
+         const closeSuccessTrigger = document.querySelector('.close-success-popup');
+
+        // Popup
+         const requestPartnershipPopup = document.getElementById('requestPartnershipPopup');
+         const requestDeckSuccessPopup = document.getElementById('requestDeckSuccessPopup');
+
+         requestPartnershipPopupTrigger?.addEventListener('click', () => {
+                requestPartnershipPopup.style.display = 'flex';
+         });
+         requestDeckSuccessPopupTrigger?.addEventListener('click', () => {
+                requestDeckSuccessPopup.style.display = 'flex';
+                requestPartnershipPopup.style.display = 'none';
+         });
+
+         closeSuccessTrigger?.addEventListener('click', () => {
+             requestDeckSuccessPopup.style.display = 'none';
+        });
+
+    </script>
 </body>
 
 
