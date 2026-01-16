@@ -22,9 +22,9 @@ navElement.innerHTML = `
         </button>
         <div class="nav-links">
           <ul>
-            <li>
-               <a href="index.html">Home</a>
-            </li>
+<!--            <li>-->
+<!--               <a href="index.html">Home</a>-->
+<!--            </li>-->
             <li class="dropdown-menu">
               <div class="nav-dropdown-trigger">
                 <span>Shop</span>
@@ -114,6 +114,9 @@ navElement.innerHTML = `
                   </li>
                 </ul>
               </div>
+            </li>
+            <li>
+               <a href="">Venues</a>
             </li>
             
              <li class="logo-desktop">
