@@ -82,9 +82,6 @@ navElement.innerHTML = `
                   <li>
                     <a href="Next.html">Next Fixtures</a>
                   </li>
-                  <li>
-                   <a href="Venues.html">Venues</a>
-                  </li>
 <!--                  <li>-->
 <!--                    <div class="coming-soon nav-link">Past Matchdays</div>-->
 <!--                  </li>-->
@@ -117,6 +114,10 @@ navElement.innerHTML = `
                   </li>
                 </ul>
               </div>
+            </li>
+            
+            <li>
+               <a href="Venues.html">Venues</a>
             </li>
             
              <li class="logo-desktop">
