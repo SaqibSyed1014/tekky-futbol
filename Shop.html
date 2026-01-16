@@ -329,7 +329,6 @@
       const openSuccessButtons = document.querySelectorAll('.open-success-popup');
 
       // Close icons
-      const closeIcons = document.querySelectorAll('.cross-icon');
       const closeSuccessButton = document.querySelector('.close-success-popup');
 
       /* ---------- OPEN POPUPS ---------- */
@@ -357,12 +356,6 @@
       });
 
       /* ---------- CLOSE POPUPS ---------- */
-
-      closeIcons.forEach(icon => {
-        icon.addEventListener('click', () => {
-          closePopup(icon.closest('.coming-soon-overlay'));
-        });
-      });
 
       closeSuccessButton?.addEventListener('click', () => {
         closePopup(successPopup);

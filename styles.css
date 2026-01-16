@@ -583,6 +583,8 @@ ul.custom-list.bottom-space{
 input[type="checkbox"]{
   width: auto;
 }
+/* hide footer mail */
+#footer p a{ display: none; }
 
 
 @media (max-width:768px) {
