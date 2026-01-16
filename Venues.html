@@ -15,7 +15,6 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-/*       background: radial-gradient(60% 50% at 50% 35%, rgba(0, 116, 255, 0.32), rgba(0, 0, 0, 0.95) 60%), url('tekky-venues-bg.jpg') center/cover no-repeat fixed; */
     }
 
     .hero {
@@ -23,13 +22,6 @@
       z-index: 2;
       max-width: 980px;
       padding: 0 1rem
-    }
-
-    .tagline {
-      margin-top: 0.4rem;
-      color: var(--tekky-blue);
-      font-weight: 700;
-      text-shadow: 0 0 10px var(--tekky-blue);
     }
 
     .subtext {
@@ -41,51 +33,59 @@
 
     main {
       max-width: 1080px;
-      margin: 3rem auto 4rem;
-      padding: 0 1.25rem;
+      margin: 2.8rem auto 4rem;
+      padding: 0 1.25rem
+    }
+
+    section {
+      margin: 3rem 0;
       text-align: center
     }
 
     section h2 {
       font-family: 'Bebas Neue', sans-serif;
-      color: var(--tekky-blue);
       font-size: 2rem;
-      margin-bottom: 1rem
+      color: var(--tekky-blue);
+      margin-bottom: 0.5rem
     }
 
-    p {
+    section p {
       color: #d3d9e3;
-      line-height: 1.7;
-      margin-bottom: 1rem
+      margin: 0.6rem auto;
+      max-width: 70ch;
+      line-height: 1.8
     }
 
-    iframe {
-      width: 100%;
-      height: 350px;
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 116, 255, 0.3);
-      margin-top: 1rem
-    }
 
-    .sec-cta {
-      text-align: center;
-      margin-top: 2rem
-    }
 
-    .nav-links.active {
-      display: block;
-    }
+
+
 
     @media(max-width:768px) {
       h1 {
-        font-size: 2.5rem
+        font-size: 2.4rem
       }
 
-      iframe {
-        height: 250px
+      .nav-links {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        background: #000;
+        backdrop-filter: blur(10px);
+      }
+
+      .nav-links ul {
+        align-items: start;
+        flex-direction: column;
+        padding: 20px 20px;
       }
     }
+.micro-line{ font-size: 13px; }
+.muted{
+      color: var(--muted);
+}
   </style>
 
   <link rel="stylesheet" href="styles.css" />
@@ -95,14 +95,14 @@
 </head>
 
 <body>
-   <div id="nav"></div>
+    <div id="nav"></div>
 
 
   <header>
     <div class="hero">
-      <h1>TEKKY VENUES</h1>
+      <h1>TEKKYFUTBOL</h1>
       <p class="tagline">For Ballers Who Create</p>
-      <p class="subtext">From the North’s composure to the South’s chaos — both sides share one heartbeat.</p>
+      <p class="subtext">From Regular Season Battles to the Final Stage</p>
     </div>
   </header>
 
@@ -110,38 +110,37 @@
   <main>
   <div class="glow-divider"></div>
 
-    <section id="north">
-      <h2>Tekky North</h2>
-      <p>Where creativity meets composure — Tekky North brings classic street football under controlled chaos. Fast
-        tempo, sharp touches, and floodlights that never lie.</p>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.8037289339475!2d-87.62700518455612!3d41.8818327792205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2ca8d58b0a0b%3A0x5c74fddf2f9c7f!2sChicago%20Loop!5e0!3m2!1sen!2sus!4v1700000000000"
-        allowfullscreen="" loading="lazy"></iframe>
+    <section>
+      <h2>TEKKY NORTH</h2>
+      <p>Tekky North is built on control, precision, and composure.
+         This venue hosts regular-season matches for the North Division — where creativity is sharpened under structure and every touch is tested under the lights.</p>
+      <p>Expect fast tempo, clean surfaces, and a game that rewards intelligence as much as flair.</p>
+      <p class="micro-line">Regular-season venue · North Division</p>
     </section>
 
     <div class="glow-divider"></div>
 
-    <section id="south">
-      <h2>Tekky South</h2>
-      <p>Where rhythm meets rivalry — Tekky South is pure intensity, built for expression and dominance. Expect high
-        pressure, loud crowds, and creative freedom.</p>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.457270889992!2d-87.65005268455596!3d41.8850037792205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2cdd58b0a0b%3A0x9f9a12d9ddf5e5!2sPilsen%2C%20Chicago%2C%20IL!5e0!3m2!1sen!2sus!4v1700000000001"
-        allowfullscreen="" loading="lazy"></iframe>
+    <section>
+      <h2>TEKKY SOUTH</h2>
+      <p>Tekky South is intensity, rhythm, and expression turned all the way up.
+         This venue hosts regular-season matches for the South Division — where pressure is constant and players are pushed to create under chaos.</p>
+      <p>The pace is higher. The energy is louder. The margins are thinner.</p>
+      <p class="micro-line">Regular-season venue · South Division</p>
     </section>
 
     <div class="glow-divider"></div>
 
-    <section id="cta">
-      <div class="sec-cta">
-        <a class="cta" href="League-schedule.html">View Full Schedule</a>
-        <a class="cta" href="registration.html">Register Your Squad</a>
-        <a class="cta" href="index.html">Back to Home</a>
-      </div>
+    <section>
+      <h2>THE FINALE VENUE</h2>
+      <p>The TekkyFutbol Season Finale and Third-Place Match take place at a neutral venue, separate from North and South regular-season play.</p>
+      <p>This location is chosen to create a shared stage — where divisions disappear and the league comes together for its final moments.</p>
+      <p>The Finale venue is TBD and will be announced closer to the event.</p>
+      <p class="micro-line">Neutral ground · Championship stage</p>
+      <p class="muted">Final details will be shared with qualified teams, attendees, partners, and sponsors.</p>
     </section>
   </main>
 
-    <div id="footer"></div>
+   <div id="footer"></div>
 
 </body>
 
