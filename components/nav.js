@@ -306,3 +306,33 @@ document.querySelectorAll('.dropdown-menu > .nav-dropdown-trigger').forEach(trig
     });
 });
 
+
+
+/**
+ * Resets the navigation to its closed state.
+ * This ensures that back/forward navigation doesn't leave
+ * menus or dropdowns hanging open.
+ */
+function closeAllNavStates() {
+    console.log('closing')
+    const nav = document.querySelector('nav');
+    const navLinks = document.querySelector('.nav-links');
+    const menuTogglerBtn = document.querySelector('.menu-toggler');
+    const activeDropdowns = document.querySelectorAll('.dropdown-menu.active');
+
+    activeDropdowns.forEach(item => item.classList.remove('active'));
+
+    if (navLinks) navLinks.classList.remove('active');
+
+    if (menuTogglerBtn) menuTogglerBtn.classList.remove('active');
+
+    if (nav) nav.style.background = 'rgba(0,0,0,0.65)';
+}
+
+// Handle the browser "Back" and "Forward" buttons
+window.addEventListener('popstate', closeAllNavStates);
+
+// Handle cases where the browser loads the page from cache (BFcache)
+window.addEventListener('pageshow', (event) => {
+    closeAllNavStates();
+});

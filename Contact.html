@@ -87,7 +87,7 @@
       padding: 0.8rem;
       border: none;
       border-radius: 40px;
-      background: var(--tekky-blue);
+      background: var(--bg);
       color: #fff;
       font-family: 'Bebas Neue', sans-serif;
       letter-spacing: 1px;
@@ -96,6 +96,10 @@
       box-shadow: 0 0 15px var(--tekky-blue);
       transition: .25s
     }
+
+form .cta{
+      font-size: 1.1rem;
+}
 
     button.submit-btn:hover {
       transform: translateY(-2px);
@@ -182,7 +186,7 @@
         <input type="email" name="email" placeholder="Your Email" required>
         <input type="text" name="subject" placeholder="Subject" required>
         <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit" class="submit-btn">Send Message</button>
+        <button type="submit" class="cta">Send Message</button>
         <div class="success-message">✅ Your message has been sent!</div>
       </form>
     </section>
