@@ -337,7 +337,7 @@ table{
     padding-top: 36px;
   }
   h1{
-    text-shadow: 0 0 4px var(--tekky-blue);
+    text-shadow: 0 0 2px var(--tekky-blue);
   }
   h2{
     text-shadow: 0 0 2px var(--tekky-blue);
