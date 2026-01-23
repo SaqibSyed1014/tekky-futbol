@@ -155,6 +155,7 @@ form .cta{
       }
     }
     #footer .social a{ display: none; }
+    .green-check{ transition: opacity 1000 ease; }
   </style>
 
   <link rel="stylesheet" href="styles.css" />
@@ -181,13 +182,13 @@ form .cta{
 
     <section id="contact-form">
       <h2>Send a Message</h2>
-      <form onsubmit="event.preventDefault();document.querySelector('.success-message').style.display='block';">
+      <form id="contactForm">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <input type="text" name="subject" placeholder="Subject" required>
         <textarea name="message" placeholder="Your Message" required></textarea>
         <button type="submit" class="cta">Send Message</button>
-        <div class="success-message">✅ Your message has been sent!</div>
+        <div class="success-message"><span class="green-check">✅</span> Your message has been sent!</div>
       </form>
     </section>
 
@@ -215,6 +216,19 @@ form .cta{
   </main>
 
    <div id="footer"></div>
+
+   <script>
+           const teamForm = document.getElementById('contactForm');
+           const successMessage = document.querySelector('.success-message');
+           const greenCheck = document.querySelector('.green-check');
+           teamForm.addEventListener('submit', e => {
+             e.preventDefault();
+               successMessage.style.display = 'block';
+             setTimeout(() => {
+               greenCheck.style.opacity = 0.6;
+             }, 5000);
+           });
+       </script>
 
 </body>
 

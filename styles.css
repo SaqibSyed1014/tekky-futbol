@@ -328,9 +328,9 @@ table{
   }
 }
 @media (max-width:768px) {
-  h1{
-    text-shadow: 0 0 8px var(--tekky-blue);
-  }
+  /*h1{*/
+  /*  text-shadow: 0 0 8px var(--tekky-blue);*/
+  /*}*/
 }
 @media (max-width:768px) {
   header{
@@ -411,6 +411,9 @@ table{
   .legal-footer-links a{
     font-size: 12px;
   }
+}
+
+@media (max-width: 991px) {
   .social a:focus .fab{
     color: #dfe7ff !important;
   }
@@ -424,7 +427,6 @@ table{
     transform: translateY(0px);
   }
 }
-
 
 
 @media (min-width: 1440px) {
