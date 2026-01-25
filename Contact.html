@@ -222,13 +222,14 @@ form .cta{
            const successMessage = document.querySelector('.success-message');
            const greenCheck = document.querySelector('.green-check');
            teamForm.addEventListener('submit', e => {
-             e.preventDefault();
+                 e.preventDefault();
+                 teamForm.reset();
                successMessage.style.display = 'block';
              setTimeout(() => {
-               greenCheck.style.opacity = 0.6;
+               successMessage.style.opacity = 0.6;
              }, 5000);
            });
-       </script>
+   </script>
 
 </body>
 

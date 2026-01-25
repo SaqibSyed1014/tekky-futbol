@@ -143,6 +143,15 @@
             grid-template-columns: 1fr;
         }
     }
+
+.flex-centered{
+    display: flex;
+    justify-content: center;
+}
+.drop{
+    width: 100%;
+    max-width: 280px;
+}
   </style>
 
   <link rel="stylesheet" href="styles.css" />
@@ -270,11 +279,14 @@
 
     <section>
       <h2>Signature Drops</h2>
-        <div class="grid has-four">
-            <div class="card">
+        <div class="flex-centered">
+            <div class="card drop">
+                <div class="img-placeholder">
+                  <img src="images/logo.webp" alt="Pants" fetchpriority="high">
+                </div>
 <!--               <img src="images/logo.webp" alt="Pants" fetchpriority="high"> -->
               <h3>North Division Button-Up Jersey</h3>
-              <span class="muted">Season 01 · Limited Edition</span>
+              <span class="muted">Designed once. Released once.</span>
               <p class="price">$90</p>
               <div class="cta new">UNLOCK EARLY ACCESS</div>
             </div>
@@ -283,15 +295,15 @@
 
     <div class="glow-divider"></div>
 
-    <section id="collabs">
-      <h2>Collabs</h2>
-      <p>Partnerships that amplify the culture.</p>
-      <div class="sec-cta">
-        <a class="cta" href="Partners.html">Partner with TekkyFutbol</a>
-      </div>
-    </section>
+<!--     <section id="collabs"> -->
+<!--       <h2>Collabs</h2> -->
+<!--       <p>Partnerships that amplify the culture.</p> -->
+<!--       <div class="sec-cta"> -->
+<!--         <a class="cta" href="Partners.html">Partner with TekkyFutbol</a> -->
+<!--       </div> -->
+<!--     </section> -->
 
-    <div class="glow-divider"></div>
+<!--     <div class="glow-divider"></div> -->
 
     <section id="subscribe">
       <h2>Stay Connected</h2>

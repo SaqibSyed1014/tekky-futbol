@@ -74,9 +74,6 @@ navElement.innerHTML = `
                     <a href="League-schedule.html">League Schedule</a>
                   </li>
                   <li>
-                    <div class="coming-soon-teams nav-link">Team</div>
-                  </li>
-                  <li>
                     <a href="Results.html">Results</a>
                   </li>
                   <li>
@@ -90,6 +87,10 @@ navElement.innerHTML = `
 <!--                  </li>-->
                 </ul>
               </div>
+            </li>
+            
+            <li>
+                <div class="coming-soon-teams nav-link">Team</div>
             </li>
           
             <li class="dropdown-menu">
@@ -408,7 +409,7 @@ window.addEventListener('pageshow', (event) => {
     // Clear form on submit button click
     document.addEventListener('click', function (e) {
             const btn = e.target.closest('button');
-            if (!btn) return;
+            if (!btn || window.location.pathname.includes('Contact.html')) return;
 
             const form = btn.closest('form');
             if (form) {
