@@ -74,6 +74,9 @@ navElement.innerHTML = `
                     <a href="League-schedule.html">League Schedule</a>
                   </li>
                   <li>
+                    <div class="coming-soon-teams nav-link">Team</div>
+                  </li>
+                  <li>
                     <a href="Results.html">Results</a>
                   </li>
                   <li>
@@ -202,6 +205,46 @@ navElement.innerHTML = `
         </div>
     </div>
     
+    <div id="teamsPopup" class="coming-soon-overlay">
+        <div class="overlay-content">
+          <h3>Teams Are Forming</h3>
+          <p>Registered teams will be revealed before the season begins. Join the list to be notified when lineups, names, and rivalries go live.</p>
+          <form id="futureUpdatesForm">
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <button type="button" class="cta close-overlay open-teams-success">Notify Me</button>
+          </form>
+          
+          <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="cross-icon"
+              style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+              viewBox="0 0 1024 1024"
+              version="1.1"
+          >
+              <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>
+          </svg>
+        </div>
+    </div>
+    
+    <div id="successTeamsPopup" class="coming-soon-overlay">
+        <div class="overlay-content">
+          <h3>You’re In</h3>
+          <p class="subtext">You’ll be notified as soon as teams are revealed. This is where the stories begin.</p>
+          <button class="cta close-overlay close-teams-success-popup">Explore the League</button>
+
+          <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="cross-icon"
+              style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+              viewBox="0 0 1024 1024"
+              version="1.1"
+          >
+              <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>
+          </svg>
+        </div>
+    </div>
+    
     <div id="comingSoonPopup" class="coming-soon-overlay">
         <div class="overlay-content">
           <h3>Coming Soon</h3>
@@ -228,30 +271,49 @@ const comingSoonGlobalPopup = document.getElementById('comingSoonPopup');
 const closeMediaOverlay = document.querySelector('#comingSoonPopup .close-overlay');
 
 comingSoonElements.forEach((ele) => {
-    ele.addEventListener('click', () => { comingSoonGlobalPopup.style.display = 'flex'; });
+    ele.addEventListener('click', () => {
+        comingSoonGlobalPopup.style.display = 'flex';
+    });
 })
-closeMediaOverlay.addEventListener('click', () => { comingSoonGlobalPopup.style.display = 'none'; });
+closeMediaOverlay.addEventListener('click', () => {
+    comingSoonGlobalPopup.style.display = 'none';
+});
 
 // Triggers
 const comingSoonHOFTrigger = document.querySelector('.coming-soon-hof');
+const comingSoonTeamsTrigger = document.querySelector('.coming-soon-teams');
 const hallOfFameSuccessTrigger = document.querySelector('.open-hof-success');
+const teamsSuccessTrigger = document.querySelector('.open-teams-success');
 const closeHofSuccessTrigger = document.querySelector('.close-success-popup');
+const closeTeamsSuccessTrigger = document.querySelector('.close-teams-success-popup');
 
 // Popups
 const hofPopup = document.getElementById('hallOfFamePopup')
 const successHofPopup = document.getElementById('successHallOfFamePopup');
+const teamsPopup = document.getElementById('teamsPopup')
+const successTeamsPopup = document.getElementById('successTeamsPopup');
 
 comingSoonHOFTrigger.addEventListener('click', () => {
     hofPopup.style.display = 'flex';
+});
+comingSoonTeamsTrigger.addEventListener('click', () => {
+    teamsPopup.style.display = 'flex';
 });
 
 hallOfFameSuccessTrigger.addEventListener('click', () => {
     successHofPopup.style.display = 'flex';
     hofPopup.style.display = 'none';
 });
+teamsSuccessTrigger.addEventListener('click', () => {
+    successTeamsPopup.style.display = 'flex';
+    teamsPopup.style.display = 'none';
+});
 
 closeHofSuccessTrigger.addEventListener('click', () => {
     successHofPopup.style.display = 'none';
+});
+closeTeamsSuccessTrigger.addEventListener('click', () => {
+    successTeamsPopup.style.display = 'none';
 });
 
 const closePopups = document.querySelectorAll('.cross-icon');
@@ -307,7 +369,6 @@ document.querySelectorAll('.dropdown-menu > .nav-dropdown-trigger').forEach(trig
 });
 
 
-
 /**
  * Resets the navigation to its closed state.
  * This ensures that back/forward navigation doesn't leave
@@ -336,3 +397,32 @@ window.addEventListener('popstate', closeAllNavStates);
 window.addEventListener('pageshow', (event) => {
     closeAllNavStates();
 });
+
+
+    // Clear a single form
+    function clearForm(form) {
+        if (!form) return;
+        form.reset();
+    }
+
+    // Clear form on submit button click
+    document.addEventListener('click', function (e) {
+            const btn = e.target.closest('button');
+            if (!btn) return;
+
+            const form = btn.closest('form');
+            if (form) {
+            clearForm(form);
+        }
+    });
+
+    // Clear forms when popup closes
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest('.cross-icon')) return;
+
+        const popup = e.target.closest('.overlay-content');
+        if (!popup) return;
+
+        const forms = popup.querySelectorAll('form');
+        forms.forEach(form => clearForm(form));
+    });

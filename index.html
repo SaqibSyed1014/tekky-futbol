@@ -234,10 +234,7 @@
       <h2>The Culture</h2>
       <p>Tekky lives on and off the pitch — highlights, portraits, and weekly recaps that move like music.</p>
       <div class="sec-cta">
-          <div class="cta coming-soon">
-          Watch
-          Highlights</a>
-          </div>
+          <div class="cta highlightPopupTrigger">Watch Highlights</div>
     </section>
 
     <div class="glow-divider"></div>
@@ -267,6 +264,81 @@
   </main>
 
     <div id="footer" class="home-page"></div>
+
+
+
+   <div id="highlightPopup" class="coming-soon-overlay">
+       <div class="overlay-content">
+         <h3>Get Notified When Highlights Drop</h3>
+         <p class="subtext">Cinematic match recaps, player moments, and culture-driven content — released throughout the season. Enter your email to be notified when new highlights go live.</p>
+         <form id="futureUpdatesForm">
+               <input type="text" id="firstName" name="firstName" placeholder="Enter your  name" required>
+               <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+               <button type="button" class="cta close-overlay open-success-popup">Notify Me</button>
+         </form>
+
+         <svg
+             xmlns="http://www.w3.org/2000/svg"
+             class="cross-icon"
+             style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+             viewBox="0 0 1024 1024"
+             version="1.1"
+         >
+             <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>
+         </svg>
+       </div>
+   </div>
+
+   <div id="highlightSuccessPopup" class="coming-soon-overlay">
+       <div class="overlay-content">
+         <h3>You’re on the list</h3>
+         <p class="subtext">We’ll notify you when highlights are released. Some content may be exclusive to players, partners, or event attendees.</p>
+         <button class="cta close-overlay close-success-popup">Back to site </button>
+
+         <svg
+             xmlns="http://www.w3.org/2000/svg"
+             class="cross-icon"
+             style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+             viewBox="0 0 1024 1024"
+             version="1.1"
+         >
+             <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>
+         </svg>
+       </div>
+   </div>
+
+
+   <script>
+                function openPopup(popup) {
+                  popup.style.display = 'flex';
+                }
+
+                function closePopup(popup) {
+                  popup.style.display = 'none';
+                }
+
+                // Popups
+                const comingSoonPopup = document.getElementById('highlightPopup');
+                const successPopup = document.getElementById('highlightSuccessPopup');
+
+                // Triggers
+                const HighlightPopupTrigger = document.querySelector('.highlightPopupTrigger');
+                const openSuccessButtons = document.querySelector('.open-success-popup');
+
+                // Close buttons
+                const closeSuccessButton = document.querySelector('.close-success-popup');
+
+                HighlightPopupTrigger.addEventListener('click', () => openPopup(comingSoonPopup));
+
+                /* Open Success */
+                openSuccessButtons.addEventListener('click', () => {
+                  closePopup(comingSoonPopup);
+                  openPopup(successPopup);
+                });
+
+                /* Close success popup */
+                closeSuccessButton?.addEventListener('click', () => closePopup(successPopup));
+          </script>
 
 </body>
 

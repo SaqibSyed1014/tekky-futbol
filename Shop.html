@@ -57,6 +57,9 @@
       gap: 1.2rem;
       margin-top: 1.3rem
     }
+    .grid.has-four{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 
     .card {
       background: black;
@@ -73,12 +76,33 @@
       box-shadow: 0 0 22px rgba(0, 116, 255, 0.35)
     }
 
-    .card img {
+    .card .img-placeholder {
       width: 100%;
       height: 200px;
-      object-fit: contain;
+/*       object-fit: contain; */
       border-radius: 12px;
-      margin-bottom: 0.3rem
+      margin-bottom: 0.3rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card .img-placeholder img{
+        width: 60%;
+      position: relative;
+        z-index: 2;
+    }
+    .card .img-placeholder::before {
+      content: '';
+      position: absolute;
+      background: url('images/merch-bg.webp') no-repeat;
+      background-size: cover;
+      background-position: center;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
     }
 
     .card h3 {
@@ -108,8 +132,16 @@
       h1 {
         font-size: 2.4rem
       }
+        .grid.has-four{
+            grid-template-columns: 1fr 1fr;
+        }
+    }
 
 
+    @media (max-width:480px) {
+        .grid.has-four{
+            grid-template-columns: 1fr;
+        }
     }
   </style>
 
@@ -174,64 +206,77 @@
 <!--           <div class="cta">Notify Me at Drop</div> -->
 <!--         </div> -->
         <div class="card">
-          <img src="images/logo.webp" alt="Jacket" fetchpriority="high">
+            <div class="img-placeholder">
+              <img src="images/logo.webp" alt="Jacket" fetchpriority="high">
+            </div>
           <h3>North Division Hoodie</h3>
           <span class="muted">Season 01 Drop</span>
           <p class="price">$80</p>
-          <div class="cta">Notify Me at Drop</div>
+          <div class="cta old">Notify Me at Drop</div>
         </div>
         <div class="card">
-          <img src="images/logo.webp" alt="Pants" fetchpriority="high">
+            <div class="img-placeholder">
+              <img src="images/logo.webp" alt="Pants" fetchpriority="high">
+            </div>
           <h3>North Division Trouser</h3>
           <span class="muted">Season 01 Drop</span>
           <p class="price">$60</p>
-          <div class="cta">Notify Me at Drop</div>
+          <div class="cta old">Notify Me at Drop</div>
         </div>
         <div class="card">
-          <img src="images/logo.webp" alt="Jacket" fetchpriority="high">
+            <div class="img-placeholder">
+              <img src="images/logo.webp" alt="Jacket" fetchpriority="high">
+            </div>
           <h3>South Division Hoodie</h3>
           <span class="muted">Season 01 Drop</span>
           <p class="price">$80</p>
-          <div class="cta">Notify Me at Drop</div>
+          <div class="cta old">Notify Me at Drop</div>
         </div>
         <div class="card">
-          <img src="images/logo.webp" alt="Pants" fetchpriority="high">
+            <div class="img-placeholder">
+              <img src="images/logo.webp" alt="Pants" fetchpriority="high">
+            </div>
           <h3>South Division Trouser</h3>
           <span class="muted">Season 01 Drop</span>
           <p class="price">$60</p>
-          <div class="cta">Notify Me at Drop</div>
+          <div class="cta old">Notify Me at Drop</div>
         </div>
         <div class="card">
-          <img src="images/logo.webp" alt="Hoodie" fetchpriority="high">
+            <div class="img-placeholder">
+              <img src="images/logo.webp" alt="Hoodie" fetchpriority="high">
+            </div>
           <h3>Finale Hoodie</h3>
           <span class="muted">Season 01 Drop</span>
           <p class="price">$80</p>
-          <div class="cta">Notify Me at Drop</div>
+          <div class="cta old">Notify Me at Drop</div>
         </div>
         <div class="card">
-          <img src="images/logo.webp" alt="Pants" fetchpriority="high">
+            <div class="img-placeholder">
+              <img src="images/logo.webp" alt="Pants" fetchpriority="high">
+            </div>
           <h3>Finale Trouser</h3>
           <span class="muted">Season 01 Drop</span>
           <p class="price">$60</p>
-          <div class="cta">Notify Me at Drop</div>
+          <div class="cta old">Notify Me at Drop</div>
         </div>
       </div>
-      <div class="sec-cta">
-        <a class="cta" href="registration.html">Register to Play in Tekky Gear</a>
-      </div>
+<!--       <div class="sec-cta"> -->
+<!--         <a class="cta" href="registration.html">Register to Play in Tekky Gear</a> -->
+<!--       </div> -->
     </section>
 
 
     <div class="glow-divider"></div>
 
     <section>
-        <div class="" style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;">
+      <h2>Signature Drops</h2>
+        <div class="grid has-four">
             <div class="card">
 <!--               <img src="images/logo.webp" alt="Pants" fetchpriority="high"> -->
               <h3>North Division Button-Up Jersey</h3>
               <span class="muted">Season 01 · Limited Edition</span>
               <p class="price">$90</p>
-              <div class="cta">UNLOCK EARLY ACCESS</div>
+              <div class="cta new">UNLOCK EARLY ACCESS</div>
             </div>
         </div>
     </section>
@@ -321,6 +366,51 @@
         </div>
     </div>
 
+
+    <div id="newEarlyAccessPopup" class="coming-soon-overlay">
+        <div class="overlay-content">
+            <h3>EARLY ACCESS</h3>
+          <p class="subtext">Limited drops don’t get restocks.</p>
+          <p class="subtext">Join the list to be notified the moment this piece goes live.</p>
+          <p class="subtext">Early access is first-come, first-served.</p>
+
+          <form id="futureUpdatesForm">
+                <input type="text" id="firstName" name="firstName" placeholder="Enter your name" required>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <button type="button" class="cta close-overlay open-new-success-popup">GET NOTIFIED</button>
+          </form>
+
+          <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="cross-icon"
+              style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+              viewBox="0 0 1024 1024"
+              version="1.1"
+          >
+              <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>
+          </svg>
+        </div>
+    </div>
+
+    <div id="newSuccessPopup" class="coming-soon-overlay">
+        <div class="overlay-content">
+          <h3>YOU’RE LOCKED IN</h3>
+          <p class="subtext">You’ll be notified the moment this drop is released. No restocks. No reruns.</p>
+          <p class="subtext">Watch your inbox.</p>
+          <button class="cta close-overlay close-new-success-popup">EXPLORE TEKKYFUTBOL</button>
+
+          <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="cross-icon"
+              style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+              viewBox="0 0 1024 1024"
+              version="1.1"
+          >
+              <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>
+          </svg>
+        </div>
+    </div>
+
     <script>
       // Helpers
       function openPopup(popup) {
@@ -335,10 +425,15 @@
       const comingSoonPopup = document.getElementById('comingSoonUpdatesPopup');
       const earlyAccessPopup = document.getElementById('getEarlyAccessPopup');
       const successPopup = document.getElementById('successPopup');
+      const newEarlyAccessPopup = document.getElementById('newEarlyAccessPopup');
+      const newSuccessPopup = document.getElementById('newSuccessPopup');
 
       // Triggers
       const comingSoonTrigger = document.getElementById('comingSoonUpdates');
-      const earlyAccessTriggers = document.querySelectorAll('.card .cta');
+      const earlyAccessTriggers = document.querySelectorAll('.card .cta.old');
+      const earlyNewAccessTrigger = document.querySelector('.card .cta.new');
+      const openNewSuccessTrigger = document.querySelector('.open-new-success-popup');
+      const closeNewSuccessTrigger = document.querySelector('.close-new-success-popup');
 
       // Success triggers (from both popups)
       const openSuccessButtons = document.querySelectorAll('.open-success-popup');
@@ -360,6 +455,11 @@
         });
       });
 
+      // New Early Access (single button)
+        earlyNewAccessTrigger?.addEventListener('click', () => {
+          openPopup(newEarlyAccessPopup);
+        });
+
       /* ---------- SUCCESS POPUP ---------- */
 
       openSuccessButtons.forEach(btn => {
@@ -370,11 +470,19 @@
         });
       });
 
+      openNewSuccessTrigger?.addEventListener('click', () => {
+        openPopup(newSuccessPopup);
+        closePopup(newEarlyAccessPopup);
+      });
+
       /* ---------- CLOSE POPUPS ---------- */
 
       closeSuccessButton?.addEventListener('click', () => {
         closePopup(successPopup);
       });
+        closeNewSuccessTrigger?.addEventListener('click', () => {
+          closePopup(newSuccessPopup);
+        });
     </script>
 
 

@@ -327,10 +327,10 @@ table{
     box-shadow: 0 0 25px var(--tekky-blue);
   }
 }
-@media (max-width:768px) {
-  /*h1{*/
-  /*  text-shadow: 0 0 8px var(--tekky-blue);*/
-  /*}*/
+@media (max-width:991px) {
+  h1{
+    text-shadow: 0 0 2px var(--tekky-blue);
+  }
 }
 @media (max-width:768px) {
   header{
