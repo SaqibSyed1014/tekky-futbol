@@ -90,7 +90,7 @@ navElement.innerHTML = `
             </li>
             
             <li>
-                <div class="coming-soon-teams nav-link">Team</div>
+                <div class="coming-soon-teams nav-link">Teams</div>
             </li>
           
             <li class="dropdown-menu">
