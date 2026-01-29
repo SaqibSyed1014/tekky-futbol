@@ -271,10 +271,11 @@
        <div class="overlay-content">
          <h3>Get Notified When Highlights Drop</h3>
          <p class="subtext">Cinematic match recaps, player moments, and culture-driven content — released throughout the season. Enter your email to be notified when new highlights go live.</p>
-         <form id="futureUpdatesForm">
+         <form action="https://api.web3forms.com/submit" method="POST" id="futureUpdatesForm">
+             <input type="hidden" name="access_key" value="1977fae6-c683-449d-9ac1-819ec426fed5">
                <input type="text" id="firstName" name="firstName" placeholder="Enter your  name" required>
                <input type="email" id="email" name="email" placeholder="Enter your Email" required>
-               <button type="button" class="cta close-overlay open-success-popup">Notify Me</button>
+               <button type="submit" class="cta close-overlay">Notify Me</button>
          </form>
 
          <svg

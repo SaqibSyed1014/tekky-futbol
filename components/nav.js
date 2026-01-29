@@ -407,15 +407,15 @@ window.addEventListener('pageshow', (event) => {
     }
 
     // Clear form on submit button click
-    document.addEventListener('click', function (e) {
-            const btn = e.target.closest('button');
-            if (!btn || window.location.pathname.includes('Contact.html')) return;
-
-            const form = btn.closest('form');
-            if (form) {
-            clearForm(form);
-        }
-    });
+    // document.addEventListener('click', function (e) {
+    //         const btn = e.target.closest('button');
+    //         if (!btn || window.location.pathname.includes('Contact.html')) return;
+    //
+    //         const form = btn.closest('form');
+    //         if (form) {
+    //         clearForm(form);
+    //     }
+    // });
 
     // Clear forms when popup closes
     document.addEventListener('click', function (e) {
