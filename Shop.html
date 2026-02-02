@@ -320,10 +320,15 @@
         <div class="overlay-content">
           <h3>Access Drops Before They're Gone</h3>
           <p class="subtext">Get early access to limited TekkyFutbol drops, collabs, and special releases.</p>
-          <form id="futureUpdatesForm">
-                <input type="text" id="firstName" name="firstName" placeholder="Enter your name" required>
+          <form onsubmit="handleFormSubmit(event, 'successPopup', 'comingSoonUpdatesPopup')" id="futureUpdatesForm">
+                <input type="hidden" name="access_key" value="284af3a4-a5cb-4028-b152-e6e32de2702e">
+                <input type="checkbox" name="botcheck" id="" style="display: none;">
+
+                <input type="hidden" name="Type" value="Updates on Future Drops">
+
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                <button type="button" class="cta close-overlay open-success-popup">Get Early Access</button>
+                <button type="submit" class="cta close-overlay">Get Early Access</button>
           </form>
 
           <svg
@@ -342,10 +347,15 @@
     <div id="getEarlyAccessPopup" class="coming-soon-overlay">
         <div class="overlay-content">
           <p class="subtext">Limited drops. No restocks. Be the first to know when TeckyFutbol merch goes live.</p>
-          <form id="futureUpdatesForm">
-                <input type="text" id="firstName" name="firstName" placeholder="Enter your name" required>
+          <form onsubmit="handleFormSubmit(event, 'successPopup', 'getEarlyAccessPopup')" id="futureUpdatesForm">
+                 <input type="hidden" name="access_key" value="284af3a4-a5cb-4028-b152-e6e32de2702e">
+                 <input type="checkbox" name="botcheck" id="" style="display: none;">
+
+                <input type="hidden" name="Type" value="Season Drop">
+
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                <button type="button" class="cta close-overlay open-success-popup">Unlock Access</button>
+                <button type="submit" class="cta close-overlay">Unlock Access</button>
           </form>
 
           <svg
@@ -381,15 +391,20 @@
 
     <div id="newEarlyAccessPopup" class="coming-soon-overlay">
         <div class="overlay-content">
-            <h3>EARLY ACCESS</h3>
+          <h3>EARLY ACCESS</h3>
           <p class="subtext">Limited drops don’t get restocks.</p>
           <p class="subtext">Join the list to be notified the moment this piece goes live.</p>
           <p class="subtext">Early access is first-come, first-served.</p>
 
-          <form id="futureUpdatesForm">
-                <input type="text" id="firstName" name="firstName" placeholder="Enter your name" required>
+          <form onsubmit="handleFormSubmit(event, 'newSuccessPopup', 'newEarlyAccessPopup')" id="futureUpdatesForm">
+                <input type="hidden" name="access_key" value="284af3a4-a5cb-4028-b152-e6e32de2702e">
+                <input type="checkbox" name="botcheck" id="" style="display: none;">
+
+                <input type="hidden" name="Type" value="Signature Drop">
+
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                <button type="button" class="cta close-overlay open-new-success-popup">GET NOTIFIED</button>
+                <button type="submit" class="cta close-overlay">GET NOTIFIED</button>
           </form>
 
           <svg
@@ -423,6 +438,9 @@
         </div>
     </div>
 
+
+   <script src="scripts/web3form.js" type="text/javascript"></script>
+
     <script>
       // Helpers
       function openPopup(popup) {
@@ -447,9 +465,6 @@
       const openNewSuccessTrigger = document.querySelector('.open-new-success-popup');
       const closeNewSuccessTrigger = document.querySelector('.close-new-success-popup');
 
-      // Success triggers (from both popups)
-      const openSuccessButtons = document.querySelectorAll('.open-success-popup');
-
       // Close icons
       const closeSuccessButton = document.querySelector('.close-success-popup');
 
@@ -471,21 +486,6 @@
         earlyNewAccessTrigger?.addEventListener('click', () => {
           openPopup(newEarlyAccessPopup);
         });
-
-      /* ---------- SUCCESS POPUP ---------- */
-
-      openSuccessButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          closePopup(comingSoonPopup);
-          closePopup(earlyAccessPopup);
-          openPopup(successPopup);
-        });
-      });
-
-      openNewSuccessTrigger?.addEventListener('click', () => {
-        openPopup(newSuccessPopup);
-        closePopup(newEarlyAccessPopup);
-      });
 
       /* ---------- CLOSE POPUPS ---------- */
 

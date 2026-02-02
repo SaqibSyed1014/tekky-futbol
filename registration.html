@@ -247,10 +247,13 @@
          <div class="overlay-content">
            <h3>Season starts Before You Think</h3>
            <p class="subtext">Get notified when registration opens, teams fill, and spots go live.</p>
-           <form id="rsvpForm">
-               <input type="text" id="firstName" name="firstName" placeholder="Enter your name" required>
+           <form onsubmit="handleFormSubmit(event, 'successPopup', 'comingSoonRegistrationPopup')" id="rsvpForm">
+               <input type="hidden" name="access_key" value="1977fae6-c683-449d-9ac1-819ec426fed5">
+               <input type="checkbox" name="botcheck" id="" style="display: none;">
+
+               <input type="text" id="name" name="name" placeholder="Enter your name" required>
                <input type="email" id="email" name="email" placeholder="Enter your email" required>
-               <button type="button" class="cta open-success-popup">Notify Me</button>
+               <button type="submit" class="cta open-success-popup">Notify Me</button>
            </form>
 
              <svg
@@ -284,6 +287,7 @@
          </div>
      </div>
 
+   <script src="scripts/web3form.js" type="text/javascript"></script>
 
     <script>
         const comingSoonTriggers = document.querySelectorAll('.coming-soon-registration');
@@ -299,18 +303,13 @@
 
 
       const successPopup = document.getElementById('successPopup');
-      const openSuccessButtons = document.querySelector('.open-success-popup');
       const closeSuccessButton = document.querySelectorAll('.close-success-popup');
 
-              openSuccessButtons.addEventListener('click', () => {
-                    registrationPopupOverlay.style.display = 'none';
-                    successPopup.style.display = 'flex';
-              });
-              closeSuccessButton.forEach(ele => {
-                ele.addEventListener('click', () => {
-                      successPopup.style.display = 'none';
-                });
-              })
+      closeSuccessButton.forEach(ele => {
+        ele.addEventListener('click', () => {
+              successPopup.style.display = 'none';
+        });
+      })
     </script>
 
   <script>

@@ -183,6 +183,9 @@ form .cta{
     <section id="contact-form">
       <h2>Send a Message</h2>
       <form id="contactForm">
+         <input type="hidden" name="access_key" value="78bba14c-803b-44bc-bf94-442c0b4a9ffc">
+         <input type="checkbox" name="botcheck" id="" style="display: none;">
+
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <input type="text" name="subject" placeholder="Subject" required>
@@ -218,13 +221,40 @@ form .cta{
    <div id="footer"></div>
 
    <script>
-           const teamForm = document.getElementById('contactForm');
+           const contactForm = document.getElementById('contactForm');
            const successMessage = document.querySelector('.success-message');
            const greenCheck = document.querySelector('.green-check');
-           teamForm.addEventListener('submit', e => {
-                 e.preventDefault();
-                 teamForm.reset();
-               successMessage.style.display = 'block';
+
+           contactForm.addEventListener('submit', e => {
+               e.preventDefault();
+
+               const form = event.target;
+
+               const formData = new FormData(form);
+               const object = Object.fromEntries(formData);
+               const json = JSON.stringify(object);
+
+               fetch('https://api.web3forms.com/submit', {
+                   method: 'POST',
+                   headers: {
+                       'Content-Type': 'application/json',
+                       'Accept': 'application/json'
+                   },
+                   body: json
+               }).then(async (response) => {
+                   let res = await response.json();
+                   console.log('response', response);
+                   if (response.status == 200) {
+                       contactForm.reset();
+                       successMessage.style.display = 'block';
+                   } else {
+                       console.log('error')
+                   }
+               }).catch(error => {
+                   console.error("Form Error:", error);
+               })
+
+
              setTimeout(() => {
                successMessage.style.opacity = 0.6;
              }, 5000);
