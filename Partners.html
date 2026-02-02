@@ -140,7 +140,7 @@
             <h3>Request partnership deck</h3>
             <p class="subtext">Get an overview of how TekkyFutbol collaborates with brands, venues, and creators through culture-driven football experiences.</p>
             <form onsubmit="handleFormSubmit(event, 'requestDeckSuccessPopup', 'requestPartnershipPopup')" id="becomeSponsorForm">
-                 <input type="hidden" name="access_key" value="7f2d5686-6ea5-47f1-9838-2574c269f179">
+                 <input type="hidden" name="access_key" value="6ab182c2-a700-4bf2-9880-c529c8ef29a3">
                  <input type="checkbox" name="botcheck" id="" style="display: none;">
 
                 <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -148,8 +148,8 @@
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 <input type="tel" id="phone" name="phone" placeholder="Enter your phone">
                 <input type="text" id="website" name="website" placeholder="Enter your website/instagram" required>
-                <select id="sponsorshipInterest" name="sponsorshipInterest" required>
-                  <option value="">Select type of partnership are you interested in</option>
+                <select id="sponsorshipInterest" name="sponsorshipInterest" value="" required>
+                  <option value="" selected disabled hidden>Select type of partnership are you interested in</option>
                   <option>Brand collaboration</option>
                   <option>Event activation</option>
                   <option>Kit or merchandise collaboration</option>
