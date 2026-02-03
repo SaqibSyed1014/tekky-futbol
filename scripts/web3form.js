@@ -24,6 +24,7 @@ function handleFormSubmit(event, successPopupId, activePopupId) {
         .then(async (response) => {
             console.log('response', response);
             if (response.status == 200) {
+                form.reset();
                 const successPopup = document.getElementById(successPopupId);
                 const activePopup = document.getElementById(activePopupId);
                 successPopup.style.display = 'flex';
