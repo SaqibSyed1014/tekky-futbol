@@ -11,6 +11,7 @@ footerElement.innerHTML = `
     <div class="legal-footer-links">
         <a href="privacy-and-terms.html">Privacy Policy & Terms of Use</a>
         <a href="Refund.html">Refund Policy</a>
+        <a href="Kit-and-Branding-Policy.html">Kit & Branding Policy</a>
     </div>
     <p>© 2025 TekkyFutbol — For Ballers Who Create</p>
     <p><a href="mailto:tekkyfutbol@gmail.com" style="color:#dfe7ff;text-decoration:none;">tekkyfutbol@gmail.com</a></p>
