@@ -29,7 +29,6 @@
       padding: 0 1rem
     }
 
-
     .tagline {
       margin-top: 0.4rem;
       color: var(--tekky-blue);
@@ -43,7 +42,7 @@
     }
 
     main {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 3rem auto 4rem;
       padding: 0 1.25rem;
       text-align: center
@@ -60,8 +59,7 @@
       overflow: hidden
     }
 
-    th,
-    td {
+    th, td {
       padding: 1rem 0.8rem;
       border-bottom: 1px solid rgba(0, 116, 255, 0.25)
     }
@@ -107,7 +105,6 @@
         font-size: 2.5rem
       }
 
-
       .nav-links {
         display: none
       }
@@ -115,7 +112,6 @@
       table {
         font-size: 0.85rem
       }
-
 
       .nav-links ul {
         align-items: start;
@@ -217,14 +213,26 @@
 <!--     <div class="glow-divider"></div> -->
 
     <section>
-        <h2>Preseason Week 2</h2>
+                <div class="dropdown-wrap">
+                    <label for="matchday" class="venue">Select Matchday</label>
+                    <select onChange="matchdaySelected(this.value)" id="matchday" name="matchday">
+        <!--               <option value="Latest">Week 5 (Latest)</option> -->
+        <!--               <option>Week 4</option> -->
+        <!--               <option>Week 3</option> -->
+        <!--               <option>Week 2</option> -->
+                            <option>Week 2</option>
+                    </select>
+                </div>
+
+        <h2>Matchweek 2</h2>
             <div class="table-wrap">
               <table>
                 <thead>
                   <tr>
                     <th>Venue</th>
                     <th>Match</th>
-                    <th>Time</th>
+                    <th>Score</th>
+                    <th>Week</th>
                     <th>Date</th>
                   </tr>
                 </thead>
@@ -234,9 +242,11 @@
                     <td></td>
                     <td></td>
                     <td></td>
+                    <td></td>
                   </tr>
                   <tr>
                     <td class="venue">Tekky North</td>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -246,23 +256,20 @@
                       <td></td>
                       <td></td>
                       <td></td>
+                      <td></td>
                   </tr>
                  <tr>
                      <td class="venue">Tekky North</td>
                      <td></td>
                      <td></td>
                      <td></td>
+                     <td></td>
                   </tr>
                   <tr>
                     <td class="venue">Tekky South</td>
                     <td></td>
                     <td></td>
                     <td></td>
-                  </tr>
-                  <tr>
-                    <td class="venue">Tekky South</td>
-                    <td></td>
-                    <td></td>
                     <td></td>
                   </tr>
                   <tr>
@@ -270,9 +277,18 @@
                     <td></td>
                     <td></td>
                     <td></td>
+                    <td></td>
                   </tr>
                   <tr>
                     <td class="venue">Tekky South</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td class="venue">Tekky South</td>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>

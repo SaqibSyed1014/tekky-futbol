@@ -65,16 +65,17 @@
     tr:hover {
       background: rgba(0, 116, 255, 0.08)
     }
-.sec-cta{
-    text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 4rem;
-}
+    .sec-cta{
+        text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+    }
   </style>
 
   <link rel="stylesheet" href="styles.css" />
   <script src="components/nav.js" type="text/javascript" defer></script>
-<script src="components/footer.js" type="text/javascript" defer></script>
+  <script src="components/footer.js" type="text/javascript" defer></script>
+
 </head>
 
 <body>
@@ -293,38 +294,75 @@
     <div id="footer"></div>
 
     <div id="comingSoonUpdatesPopup" class="coming-soon-overlay">
-            <div class="overlay-content">
-              <h3>Stay in the Game</h3>
-              <p class="subtext">Get league updates, fixtures, drops, and announcements — straight to your inbox.</p>
-              <form id="futureUpdatesForm">
-                    <input type="text" id="firstName" name="firstName" placeholder="Enter your name" required>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                    <button type="submit" class="cta close-overlay">Get Updates</button>
-              </form>
+        <div class="overlay-content">
+          <h3>Stay in the Game</h3>
+          <p class="subtext">Get league updates, fixtures, drops, and announcements — straight to your inbox.</p>
+          <form onsubmit="handleFormSubmit(event, 'successPopup', 'comingSoonUpdatesPopup')" id="futureUpdatesForm">
+                <input type="hidden" name="access_key" value="145c976f-f212-414e-b245-d1d502b64da9">
+                <input type="checkbox" name="botcheck" id="" style="display: none;">
 
-              <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="cross-icon"
-                  style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
-                  viewBox="0 0 1024 1024"
-                  version="1.1"
-              >
-                  <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>
-              </svg>
-            </div>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <button type="submit" class="cta close-overlay">Get Updates</button>
+          </form>
+
+          <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="cross-icon"
+              style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+              viewBox="0 0 1024 1024"
+              version="1.1"
+          >
+              <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>
+          </svg>
         </div>
+    </div>
+
+    <div id="successPopup" class="coming-soon-overlay">
+     <div class="overlay-content">
+       <h3>Added to the list</h3>
+       <p class="subtext">You'll be notified first.</p>
+       <button class="cta close-overlay close-success-popup">Explore the League</button>
+
+       <svg
+           xmlns="http://www.w3.org/2000/svg"
+           class="cross-icon"
+           style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+           viewBox="0 0 1024 1024"
+           version="1.1"
+       >
+           <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>
+       </svg>
+     </div>
+    </div>
 
 
-        <script>
-            const comingSoonTrigger = document.getElementById('comingSoonUpdates');
-            const overlay = document.querySelector('#comingSoonUpdatesPopup.coming-soon-overlay');
-            const closeOverlay = document.querySelector('#comingSoonUpdatesPopup .close-overlay');
-            const closePopup = document.querySelector('#comingSoonUpdatesPopup .cross-icon');
-            comingSoonTrigger.addEventListener('click', () => { overlay.style.display = 'flex'; });
+  <script src="scripts/web3form.js" type="text/javascript"></script>
 
-            closeOverlay.addEventListener('click', () => { overlay.style.display = 'none'; });
-            closePopup.addEventListener('click', () => { overlay.style.display = 'none'; });
-        </script>
+    <script>
+       function openPopup(popup) {
+         popup.style.display = 'flex';
+       }
+
+       function closePopup(popup) {
+         popup.style.display = 'none';
+       }
+
+       // Popups
+       const comingSoonPopup = document.getElementById('comingSoonUpdatesPopup');
+       const successPopup = document.getElementById('successPopup');
+
+       // Triggers
+       const openComingSoonButtons = document.querySelector('#comingSoonUpdates');
+
+       // Close buttons
+       const closeSuccessButton = document.querySelector('.close-success-popup');
+
+       openComingSoonButtons.addEventListener('click', () => openPopup(comingSoonPopup));
+
+       /* Close success popup */
+       closeSuccessButton?.addEventListener('click', () => closePopup(successPopup));
+    </script>
 
 </body>
 

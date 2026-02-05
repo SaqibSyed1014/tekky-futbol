@@ -131,8 +131,6 @@
       padding: 0 1rem
     }
 
-
-
     .tagline {
       margin-top: 0.4rem;
       color: var(--tekky-blue);
@@ -167,15 +165,6 @@
       box-shadow: 0 0 20px rgba(0, 116, 255, 0.4);
     }
 
-
-
-
-
-
-
-
-
-
     .nav-links.active {
       display: block;
     }
@@ -184,7 +173,6 @@
       h1 {
         font-size: 2.5rem
       }
-
     }
   </style>
 
@@ -226,10 +214,15 @@
        <div class="overlay-content">
          <h3>Don't Miss a Match</h3>
          <p class="subtext">Get notified when single game tickets drop and matchups are announced.</p>
-         <form id="futureUpdatesForm">
-               <input type="text" id="firstName" name="firstName" placeholder="Enter your  name" required>
-               <input type="email" id="email" name="email" placeholder="Enter your Email" required>
-               <button type="button" class="cta close-overlay open-success-popup">Notify Me</button>
+         <form onsubmit="handleFormSubmit(event, 'successPopup', 'comingSoonUpdatesPopup')" id="futureUpdatesForm">
+               <input type="hidden" name="access_key" value="28168bad-5576-4885-9ee6-125e901d7fcf">
+               <input type="checkbox" name="botcheck" id="" style="display: none;">
+
+               <input type="hidden" name="Type" value="Single Game Ticket">
+
+               <input type="text" id="name" name="name" placeholder="Enter your name" required>
+               <input type="email" id="email" name="email" placeholder="Enter your email" required>
+               <button type="submit" class="cta close-overlay">Notify Me</button>
          </form>
 
          <svg
@@ -263,6 +256,8 @@
    </div>
 
 
+   <script src="scripts/web3form.js" type="text/javascript"></script>
+
        <script>
              function openPopup(popup) {
                popup.style.display = 'flex';
@@ -278,18 +273,11 @@
 
              // Triggers
              const openComingSoonButtons = document.querySelector('#comingSoonUpdates');
-             const openSuccessButtons = document.querySelector('.open-success-popup');
 
              // Close buttons
              const closeSuccessButton = document.querySelector('.close-success-popup');
 
              openComingSoonButtons.addEventListener('click', () => openPopup(comingSoonPopup));
-
-             /* Open Success */
-             openSuccessButtons.addEventListener('click', () => {
-               closePopup(comingSoonPopup);
-               openPopup(successPopup);
-             });
 
              /* Close success popup */
              closeSuccessButton?.addEventListener('click', () => closePopup(successPopup));
