@@ -1,3 +1,16 @@
+(function loadWeb3Forms() {
+    if (!document.querySelector('script[src*="web3forms.js"]')) {
+        const script = document.createElement('script');
+        script.src = './scripts/web3form.js';
+        script.async = true;
+        document.body.appendChild(script);
+        
+        script.onload = () => {
+            console.log("Web3Forms logic loaded successfully via Nav.");
+        };
+    }
+})();
+
 const navElement = document.getElementById('nav');
 
 navElement.innerHTML = `
@@ -170,10 +183,13 @@ navElement.innerHTML = `
         <div class="overlay-content">
           <h3>The Hall of Fame Is Coming</h3>
           <p>Celebrate the players, moments, and legacy that define TekkyFutbol. Be the first to know when the Hall of Fame officially opens</p>
-          <form id="futureUpdatesForm">
+          <form onsubmit="handleFormSubmit(event, 'successHallOfFamePopup', 'hallOfFamePopup')" id="futureUpdatesForm">
+                <input type="hidden" name="access_key" value="145c976f-f212-414e-b245-d1d502b64da9">
+                <input type="checkbox" name="botcheck" id="" style="display: none;">
+
                 <input type="text" id="name" name="name" placeholder="Enter your name" required>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                <button type="button" class="cta close-overlay open-hof-success">Enter the legacy</button>
+                <button type="submit" class="cta close-overlay">Enter the legacy</button>
           </form>
           
           <svg
@@ -210,10 +226,13 @@ navElement.innerHTML = `
         <div class="overlay-content">
           <h3>Teams Are Forming</h3>
           <p>Registered teams will be revealed before the season begins. Join the list to be notified when lineups, names, and rivalries go live.</p>
-          <form id="futureUpdatesForm">
+          <form onsubmit="handleFormSubmit(event, 'successTeamsPopup', 'teamsPopup')" id="futureUpdatesForm">
+               <input type="hidden" name="access_key" value="b8df5786-0fd3-48f8-9bb3-5d580210b399">
+               <input type="checkbox" name="botcheck" id="" style="display: none;">
+
                 <input type="text" id="name" name="name" placeholder="Enter your name" required>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                <button type="button" class="cta close-overlay open-teams-success">Notify Me</button>
+                <button type="submit" class="cta close-overlay">Notify Me</button>
           </form>
           
           <svg
@@ -283,8 +302,6 @@ closeMediaOverlay.addEventListener('click', () => {
 // Triggers
 const comingSoonHOFTrigger = document.querySelector('.coming-soon-hof');
 const comingSoonTeamsTrigger = document.querySelector('.coming-soon-teams');
-const hallOfFameSuccessTrigger = document.querySelector('.open-hof-success');
-const teamsSuccessTrigger = document.querySelector('.open-teams-success');
 const closeHofSuccessTrigger = document.querySelector('.close-success-popup');
 const closeTeamsSuccessTrigger = document.querySelector('.close-teams-success-popup');
 
@@ -301,14 +318,6 @@ comingSoonTeamsTrigger.addEventListener('click', () => {
     teamsPopup.style.display = 'flex';
 });
 
-hallOfFameSuccessTrigger.addEventListener('click', () => {
-    successHofPopup.style.display = 'flex';
-    hofPopup.style.display = 'none';
-});
-teamsSuccessTrigger.addEventListener('click', () => {
-    successTeamsPopup.style.display = 'flex';
-    teamsPopup.style.display = 'none';
-});
 
 closeHofSuccessTrigger.addEventListener('click', () => {
     successHofPopup.style.display = 'none';

@@ -114,10 +114,15 @@
             <div class="overlay-content">
               <h3>Lock In The Season</h3>
               <p class="subtext">Be first to access Season Passes, schedules, and league drops.</p>
-              <form id="futureUpdatesForm">
-                    <input type="text" id="firstName" name="firstName" placeholder="Enter your name" required>
+              <form onsubmit="handleFormSubmit(event, 'successPopup', 'comingSoonUpdatesPopup')" id="futureUpdatesForm">
+                    <input type="hidden" name="access_key" value="28168bad-5576-4085-9ee6-125e901d7fcf">
+                    <input type="checkbox" name="botcheck" id="" style="display: none;">
+
+                    <input type="hidden" name="Type" value="Season Pass Ticket">
+
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
                     <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                    <button type="button" class="cta close-overlay open-success-popup">Join the Season List</button>
+                    <button type="submit" class="cta close-overlay">Join the Season List</button>
               </form>
 
               <svg
@@ -166,21 +171,12 @@
 
       // Triggers
       const openComingSoonButtons = document.querySelector('#comingSoonUpdates');
-      const openSuccessButtons = document.querySelector('.open-success-popup');
 
       // Close buttons
       const closeSuccessButton = document.querySelector('.close-success-popup');
 
       /* Open Coming Soon */
       openComingSoonButtons.addEventListener('click', () => openPopup(comingSoonPopup));
-
-      /* Open Success */
-      openSuccessButtons.addEventListener('click', () => {
-        closePopup(comingSoonPopup);
-        openPopup(successPopup);
-      });
-
-      /* Close any popup */
 
       /* Close success popup */
       closeSuccessButton?.addEventListener('click', () => closePopup(successPopup));

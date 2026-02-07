@@ -119,6 +119,9 @@
         display: none;
       }
     }
+#attendance ul{ list-style: disc; margin-left: 1.5rem; text-align: left; }
+#attendance p{ text-align: left; }
+#attendance .text-center{ text-align: center; }
   </style>
 
   <link rel="stylesheet" href="styles.css" />
@@ -171,7 +174,30 @@
 
     <section id="attendance">
       <h2>ATTENDANCE & FORFEITS</h2>
-      <p>Ready-to-play counts only. A player counts only if they are checked in and on the field by kickoff.</p>
+      <p class="text-center">Ready-to-play counts only. A player counts only if they are checked in and on the field by kickoff.</p>
+      <p>Missing-player handicap (kickoff only):</p>
+      <ul>
+          <li>For each missing player at kickoff, the opponent is awarded +1 goal.</li>
+          <li>For each goal awarded due to missing players, the opponent must also play down one player (sit one) to keep the game balanced.</li>
+      </ul>
+      <p>Forfeit threshold:</p>
+        <ul>
+            <li>If a team is missing more than 3 players at kickoff, it is an automatic forfeit.</li>
+        </ul>
+      <p>Standings impact (forfeits):</p>
+        <ul>
+            <li>Opponent receives 3 points and a 3–0 win recorded ( +3 GD ).</li>
+            <li>Forfeiting team receives 0 points, a 0–3 loss recorded ( −3 GD ), plus a 1-point deduction.</li>
+        </ul>
+      <p>Still play if you want:</p>
+        <ul>
+            <li>If a forfeit occurs, teams may still scrimmage / practice for fun (does not affect standings).</li>
+        </ul>
+      <p>ODD NUMBER OF TEAMS (BYE WEEK)</p>
+        <ul>
+            <li>If there is an odd number of teams in the regular season, one team will have a bye each matchweek.</li>
+            <li>Byes rotate in order from last place → first place, repeating as needed to keep it fair over the season.</li>
+        </ul>
     </section>
 
     <div class="glow-divider"></div>
