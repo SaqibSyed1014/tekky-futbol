@@ -227,7 +227,7 @@ navElement.innerHTML = `
           <h3>Teams Are Forming</h3>
           <p>Registered teams will be revealed before the season begins. Join the list to be notified when lineups, names, and rivalries go live.</p>
           <form onsubmit="handleFormSubmit(event, 'successTeamsPopup', 'teamsPopup')" id="futureUpdatesForm">
-               <input type="hidden" name="access_key" value="b8df5786-0fd3-48f8-9bb3-5d580210b399">
+               <input type="hidden" name="access_key" value="145c976f-f212-414e-b245-d1d502b64da9">
                <input type="checkbox" name="botcheck" id="" style="display: none;">
 
                 <input type="text" id="name" name="name" placeholder="Enter your name" required>
