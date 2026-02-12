@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TekkyFutbol — Dominion</title>
+  <link rel="icon" type="image/png" href="images/favicons/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="images/favicons/favicon.svg" />
+  <link rel="shortcut icon" href="images/favicons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+/*       background: radial-gradient(60% 50% at 50% 35%, rgba(0, 116, 255, 0.32), rgba(0, 0, 0, 0.95) 60%), url('night-pitch.jpg') center/cover no-repeat fixed; */
+    }
+
+    .hero {
+      position: relative;
+      z-index: 2;
+      max-width: 980px;
+      padding: 0 1rem
+    }
+
+    .tagline {
+      margin-top: 0.4rem;
+      color: var(--tekky-blue);
+      font-weight: 700;
+      text-shadow: 0 0 10px var(--tekky-blue);
+    }
+
+    .subtext {
+      margin: 0.9rem auto 1.2rem;
+      color: var(--muted);
+      max-width: 70ch;
+      line-height: 1.7
+    }
+
+    main {
+      max-width: 1080px;
+      margin: 2.8rem auto 4rem;
+      padding: 0 1.25rem;
+      text-align: center
+    }
+
+    section {
+      margin: 3rem 0;
+    }
+
+    section h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--tekky-blue);
+      margin-bottom: 0.5rem
+    }
+
+    section p,
+    section li {
+      color: #d3d9e3;
+      margin: 0.6rem auto;
+      max-width: 70ch;
+      line-height: 1.8
+    }
+
+    ul {
+      list-style: none;
+      padding: 0
+    }
+
+    li:hover {
+      color: #fff;
+      text-shadow: 0 0 8px var(--tekky-blue);
+      transform: translateX(4px);
+      transition: 0.25s
+    }
+
+    .sec-cta {
+      margin-top: 1rem;
+      text-align: center
+    }
+
+    .social {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin: 0.6rem 0 0.3rem
+    }
+
+    @media (max-width:768px) {
+      h1 {
+        font-size: 2.4rem
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        background: #000;
+        backdrop-filter: blur(10px);
+      }
+
+      .nav-links ul {
+        align-items: start;
+        flex-direction: column;
+        padding: 20px 20px;
+      }
+
+      .nav-links .logo-desktop {
+        display: none;
+      }
+    }
+#attendance ul{ list-style: disc; margin-left: 1.5rem; text-align: left; }
+#attendance p{ text-align: left; }
+#attendance .text-center{ text-align: center; }
+  </style>
+
+  <link rel="stylesheet" href="styles.css" />
+  <script src="components/nav.js" type="text/javascript" defer></script>
+  <script src="components/footer.js" type="text/javascript" defer></script>
+
+</head>
+
+<body>
+    <div id="nav"></div>
+
+
+  <header>
+    <div class="hero">
+      <h1>Dominion </h1>
+      <p class="tagline">For Ballers Who Create</p>
+      <!-- <p class="subtext">Built for creativity, discipline, and flow. This is how TekkyFutbol moves.</p> -->
+       <p class="subtext">Control the game. Multiply your impact.</p>
+       <p class="subtext">Skill moves create pressure. Finishing converts it. Dominion rewards creativity — but only when you complete the play.</p>
+    </div>
+  </header>
+
+
+  <main>
+  <div class="glow-divider"></div>
+
+    <section id="overview">
+      <h2>League Overview</h2>
+      <p>12–16 teams compete across a 16-matchweek season — 14 weeks of rotating regular-season play followed by a concrete-based postseason that crowns the champion.</p>
+      <p>North and South divisions battle through the season under one unified rule set designed for speed, creativity, and flow.</p>
+      <a class="cta" href="registration.html">Join Next Season</a>
+    </section>
+
+    <div class="glow-divider"></div>
+
+    <section id="setup">
+      <h2>Setup</h2>
+      <ul>
+        <li>Each team may register up to 10 players per season.</li>
+        <li>Managers and coaches are eligible to play as well.</li>
+        <li>Games are 5v5 — no goalkeepers.</li>
+        <li>Game duration: 50 minutes continuous play — no halftime.</li>
+        <li>Substitutions are on the fly to keep tempo high.</li>
+      </ul>
+      <p>Goals are small, knee-height nets, rewarding precision, control, and composure over power.</p>
+      <div class="sec-cta">
+        <a class="cta" href="registration.html">Register Your Team</a>
+      </div>
+    </section>
+
+    <div class="glow-divider"></div>
+
+    <section id="attendance">
+      <h2>ATTENDANCE & FORFEITS</h2>
+      <p class="text-center">Ready-to-Play Standard</p>
+      <p>A player counts only if they are checked in and on the field at kickoff.</p>
+      <p>Late players may enter upon arrival but do not reverse any goals awarded due to absence.</p>
+      <p>Missing-Player Penalty (Kickoff Only)</p>
+      <p>Dominion rewards preparation.</p>
+      <ul>
+          <li>For each missing rostered player at kickoff, the opponent is awarded +5 goals.</li>
+          <li>Substitutes and coaches do not count toward the starting player requirement.</li>
+          <li>Goals awarded due to absence are recorded immediately and count toward the official match result.</li>
+      </ul>
+      <p>No minimum amount of players</p>
+      <p>Forfeit threshold:</p>
+        <ul>
+            <li>If a team is missing more than 3 players at kickoff, it is an automatic forfeit.</li>
+        </ul>
+      <p>Standings impact (forfeits):</p>
+        <ul>
+            <li>Opponent receives 3 points and a 3–0 win recorded ( +3 GD ).</li>
+            <li>Forfeiting team receives 0 points, a 0–3 loss recorded ( −3 GD ), plus a 1-point deduction.</li>
+        </ul>
+      <p>Still play if you want:</p>
+        <ul>
+            <li>If a forfeit occurs, teams may still scrimmage / practice for fun (does not affect standings).</li>
+        </ul>
+      <p>ODD NUMBER OF TEAMS (BYE WEEK)</p>
+        <ul>
+            <li>If there is an odd number of teams in the regular season, one team will have a bye each matchweek.</li>
+            <li>Byes rotate in order from last place → first place, repeating as needed to keep it fair over the season.</li>
+        </ul>
+    </section>
+
+    <div class="glow-divider"></div>
+
+    <section id="scoring">
+      <h2>Scoring System</h2>
+      <ul>
+        <li>Win = 3 points</li>
+        <li>Tie = 0 points</li>
+        <li>Loss = 0 points</li>
+        <li>Matches must be won outright to count — no shared results.</li>
+        <li>Top 4 teams qualify for playoffs.</li>
+        <li>Playoffs decide the Champion Team — awards at the Finale Party.</li>
+      </ul>
+      <div class="sec-cta">
+        <a class="cta" href="Season-Finale.html">See Finale Details</a>
+      </div>
+    </section>
+
+    <div class="glow-divider"></div>
+
+    <section id="gameplay">
+      <h2>Gameplay Flow</h2>
+      <ul>
+        <li>Each successful skill move during a possession adds +1 dominion points.</li>
+        <li>A clean nutmeg dribble adds +2 Skill Multiplier.</li>
+        <li>If that possession results in a goal (including an own goal forced by attacking pressure), the total dominion points. is added to the scoring team’s goal count.</li>
+        <li>After the goal is recorded, both teams’ dominion points. reset to zero.</li>
+        <li>If a defender touches their own goal while defending, they receive a yellow card and the opponent gets an open shot from 12 steps.</li>
+        <li>Slide tackles only allowed on turf</li>
+      </ul>
+      <div class="sec-cta">
+        <a class="cta" href="About.html">Learn Our Inspiration</a>
+      </div>
+    </section>
+
+    <div class="glow-divider"></div>
+
+    <section id="discipline">
+      <h2>Discipline & Respect</h2>
+      <ul>
+        <li>Yellow card = warning.</li>
+        <li>Red card = ejection + 1-game suspension.</li>
+        <li>Pushing or forcing a defender into the goal counts as aggressive conduct and results in a yellow card.</li>
+        <li>Reckless or disrespectful behavior may result in suspension or league removal.</li>
+      </ul>
+      <div class="sec-cta">
+        <a class="cta" href="registration.html">Play With Respect — Register</a>
+      </div>
+    </section>
+
+    <div class="glow-divider"></div>
+
+    <section id="bottom-cta">
+      <div class="sec-cta">
+        <a class="cta un-focused" href="#top">Back to Top</a>
+        <a class="cta" href="registration.html">Register Now</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+</body>
+
+
+</html>
