@@ -121,9 +121,6 @@ navElement.innerHTML = `
                     <a href="About.html">About TekkyFutbol</a>
                   </li>
                   <li>
-                    <a href="Rules.html">Rules</a>
-                  </li>
-                  <li>
                     <a href="Staff.html">Staff & Volunteers</a>
                   </li>
                   <li>
@@ -142,6 +139,28 @@ navElement.innerHTML = `
                 <img src="images/logo.webp" alt="TekkyFutbol Logo">
               </a>
             </li>
+
+            <li class="dropdown-menu">
+              <div class="nav-dropdown-trigger">
+                <span>Rules</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24">
+                  <path fill="currentColor"
+                    d="M18.53 9.53a.75.75 0 0 0 0-1.06H5.47a.75.75 0 0 0 0 1.06l6 6a.75.75 0 0 0 1.06 0z" />
+                </svg>
+              </div>
+              <!-- dropdown -->
+              <div class="nav-links-dropdown">
+                <ul>
+                  <li>
+                    <a href="Rules.html">Attrition</a>
+                  </li>
+                  <li>
+                    <a href="Dominion.html">Dominion</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
             <li class="dropdown-menu">
               <div class="nav-dropdown-trigger">
                 <span>Partners</span>

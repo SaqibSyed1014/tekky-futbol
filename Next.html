@@ -142,91 +142,38 @@
 
   <main>
   <div class="glow-divider"></div>
+    <section>
+        <div class="dropdown-wrap">
+            <label for="matchday" class="venue">Select Matchweek</label>
+            <select onChange="matchdaySelected(this.value)" id="matchday" name="matchday">
+              <option value="1">Week 1</option>
+              <option value="2">Week 2</option>
+              <option value="3">Week 3</option>
+              <option value="4">Week 4</option>
+              <option value="5">Week 5</option>
+              <option value="6">Week 6</option>
+              <option value="7">Week 7</option>
+              <option value="8">Week 8</option>
+              <option value="9">Week 9</option>
+              <option value="10">Week 10</option>
+              <option value="11">Week 11</option>
+              <option value="12">Week 12</option>
+              <option value="13">Week 13</option>
+              <option value="14">Week 14</option>
+              <option value="15">Week 15</option>
+              <option value="16">Week 16</option>
+              <option value="17">Week 17</option>
+              <option value="18">Week 18</option>
+            </select>
+        </div>
 
-    <section id="fixtures">
-
-<!--       <h2>Preseason Week 1</h2> -->
-<!--     <div class="table-wrap"> -->
-<!--       <table> -->
-<!--         <thead> -->
-<!--           <tr> -->
-<!--             <th>Venue</th> -->
-<!--             <th>Match</th> -->
-<!--             <th>Time</th> -->
-<!--             <th>Date</th> -->
-<!--           </tr> -->
-<!--         </thead> -->
-<!--         <tbody> -->
-<!--           <tr> -->
-<!--             <td class="venue">Tekky North</td> -->
-<!--             <td></td> -->
-<!--             <td></td> -->
-<!--             <td></td> -->
-<!--           </tr> -->
-<!--           <tr> -->
-<!--             <td class="venue">Tekky North</td> -->
-<!--             <td></td> -->
-<!--             <td></td> -->
-<!--             <td></td> -->
-<!--           </tr> -->
-<!--           <tr> -->
-<!--               <td class="venue">Tekky North</td> -->
-<!--               <td></td> -->
-<!--               <td></td> -->
-<!--               <td></td> -->
-<!--           </tr> -->
-<!--          <tr> -->
-<!--              <td class="venue">Tekky North</td> -->
-<!--              <td></td> -->
-<!--              <td></td> -->
-<!--              <td></td> -->
-<!--           </tr> -->
-<!--           <tr> -->
-<!--             <td class="venue">Tekky South</td> -->
-<!--             <td></td> -->
-<!--             <td></td> -->
-<!--             <td></td> -->
-<!--           </tr> -->
-<!--           <tr> -->
-<!--             <td class="venue">Tekky South</td> -->
-<!--             <td></td> -->
-<!--             <td></td> -->
-<!--             <td></td> -->
-<!--           </tr> -->
-<!--           <tr> -->
-<!--             <td class="venue">Tekky South</td> -->
-<!--             <td></td> -->
-<!--             <td></td> -->
-<!--             <td></td> -->
-<!--           </tr> -->
-<!--           <tr> -->
-<!--             <td class="venue">Tekky South</td> -->
-<!--             <td></td> -->
-<!--             <td></td> -->
-<!--             <td></td> -->
-<!--           </tr> -->
-<!--         </tbody> -->
-<!--       </table> -->
-<!--       </div> -->
+        <h2>Matchweek <span id="selectedWeek">1</span></h2>
     </section>
 
-<!--     <div class="glow-divider"></div> -->
-
-    <section>
-                <div class="dropdown-wrap">
-                    <label for="matchday" class="venue">Select Matchday</label>
-                    <select onChange="matchdaySelected(this.value)" id="matchday" name="matchday">
-        <!--               <option value="Latest">Week 5 (Latest)</option> -->
-        <!--               <option>Week 4</option> -->
-        <!--               <option>Week 3</option> -->
-        <!--               <option>Week 2</option> -->
-                            <option>Week 2</option>
-                    </select>
-                </div>
-
-        <h2>Matchweek 2</h2>
+    <div id="allWeek">
+        <section>
+          <h2>Tekky North</h2>
           <div class="table-wrap">
-            <h2>Tekky North</h2>
             <table>
               <thead>
                 <tr>
@@ -268,13 +215,61 @@
                 </tr>
               </tbody>
             </table>
-            </div>
+          </div>
         </section>
 
-    <div class="glow-divider"></div>
+        <div class="glow-divider"></div>
 
-    <div class="table-wrap">
-        <h2>Tekky South</h2>
+        <section>
+            <div class="table-wrap">
+                <h2>Tekky South</h2>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Venue</th>
+                      <th>Match</th>
+                      <th>Score</th>
+                      <th>Week</th>
+                      <th>Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="venue">Tekky South</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="venue">Tekky South</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="venue">Tekky South</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="venue">Tekky South</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <section id="seventeenWeek">
+        <div class="table-wrap">
         <table>
           <thead>
             <tr>
@@ -287,7 +282,7 @@
           </thead>
           <tbody>
             <tr>
-              <td class="venue">Tekky South</td>
+              <td class="venue">Tekky North</td>
               <td></td>
               <td></td>
               <td></td>
@@ -300,22 +295,106 @@
               <td></td>
               <td></td>
             </tr>
-            <tr>
-              <td class="venue">Tekky South</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="venue">Tekky South</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
         </table>
+    </div>
+    </section>
+
+    <div id="eighteenWeek">
+        <section>
+          <h2>Third Place</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Venue</th>
+                  <th>Match</th>
+                  <th>Score</th>
+                  <th>Week</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="venue">Tekky North</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="venue">Tekky North</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                    <td class="venue">Tekky North</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="venue">Tekky North</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <div class="glow-divider"></div>
+
+        <section>
+            <div class="table-wrap">
+                <h2>Champoinship</h2>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Venue</th>
+                      <th>Match</th>
+                      <th>Score</th>
+                      <th>Week</th>
+                      <th>Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="venue">Tekky South</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="venue">Tekky South</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="venue">Tekky South</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="venue">Tekky South</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+        </section>
     </div>
 
     <div class="glow-divider"></div>
@@ -330,6 +409,38 @@
   </main>
 
     <div id="footer"></div>
+
+
+    <script>
+      const week = document.getElementById("selectedWeek");
+      const allWeek = document.getElementById('allWeek');
+      const seventeenWeek = document.getElementById('seventeenWeek');
+      const eighteenWeek = document.getElementById('eighteenWeek');
+
+      allWeek.style.display = 'block';
+      seventeenWeek.style.display = 'none';
+      eighteenWeek.style.display = 'none';
+
+      function matchdaySelected(e) {
+        let text = e;
+        if(e === "17") {
+            text = "17 (semis)";
+            allWeek.style.display = 'none';
+            seventeenWeek.style.display = 'block';
+            eighteenWeek.style.display = 'none';
+        }
+        else if(e === "18") {
+            allWeek.style.display = 'none';
+            seventeenWeek.style.display = 'none';
+            eighteenWeek.style.display = 'block';
+        } else {
+            allWeek.style.display = 'block';
+            seventeenWeek.style.display = 'none';
+            eighteenWeek.style.display = 'none';
+        }
+        week.innerHTML = text;
+      }
+  </script>
 
 </body>
 
