@@ -178,10 +178,14 @@
         <input type="number" id="rosterSize" name="rosterSize" placeholder="Number of players" min="1" max="20"
           required>
         <label for="season">Season</label>
-        <input type="text" id="season" name="season" placeholder="Season you want to register for" required>
+        <select id="season" name="season" value="" required>
+          <option value="" selected disabled hidden>Select Season</option>
+          <option value="">Attrition</option>
+          <option value="">Dominion</option>
+        </select>
         
-        <p class="note">💡 Coaches register and pay individually — the same as players. Each person completes their own
-          registration and payment to confirm their spot.</p>
+        <p class="note">💡 Every player registers and pays separately. Custom sizing (different jersey and shorts sizes)
+          may incur an extra charge.</p>
         <button type="button" class="cta coming-soon-registration">Register Team</button>
       </form>
       <div id="teamConfirm" class="confirmation">✅ Your team has been registered successfully!</div>
@@ -198,14 +202,32 @@
         <input type="text" id="playerName" name="playerName" placeholder="Your full name" required>
         <label for="playerEmail">Email</label>
         <input type="email" id="playerEmail" name="playerEmail" placeholder="player@email.com" required>
-        <label for="teamSelect">Team Name</label>
-        <input type="text" id="teamSelect" name="teamSelect" placeholder="Your approved team" required>
+        <!-- <label for="teamSelect">Team Name</label>
+        <input type="text" id="teamSelect" name="teamSelect" placeholder="Your approved team" required> -->
         <label for="season">Season</label>
-        <input type="text" id="season" name="season" placeholder="Season you want to register for" required>
-        <label for="shortsSize">Team</label>
-        <select id="shortsSize" name="shortsSize" required>
-          <option value="">Select Team</option>
+        <select id="season" name="season" value="" required>
+          <option value="" selected disabled hidden>Select Season</option>
+          <option value="">Attrition</option>
+          <option value="">Dominion</option>
         </select>
+        <div class="form-group">
+          <p class="label-heading">Registration Type?</p>
+          <div class="checkbox-group">
+            <label>
+              <input type="radio" name="interest" value="free"> Free Agent
+            </label>
+            <label>
+              <input type="radio" name="interest" value="team"> Team
+            </label>
+          </div>
+        </div>
+        <div id="teamField">
+          <label for="shortsSize">Team</label>
+          <select id="shortsSize" name="shortsSize" required>
+            <option value="">Select Team</option>
+          </select>
+        </div>
+        
         
         <p class="note">💡 Every player registers and pays separately. Custom sizing (different jersey and shorts sizes)
           may incur an extra charge.</p>
@@ -286,7 +308,22 @@
          </div>
      </div>
 
-    
+    <script>
+      const teamCheckbox = document.querySelector('input[value="team"]');
+      const freeAgentCheckbox = document.querySelector('input[value="free"]');
+      const teamField = document.getElementById('teamField');
+
+      // hide initially
+      teamField.style.display = "none";
+
+      teamCheckbox.addEventListener("change", function () {
+        teamField.style.display = this.checked ? "block" : "none";
+      });
+      freeAgentCheckbox.addEventListener("change", function () {
+        teamField.style.display = this.checked ? "none" : "block";
+      });
+    </script>
+
 
     <script>
         const comingSoonTriggers = document.querySelectorAll('.coming-soon-registration');

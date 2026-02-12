@@ -586,8 +586,12 @@ ul.custom-list.bottom-space{
   gap: .5rem;
   font-size: 14px;
 }
-input[type="checkbox"]{
+input[type="checkbox"],
+input[type="radio"]{
   width: auto;
+}
+input[type="radio"]{
+  margin-bottom: 0;
 }
 /* hide footer mail */
 #footer p a{ display: none; }
