@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TekkyFutbol — Top Scorers</title>
+  <link rel="icon" type="image/png" href="images/favicons/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="images/favicons/favicon.svg" />
+  <link rel="shortcut icon" href="images/favicons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+/*       background: radial-gradient(60% 50% at 50% 35%, rgba(0, 116, 255, 0.32), rgba(0, 0, 0, 0.95) 60%), url('night-pitch.jpg') center/cover no-repeat fixed; */
+    }
+
+    .hero {
+      position: relative;
+      z-index: 2;
+      max-width: 980px;
+      padding: 0 1rem
+    }
+
+    .tagline {
+      margin-top: 0.4rem;
+      color: var(--tekky-blue);
+      font-weight: 700;
+      text-shadow: 0 0 10px var(--tekky-blue);
+    }
+
+    .subtext {
+      margin: 0.9rem auto 1.2rem;
+      color: var(--muted);
+      max-width: 70ch;
+      line-height: 1.7
+    }
+
+    main {
+      max-width: 1080px;
+      margin: 2.8rem auto 4rem;
+      padding: 0 1.25rem;
+      text-align: center
+    }
+
+    section {
+      margin: 3rem 0;
+    }
+
+    section h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--tekky-blue);
+      margin-bottom: 0.5rem
+    }
+
+    section p,
+    section li {
+      color: #d3d9e3;
+      margin: 0.6rem auto;
+      max-width: 70ch;
+      line-height: 1.8
+    }
+
+    ul {
+      list-style: none;
+      padding: 0
+    }
+
+    li:hover {
+      color: #fff;
+      text-shadow: 0 0 8px var(--tekky-blue);
+      transform: translateX(4px);
+      transition: 0.25s
+    }
+
+    .sec-cta {
+      margin-top: 1rem;
+      text-align: center
+    }
+
+    .social {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin: 0.6rem 0 0.3rem
+    }
+
+    @media (max-width:768px) {
+      h1 {
+        font-size: 2.4rem
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        background: #000;
+        backdrop-filter: blur(10px);
+      }
+
+      .nav-links ul {
+        align-items: start;
+        flex-direction: column;
+        padding: 20px 20px;
+      }
+
+      .nav-links .logo-desktop {
+        display: none;
+      }
+    }
+    ul{
+      margin-bottom: 2rem;
+    }
+    ul{ list-style: disc; margin-left: 1.5rem; text-align: left; }
+    .text-left{ text-align: left; }
+  </style>
+
+  <link rel="stylesheet" href="styles.css" />
+  <script src="components/nav.js" type="text/javascript" defer></script>
+  <script src="components/footer.js" type="text/javascript" defer></script>
+
+</head>
+
+<body>
+    <div id="nav"></div>
+
+
+  <header>
+    <div class="hero">
+      <h1>TOP SCORERS </h1>
+      <p class="tagline">For Ballers Who Create</p>
+       <p class="subtext">Goals change games.</p>
+       <p class="subtext">Creators change seasons.</p>
+    </div>
+  </header>
+
+
+  <main>
+  <div class="glow-divider"></div>
+
+    <section id="overview">
+      <h2>HOW SCORING IS COUNTED</h2>
+      <p class="text-left">Official Goal Rules:</p>
+      <ul>
+        <li>Only goals scored in live match play are recorded</li>
+        <li>Bonus / Dominion skill modifiers are not included in player totals</li>
+        <li>Own goals do not count toward individual tallies</li>
+        <li>Forfeit-awarded goals are not credited to individual players</li>
+        <li>Ties are broken by fewer games played, then head-to-head</li>
+      </ul>
+      <p>This is pure output.</p>
+    </section>
+
+    <div class="glow-divider"></div>
+
+    <section>
+      <h2>2026 SEASON — SCORING LEADERS</h2>
+    </section>
+
+    <div class="glow-divider"></div>
+
+    <section id="setup">
+      <h2>GOLDEN CREATOR AWARD</h2>
+      <p class="text-left">At the end of each season:</p>
+      <ul>
+        <li>Highest official goal total wins the Golden Creator</li>
+        <li>Award presented at the Finale</li>
+        <li>Tiebreaker: Fewest matches played</li>
+        <li>Secondary tiebreaker: Playoff goals</li>
+      </ul>
+      <p>Dominion may reward flair.</p>
+      <p>But the Golden Creator rewards finishers.</p>
+    </section>
+
+    <div class="glow-divider"></div>
+
+    <section>
+      <h2>WHY IT MATTERS</h2>
+      <p>Goals change narratives.</p>
+      <p>The league celebrates creativity — but this table celebrates execution.</p>
+      <p>This is the scoreboard history remembers.</p>
+    </section>
+
+    <div class="glow-divider"></div>
+
+
+    <section id="bottom-cta">
+      <div class="sec-cta">
+        <a class="cta" href="registration.html">JOIN THE LEAGUE</a>
+        <a class="cta" href="Standings.html">VIEW FULL STANDINGS</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+</body>
+
+
+</html>

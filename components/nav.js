@@ -93,11 +93,11 @@ navElement.innerHTML = `
                       <a href="Standings.html">Standings</a>
                   </li>
                   <li>
+                      <a href="Top-Scorers.html">Top Scorers</a>
+                  </li>
+                  <li>
                     <a href="Next.html">Next Fixtures</a>
                   </li>
-<!--                  <li>-->
-<!--                    <div class="coming-soon nav-link">Past Matchdays</div>-->
-<!--                  </li>-->
                 </ul>
               </div>
             </li>

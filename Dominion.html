@@ -65,7 +65,7 @@
     section p,
     section li {
       color: #d3d9e3;
-      margin: 0.6rem auto;
+      margin: 0.5rem auto;
       max-width: 70ch;
       line-height: 1.8
     }
@@ -119,9 +119,12 @@
         display: none;
       }
     }
-#attendance ul{ list-style: disc; margin-left: 1.5rem; text-align: left; }
-#attendance p{ text-align: left; }
-#attendance .text-center{ text-align: center; }
+    ul{
+      margin-bottom: 2rem;
+    }
+    #attendance ul{ list-style: disc; margin-left: 1.5rem; text-align: left; }
+    #attendance p{ text-align: left; }
+    #attendance .text-center{ text-align: center; }
   </style>
 
   <link rel="stylesheet" href="styles.css" />
@@ -176,17 +179,19 @@
 
     <section id="attendance">
       <h2>ATTENDANCE & FORFEITS</h2>
-      <p class="text-center">Ready-to-Play Standard</p>
-      <p>A player counts only if they are checked in and on the field at kickoff.</p>
-      <p>Late players may enter upon arrival but do not reverse any goals awarded due to absence.</p>
-      <p>Missing-Player Penalty (Kickoff Only)</p>
-      <p>Dominion rewards preparation.</p>
+      <p>Ready-to-Play Standard:</p>
       <ul>
+        <li>A player counts only if they are checked in and on the field at kickoff.</li>
+        <li>Late players may enter upon arrival but do not reverse any goals awarded due to absence.</li>
+      </ul>
+      <p>Missing-Player Penalty (Kickoff Only):</p>
+      <ul>
+          <li>Dominion rewards preparation.</li>
           <li>For each missing rostered player at kickoff, the opponent is awarded +5 goals.</li>
           <li>Substitutes and coaches do not count toward the starting player requirement.</li>
           <li>Goals awarded due to absence are recorded immediately and count toward the official match result.</li>
+          <li>No minimum amount of players.</li>
       </ul>
-      <p>No minimum amount of players</p>
       <p>Forfeit threshold:</p>
         <ul>
             <li>If a team is missing more than 3 players at kickoff, it is an automatic forfeit.</li>
@@ -216,7 +221,7 @@
         <li>Tie = 0 points</li>
         <li>Loss = 0 points</li>
         <li>Matches must be won outright to count — no shared results.</li>
-        <li>Top 4 teams qualify for playoffs.</li>
+        <li>top 2 teams of each division qualify for playoffs (both pages).</li>
         <li>Playoffs decide the Champion Team — awards at the Finale Party.</li>
       </ul>
       <div class="sec-cta">
@@ -229,10 +234,10 @@
     <section id="gameplay">
       <h2>Gameplay Flow</h2>
       <ul>
-        <li>Each successful skill move during a possession adds +1 dominion points.</li>
-        <li>A clean nutmeg dribble adds +2 Skill Multiplier.</li>
-        <li>If that possession results in a goal (including an own goal forced by attacking pressure), the total dominion points. is added to the scoring team’s goal count.</li>
-        <li>After the goal is recorded, both teams’ dominion points. reset to zero.</li>
+        <li>Each successful skill move during a possession adds +1 impact goals.</li>
+        <li>A clean nutmeg dribble adds +2 impact goals.</li>
+        <li>If that possession results in a goal (including an own goal forced by attacking pressure), the total impact goals. is added to the scoring team’s goal count.</li>
+        <li>After the goal is recorded, both teams’ impact goals. reset to zero.</li>
         <li>If a defender touches their own goal while defending, they receive a yellow card and the opponent gets an open shot from 12 steps.</li>
         <li>Slide tackles only allowed on turf</li>
       </ul>
