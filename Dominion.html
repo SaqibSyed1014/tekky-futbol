@@ -124,9 +124,12 @@
     }
     #attendance ul, 
     #advancement ul{ list-style: disc; margin-left: 1.5rem; text-align: left; }
-    #attendance p{ text-align: left; }
+    #attendance p{ text-align: center; }
     #attendance .text-center{ text-align: center; }
-    #advancement .text-left{ text-align: left; }
+    #advancement ul {
+      max-width: 250px;
+      margin: 0 auto;
+    }
   </style>
 
   <link rel="stylesheet" href="styles.css" />
@@ -228,7 +231,7 @@
       <p>Win and advance</p>
       <p>Lose and season ends</p>
       <p>No draws.</p>
-      <p class="text-left">If tied at full time:</p>
+      <p>If tied at full time:</p>
       <ul>
         <li>Full-court penalty shootout</li>
         <li>Best of 3 attempts per team</li>
