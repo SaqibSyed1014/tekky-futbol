@@ -226,6 +226,18 @@
         transform: none;
       }
     }
+
+    body{
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    body main{
+      flex: 1;
+    }
+    body main header{
+      padding-top: 0;
+    }
   </style>
 
   <link rel="stylesheet" href="styles.css" />
@@ -237,18 +249,16 @@
 <body>
     <div id="nav"></div>
 
-
-  <header>
-    <div class="hero">
-      <h1>Supporter Bundle</h1>
-      <p class="tagline">For Ballers Who Create</p>
-      <p class="subtext">Rep the movement</p>
-    </div>
-  </header>
-
-
   <main>
-  <div class="glow-divider"></div>
+    <header>
+      <div class="hero">
+        <h1>Supporter Bundle</h1>
+        <p class="tagline">For Ballers Who Create</p>
+        <p class="subtext">Rep the movement</p>
+      </div>
+    </header>
+
+    <div class="glow-divider"></div>
 
     <section id="checkout">
       <h2>Supporter Bundle</h2>

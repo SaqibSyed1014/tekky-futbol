@@ -65,14 +65,22 @@
       h1 {
         font-size: 2.5rem
       }
-
-
-
       .nav-links ul {
         align-items: start;
         flex-direction: column;
         padding: 20px 20px;
       }
+    }
+    body{
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    body main{
+      flex: 1;
+    }
+    body main header{
+      padding-top: 0;
     }
   </style>
 
@@ -86,17 +94,16 @@
     <div id="nav"></div>
 
 
-  <header>
-    <div class="hero">
-      <h1>Season Pass</h1>
-      <p class="tagline">For Ballers Who Create</p>
-      <p class="subtext">Built for the regular season grind.</p>
-    </div>
-  </header>
-
-
   <main>
-  <div class="glow-divider"></div>
+      <header>
+        <div class="hero">
+          <h1>Season Pass</h1>
+          <p class="tagline">For Ballers Who Create</p>
+          <p class="subtext">Built for the regular season grind.</p>
+        </div>
+    </header>
+
+    <div class="glow-divider"></div>
 
     <section id="checkout">
       <h2>Season Pass</h2>
