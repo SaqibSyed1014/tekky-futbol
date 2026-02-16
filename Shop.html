@@ -47,6 +47,11 @@
       margin-bottom: 0.5rem
     }
 
+    .main-heading{
+      font-size: 2.8rem;
+      margin: .5rem 0 1.5rem;
+    }
+
     section p {
       color: #d3d9e3;
       margin: 0.6rem auto;
@@ -60,8 +65,9 @@
       gap: 1.2rem;
       margin-top: 1.3rem
     }
-    .grid.has-four{
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+    .grid.two-columns{
+        display: flex;
+        justify-content: center;
     }
 
     .card {
@@ -131,18 +137,28 @@
       text-align: center
     }
 
+    .drop{
+      width: 100%;
+      max-width: 280px;
+    }
+
     @media (max-width:768px) {
       h1 {
         font-size: 2.4rem
       }
-        .grid.has-four{
-            grid-template-columns: 1fr 1fr;
+        .grid.two-columns{
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+        .drop{
+          max-width: 100%;
         }
     }
 
 
     @media (max-width:480px) {
-        .grid.has-four{
+        .grid.two-columns{
+            display: grid;
             grid-template-columns: 1fr;
         }
     }
@@ -150,10 +166,6 @@
 .flex-centered{
     display: flex;
     justify-content: center;
-}
-.drop{
-    width: 100%;
-    max-width: 280px;
 }
   </style>
 
@@ -170,59 +182,71 @@
     <div class="hero">
       <h1>THE DRIP</h1>
       <p class="tagline">For Ballers Who Create</p>
-      <p class="subtext">Season 01 Dropnal drops built for the pitch, the street, and everything in between.</p>
-<!--       <a class="cta" href="#products">Shop the Current Drop</a> -->
+      <p class="subtext">Season 01 drops built by division — limited pieces for the pitch, the street, and everything in between.</p>
     </div>
   </header>
 
   <main>
-<!--     <section id="intro"> -->
-<!--       <p>Each TekkyFutbol season brings its own limited drop. No restocks. No repeats. Just gear built for the creators -->
-<!--         who live it. Every hoodie, jersey, and accessory represents a season, a story, a moment.</p> -->
-<!--       <div class="sec-cta"> -->
-<!--         <a class="cta" href="#products">Browse the Collection</a> -->
-<!--       </div> -->
-<!--     </section> -->
+    <div class="glow-divider"></div>
+
+    <!-- Finale Products -->
+    <section id="products">
+      <h2 class="main-heading">SEASON 01 DIVISION DROPS</h1>
+      <h2>FINALE COLLECTION</h2>
+      <p class="subtext">Worn by those who reach the final stage. Championship energy only. Limited release.</p>
+      <div class="grid">
+        <div class="card">
+            <div class="img-placeholder">
+              <img src="images/logo.webp" alt="Jacket" fetchpriority="high">
+            </div>
+          <h3>FINALE HOODIE</h3>
+          <span class="muted">Season 01 Finale Drop</span>
+          <p class="price">$80</p>
+          <div class="cta old">Notify Me at Drop</div>
+        </div>
+        <div class="card">
+            <div class="img-placeholder">
+              <img src="images/logo.webp" alt="Pants" fetchpriority="high">
+            </div>
+          <h3>FINALE TROUSER</h3>
+          <span class="muted">Season 01 Finale Drop</span>
+          <p class="price">$60</p>
+          <div class="cta old">Notify Me at Drop</div>
+        </div>
+        <div class="card">
+            <div class="img-placeholder">
+              <img src="images/logo.webp" alt="Jacket" fetchpriority="high">
+            </div>
+          <h3>FINALE SHORT</h3>
+          <span class="muted">Season 01 Finale Drop</span>
+          <p class="price">$60</p>
+          <div class="cta old">Notify Me at Drop</div>
+        </div>
+        <div class="card">
+            <div class="img-placeholder">
+              <img src="images/logo.webp" alt="Pants" fetchpriority="high">
+            </div>
+          <h3>FINALE JERSEY</h3>
+          <span class="muted">Season 01 Finale Drop</span>
+          <p class="price">$90</p>
+          <div class="cta old">Notify Me at Drop</div>
+        </div>
+      </div>
+    </section>
 
     <div class="glow-divider"></div>
 
+    <!-- North Products -->
     <section id="products">
-      <h2>Season Drop</h2>
+      <h2>NORTH DIVISION COLLECTION</h2>
+      <p class="subtext">Control. Precision. Composure. Built for structured football under the lights.</p>
       <div class="grid">
-<!--         <div class="card"> -->
-<!--           <img src="images/Jersey.webp" alt="Jersey" fetchpriority="high"> -->
-<!--           <h3>Tekky North Jersey</h3> -->
-<!--           <span class="muted">Drop 01 / Spring</span> -->
-<!--           <p class="price">$65</p> -->
-<!--           <div class="cta">Notify Me at Drop</div> -->
-<!--         </div> -->
-<!--         <div class="card"> -->
-<!--           <img src="images/Jacket.webp" alt="Jacket" fetchpriority="high"> -->
-<!--           <h3>South Division Jacket</h3> -->
-<!--           <span class="muted">Season 01 Drop</span> -->
-<!--           <p class="price">$80</p> -->
-<!--           <div class="cta">Notify Me at Drop</div> -->
-<!--         </div> -->
-<!--         <div class="card"> -->
-<!--           <img src="images/Pants.webp" alt="Pants" fetchpriority="high"> -->
-<!--           <h3>Creator Pants</h3> -->
-<!--           <span class="muted">Limited Edition</span> -->
-<!--           <p class="price">$60</p> -->
-<!--           <div class="cta">Notify Me at Drop</div> -->
-<!--         </div> -->
-<!--         <div class="card"> -->
-<!--           <img src="images/Shorts.webp" alt="Shorts" fetchpriority="high"> -->
-<!--           <h3>Glow Shorts</h3> -->
-<!--           <span class="muted">Season Exclusive</span> -->
-<!--           <p class="price">$45</p> -->
-<!--           <div class="cta">Notify Me at Drop</div> -->
-<!--         </div> -->
         <div class="card">
             <div class="img-placeholder">
               <img src="images/logo.webp" alt="Jacket" fetchpriority="high">
             </div>
           <h3>North Division Hoodie</h3>
-          <span class="muted">Season 01 Drop</span>
+          <span class="muted">Season 01 North Drop</span>
           <p class="price">$80</p>
           <div class="cta old">Notify Me at Drop</div>
         </div>
@@ -231,7 +255,7 @@
               <img src="images/logo.webp" alt="Pants" fetchpriority="high">
             </div>
           <h3>North Division Trouser</h3>
-          <span class="muted">Season 01 Drop</span>
+          <span class="muted">Season 01 North Drop</span>
           <p class="price">$60</p>
           <div class="cta old">Notify Me at Drop</div>
         </div>
@@ -239,56 +263,91 @@
             <div class="img-placeholder">
               <img src="images/logo.webp" alt="Jacket" fetchpriority="high">
             </div>
-          <h3>South Division Hoodie</h3>
-          <span class="muted">Season 01 Drop</span>
-          <p class="price">$80</p>
+          <h3>North Division Short</h3>
+          <span class="muted">Season 01 North Drop</span>
+          <p class="price">$60</p>
           <div class="cta old">Notify Me at Drop</div>
         </div>
         <div class="card">
             <div class="img-placeholder">
               <img src="images/logo.webp" alt="Pants" fetchpriority="high">
             </div>
-          <h3>South Division Trouser</h3>
-          <span class="muted">Season 01 Drop</span>
-          <p class="price">$60</p>
-          <div class="cta old">Notify Me at Drop</div>
-        </div>
-        <div class="card">
-            <div class="img-placeholder">
-              <img src="images/logo.webp" alt="Hoodie" fetchpriority="high">
-            </div>
-          <h3>Finale Hoodie</h3>
-          <span class="muted">Season 01 Drop</span>
-          <p class="price">$80</p>
-          <div class="cta old">Notify Me at Drop</div>
-        </div>
-        <div class="card">
-            <div class="img-placeholder">
-              <img src="images/logo.webp" alt="Pants" fetchpriority="high">
-            </div>
-          <h3>Finale Trouser</h3>
-          <span class="muted">Season 01 Drop</span>
-          <p class="price">$60</p>
+          <h3>North Division Jersey</h3>
+          <span class="muted">Season 01 North Drop</span>
+          <p class="price">$90</p>
           <div class="cta old">Notify Me at Drop</div>
         </div>
       </div>
-<!--       <div class="sec-cta"> -->
-<!--         <a class="cta" href="registration.html">Register to Play in Tekky Gear</a> -->
-<!--       </div> -->
+    </section>
+
+    <div class="glow-divider"></div>
+
+    <!-- South Products -->
+    <section id="products">
+      <h2>SOUTH DIVISION COLLECTION</h2>
+      <p class="subtext">Intensity. Rhythm. Expression. Built for players who create under pressure.</p>
+      <div class="grid">
+        <div class="card">
+            <div class="img-placeholder">
+              <img src="images/logo.webp" alt="Jacket" fetchpriority="high">
+            </div>
+          <h3>SOUTH Division Hoodie</h3>
+          <span class="muted">Season 01 South Drop</span>
+          <p class="price">$80</p>
+          <div class="cta old">Notify Me at Drop</div>
+        </div>
+        <div class="card">
+            <div class="img-placeholder">
+              <img src="images/logo.webp" alt="Pants" fetchpriority="high">
+            </div>
+          <h3>SOUTH Division Trouser</h3>
+          <span class="muted">Season 01 South Drop</span>
+          <p class="price">$60</p>
+          <div class="cta old">Notify Me at Drop</div>
+        </div>
+        <div class="card">
+            <div class="img-placeholder">
+              <img src="images/logo.webp" alt="Jacket" fetchpriority="high">
+            </div>
+          <h3>SOUTH Division Short</h3>
+          <span class="muted">Season 01 South Drop</span>
+          <p class="price">$60</p>
+          <div class="cta old">Notify Me at Drop</div>
+        </div>
+        <div class="card">
+            <div class="img-placeholder">
+              <img src="images/logo.webp" alt="Pants" fetchpriority="high">
+            </div>
+          <h3>SOUTH Division Jersey</h3>
+          <span class="muted">Season 01 South Drop</span>
+          <p class="price">$90</p>
+          <div class="cta old">Notify Me at Drop</div>
+        </div>
+      </div>
     </section>
 
 
     <div class="glow-divider"></div>
 
     <section>
-      <h2>Signature Drops</h2>
-        <div class="flex-centered">
+      <h2 class="main-heading">Signature Drops</h2>
+      <h2>SIGNATURE COLLECTION</h2>
+      <p>Designed once. Released once. No restocks.</p>
+        <div class="grid two-columns">
             <div class="card drop">
                 <div class="img-placeholder">
                   <img src="images/logo.webp" alt="Pants" fetchpriority="high">
                 </div>
-<!--               <img src="images/logo.webp" alt="Pants" fetchpriority="high"> -->
               <h3>North Division Button-Up Jersey</h3>
+              <span class="muted">Designed once. Released once.</span>
+              <p class="price">$90</p>
+              <div class="cta new">UNLOCK EARLY ACCESS</div>
+            </div>
+            <div class="card drop">
+                <div class="img-placeholder">
+                  <img src="images/logo.webp" alt="Pants" fetchpriority="high">
+                </div>
+              <h3>South Division Button-Up Jersey</h3>
               <span class="muted">Designed once. Released once.</span>
               <p class="price">$90</p>
               <div class="cta new">UNLOCK EARLY ACCESS</div>
