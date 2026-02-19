@@ -269,7 +269,7 @@
 
   <div id="footer"></div>
 
-<!--  Inactive form -->
+  <!--  Inactive form -->
   <div id="comingSoonRSVPPopup" class="coming-soon-overlay">
       <div class="overlay-content">
         <h3>Finale Night. Don't Miss It.</h3>
@@ -297,14 +297,18 @@
         <div class="overlay-content">
           <h3>Become a Sponsor</h3>
           <p class="subtext">Partner with the Season Finale and the culture behind TekkyFutbol.</p>
-          <form id="becomeSponsorForm">
-              <input type="text" id="firstName" name="firstName" placeholder="Enter your name" required>
+
+          <form onsubmit="handleFormSubmit(event, 'becomeSponsorSuccessPopup', 'becomeASponsorPopup')" id="becomeSponsorForm">
+              <input type="hidden" name="access_key" value="67277c57-96c8-4511-83fd-2290f6958d5c">
+              <input type="checkbox" name="botcheck" id="" style="display: none;">
+
+              <input type="text" id="name" name="name" placeholder="Enter your name" required>
               <input type="text" id="brandName" name="brandName" placeholder="Enter your company/brand name" required>
               <input type="email" id="email" name="email" placeholder="Enter your email" required>
               <input type="tel" id="phone" name="phone" placeholder="Enter your phone">
               <input type="text" id="website" name="website" placeholder="Enter your website/instagram" required>
               <select id="sponsorshipInterest" name="sponsorshipInterest" required>
-                <option value="">Select sponsorship interest</option>
+                <option value="" selected disabled hidden>Select sponsorship interest</option>
                 <option>Event Sponsorship (Season Finale)</option>
                 <option>League Sponsorship (Season / Division)</option>
                 <option>Content Partnership</option>
@@ -312,7 +316,7 @@
                 <option>Not Sure (Open to Ideas)</option>
               </select>
               <select id="budgetRange" name="budgetRange">
-                  <option value="">Select budget range</option>
+                  <option value="" selected disabled hidden>Select budget range</option>
                   <option>Under $1,000</option>
                   <option>$1,000 – $2,500</option>
                   <option>$2,500 – $5,000</option>
@@ -320,7 +324,7 @@
                   <option>Prefer to discuss</option>
                 </select>
 
-              <button type="button" class="cta close-overlay become-sponsor-success">
+              <button type="submit" class="cta close-overlay">
                   Submit Sponsorship Inquiry
               </button>
               <p class="disclaimer">All sponsorships are curated to align with TekkyFutbol’s culture and audience.</p>
@@ -362,11 +366,14 @@
         <div class="overlay-content">
           <h3>Request Access</h3>
           <p class="subtext">This is a curated event. Submit your request to be considered.</p>
-          <form id="requestAccessForm">
+          <form onsubmit="handleFormSubmit(event, 'requestAccessSuccessPopup', 'requestAccessPopup')" id="requestAccessForm">
+              <input type="hidden" name="access_key" value="84ddba4f-238b-4591-ad22-a1951b9e7739">
+              <input type="checkbox" name="botcheck" id="" style="display: none;">
+
               <input type="text" id="name" name="name" placeholder="Enter your name" required>
               <input type="email" id="email" name="email" placeholder="Enter your email" required>
               <select id="reasonForRequest" name="reasonForRequest" required>
-                  <option value="">Select your reason for request</option>
+                  <option value="" selected disabled hidden>Select your reason for request</option>
                   <option>Player</option>
                   <option>Creator/Media</option>
                   <option>Brand/partner</option>
@@ -375,7 +382,7 @@
               </select>
               <input type="text" id="website" name="website" placeholder="Enter your website/instagram" required>
 
-              <button type="button" class="cta close-overlay request-access-success">
+              <button type="submit" class="cta close-overlay">
                   Request Access
               </button>
               <p class="disclaimer">Submitting a request does not guarantee access. Approved guests will receive follow-up details.</p>
@@ -417,16 +424,20 @@
         <div class="overlay-content">
           <h3>Partner With the Finale</h3>
           <p class="subtext">The championship moment of TekkyFutbol. Limited brand placements for the most visible night of the season.</p>
-    <div class="glow-divider"></div>
+          <div class="glow-divider"></div>
           <p class="subtext">The TekkyFutbol Finale is more than a match — it’s a cultural moment combining competition, celebration, and media coverage.</p>
           <p class="subtext">Finale partners receive premium visibility across the championship match, finale party, and official league content.</p>
-          <form id="becomeSponsorForm">
-              <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+
+          <form onsubmit="handleFormSubmit(event, 'partnerWithFinaleSuccessPopup', 'partnerWithFinalePopup')" id="becomeSponsorForm">
+              <input type="hidden" name="access_key" value="52994049-196c-4c88-8f8c-e50232fc6559">
+              <input type="checkbox" name="botcheck" id="" style="display: none;">
+
+              <input type="text" id="name" name="name" placeholder="Enter your name" required>
               <input type="text" id="brandName" name="brandName" placeholder="Enter your company/brand name" required>
               <input type="email" id="email" name="email" placeholder="Enter your email" required>
               <input type="text" id="website" name="website" placeholder="Enter your website/instagram" required>
               <select id="typeOfBrand" name="typeOfBrand">
-                  <option value="">Select type of brand</option>
+                  <option value="" selected disabled hidden>Select type of brand</option>
                   <option value="apparel">Apparel / Fashion</option>
                   <option value="food-beverage">Food & Beverage</option>
                   <option value="fitness-wellness">Fitness / Wellness</option>
@@ -454,7 +465,7 @@
 
             <textarea id="message" name="message" placeholder="Tell us briefly how you’d like to be involved." rows="4"></textarea>
 
-              <button type="button" class="cta close-overlay partner-finale-success">
+              <button type="submit" class="cta close-overlay">
                   Request Finale Partnership
               </button>
           </form>
@@ -518,11 +529,8 @@
 
             // Triggers
             const becomeASponsorPopupTrigger = document.querySelectorAll('.become-sponsor-popup-trigger');
-            const becomeSponsorSuccessPopupTrigger = document.querySelector('.become-sponsor-success');
             const requestAccessPopupTrigger = document.querySelectorAll('.request-access-popup-trigger');
-            const requestAccessSuccessPopupTrigger = document.querySelector('.request-access-success');
             const partnerWithFinalePopupTrigger = document.querySelectorAll('.partner-finale-popup-trigger');
-            const partnerWithFinaleSuccessPopupTrigger = document.querySelector('.partner-finale-success');
 
             const closeSuccessTrigger = document.querySelectorAll('.close-success-popup');
 
@@ -532,29 +540,17 @@
                     openPopup(becomeASponsorPopup);
                 })
             });
-            becomeSponsorSuccessPopupTrigger?.addEventListener('click', () => {
-                closePopup(becomeASponsorPopup);
-                openPopup(becomeSponsorSuccessPopup);
-            });
 
             requestAccessPopupTrigger?.forEach(icon => {
                 icon.addEventListener('click', () => {
                     openPopup(requestAccessPopup);
                 })
             });
-            requestAccessSuccessPopupTrigger?.addEventListener('click', () => {
-                closePopup(requestAccessPopup);
-                openPopup(requestAccessSuccessPopup);
-            });
 
             partnerWithFinalePopupTrigger?.forEach(icon => {
                 icon.addEventListener('click', () => {
                     openPopup(partnerWithFinalePopup);
                 })
-            });
-            partnerWithFinaleSuccessPopupTrigger?.addEventListener('click', () => {
-                closePopup(partnerWithFinalePopup);
-                openPopup(partnerWithFinaleSuccessPopup);
             });
 
 

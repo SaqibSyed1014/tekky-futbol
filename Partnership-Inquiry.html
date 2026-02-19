@@ -100,7 +100,11 @@
   <main class="hero form">
    <section id="form">
       <h2>Partnership Inquiry</h2>
+
       <form id="partnershipInquiryForm">
+        <input type="hidden" name="access_key" value="36a9ceb5-dbb8-47b1-a857-ef2629facffa">
+        <input type="checkbox" name="botcheck" id="" style="display: none;">
+
         <label for="name">Name</label>
         <input type="text" id="name" name="name" placeholder="Enter your name" required>
         <label for="brandName">Company/Brand Name</label>
@@ -111,7 +115,7 @@
         <input type="text" id="website" name="website" placeholder="Enter your website link" required>
         <label for="interest">What best describes your interest?</label>
         <select id="interest" name="interest">
-            <option value="">Select budget range</option>
+            <option value="" selected disabled hidden>Select budget range</option>
             <option>Brand / Product Collaboration</option>
             <option>Event or Venue Partnership</option>
             <option>Sponsorship Opportunity</option>
@@ -141,7 +145,7 @@
         </div>
         <label for="budgetRange">Do you have an estimated partnership budget?</label>
         <select id="budgetRange" name="budgetRange">
-          <option value="">Select budget range</option>
+          <option value="" selected disabled hidden>Select budget range</option>
           <option>Exploring / not defined yet</option>
           <option>Under $2,500</option>
           <option>$2,500 – $7,500</option>
@@ -152,14 +156,14 @@
         <textarea id="message" name="message" placeholder="tell us why you’d like to partner with TekkyFutbol" rows="4"></textarea>
         <label for="timeline">Timeline</label>
         <select id="timeline" name="timeline">
-          <option value="">Select timeline</option>
+          <option value="" selected disabled hidden>Select timeline</option>
           <option>Immediate / upcoming season</option>
           <option>Next 3 months</option>
           <option>Later this year</option>
           <option>Just exploring</option>
         </select>
 
-        <button type="button" class="cta partnership-inquiry-success">Send Partnership Inquiry</button>
+        <button type="submit" class="cta partnership-inquiry-success">Send Partnership Inquiry</button>
       </form>
 <!--       <div id="formConfirmation" class="confirmation"> -->
 <!--           ✅ Thanks for reaching out -->
@@ -193,23 +197,47 @@
           </div>
       </div>
 
-    <script>
-         // Triggers
-         const partnershipInquirySuccessPopupTrigger = document.querySelector('.partnership-inquiry-success');
-         const closeSuccessTrigger = document.querySelector('.close-success-popup');
+   <script>
+           const partnershipForm = document.getElementById('partnershipInquiryForm');
+           const successPopup = document.getElementById('partnershipInquirySuccessPopup');
+           const closeSuccessTrigger = document.querySelector('.close-success-popup');
 
-        // Popup
-         const partnershipInquirySuccessPopup = document.getElementById('partnershipInquirySuccessPopup');
+           partnershipForm.addEventListener('submit', e => {
+               e.preventDefault();
 
-         partnershipInquirySuccessPopupTrigger?.addEventListener('click', () => {
-                partnershipInquirySuccessPopup.style.display = 'flex';
-         });
+               const form = event.target;
 
-         closeSuccessTrigger?.addEventListener('click', () => {
-             partnershipInquirySuccessPopup.style.display = 'none';
-        });
+               const formData = new FormData(form);
+               const object = Object.fromEntries(formData);
+               const json = JSON.stringify(object);
+               console.log('form data', object);
 
-    </script>
+               fetch('https://api.web3forms.com/submit', {
+                   method: 'POST',
+                   headers: {
+                       'Content-Type': 'application/json',
+                       'Accept': 'application/json'
+                   },
+                   body: json
+               }).then(async (response) => {
+                   let res = await response.json();
+                   console.log('response', response);
+                   if (response.status == 200) {
+                       partnershipForm.reset();
+                       successPopup.style.display = 'flex';
+                   } else {
+                       console.log('error');
+                   }
+               }).catch(error => {
+                   console.error("Form Error:", error);
+               })
+           });
+
+           closeSuccessTrigger?.addEventListener('click', () => {
+                successPopup.style.display = 'none';
+           });
+   </script>
+
 </body>
 
 
