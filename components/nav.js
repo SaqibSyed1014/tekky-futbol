@@ -4,7 +4,7 @@
         script.src = './scripts/web3form.js';
         script.async = true;
         document.body.appendChild(script);
-        
+
         script.onload = () => {
             console.log("Web3Forms logic loaded successfully via Nav.");
         };
@@ -203,7 +203,7 @@ navElement.innerHTML = `
           <h3>The Hall of Fame Is Coming</h3>
           <p>Celebrate the players, moments, and legacy that define TekkyFutbol. Be the first to know when the Hall of Fame officially opens</p>
           <form onsubmit="handleFormSubmit(event, 'successHallOfFamePopup', 'hallOfFamePopup')" id="futureUpdatesForm">
-                <input type="hidden" name="access_key" value="145c976f-f212-414e-b245-d1d502b64da9">
+                <input type="hidden" name="access_key" value="6d159077-4c0b-4cb2-bef6-5a866c7a7ab6">
                 <input type="checkbox" name="botcheck" id="" style="display: none;">
 
                 <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -246,7 +246,7 @@ navElement.innerHTML = `
           <h3>Teams Are Forming</h3>
           <p>Registered teams will be revealed before the season begins. Join the list to be notified when lineups, names, and rivalries go live.</p>
           <form onsubmit="handleFormSubmit(event, 'successTeamsPopup', 'teamsPopup')" id="futureUpdatesForm">
-               <input type="hidden" name="access_key" value="145c976f-f212-414e-b245-d1d502b64da9">
+               <input type="hidden" name="access_key" value="25215844-510d-4166-92e9-23a82d7e947f">
                <input type="checkbox" name="botcheck" id="" style="display: none;">
 
                 <input type="text" id="name" name="name" placeholder="Enter your name" required>
