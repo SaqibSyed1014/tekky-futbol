@@ -638,3 +638,9 @@ input[type="radio"]{
     height: 13px;
   }
 }
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  pointer-events: none;
+}
