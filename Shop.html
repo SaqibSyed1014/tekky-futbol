@@ -524,7 +524,7 @@
       // Triggers
       const comingSoonTrigger = document.getElementById('comingSoonUpdates');
       const earlyAccessTriggers = document.querySelectorAll('.card .cta.old');
-      const earlyNewAccessTrigger = document.querySelector('.card .cta.new');
+      const earlyNewAccessTrigger = document.querySelectorAll('.card .cta.new');
       const openNewSuccessTrigger = document.querySelector('.open-new-success-popup');
       const closeNewSuccessTrigger = document.querySelector('.close-new-success-popup');
 
@@ -546,8 +546,10 @@
       });
 
       // New Early Access (single button)
-        earlyNewAccessTrigger?.addEventListener('click', () => {
-          openPopup(newEarlyAccessPopup);
+        earlyNewAccessTrigger?.forEach(btn => {
+            btn.addEventListener('click', () => {
+              openPopup(newEarlyAccessPopup);
+            });
         });
 
       /* ---------- CLOSE POPUPS ---------- */
