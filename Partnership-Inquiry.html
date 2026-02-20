@@ -206,6 +206,14 @@
                e.preventDefault();
 
                const form = event.target;
+               const submitBtn = form.querySelector('button[type="submit"]');
+               const originalBtnHTML = submitBtn.innerHTML;
+
+               submitBtn.disabled = true;
+               submitBtn.innerHTML = `
+                   <span class="spinner"></span>
+                   Submitting
+               `;
 
                const formData = new FormData(form);
                const object = Object.fromEntries(formData);
@@ -230,7 +238,10 @@
                    }
                }).catch(error => {
                    console.error("Form Error:", error);
-               })
+               }).finally(() => {
+                   submitBtn.disabled = false;
+                   submitBtn.innerHTML = originalBtnHTML;
+               });
            });
 
            closeSuccessTrigger?.addEventListener('click', () => {
