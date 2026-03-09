@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TekkyFutbol — Registration</title>
+  <title>Season Application — TekkyFutbol</title>
   <link rel="icon" type="image/png" href="images/favicons/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="images/favicons/favicon.svg" />
   <link rel="shortcut icon" href="images/favicons/favicon.ico" />
@@ -166,22 +166,25 @@
     <section id="mensRegistration">
       <h2
         style="font-family:'Bebas Neue',sans-serif;color:var(--tekky-blue);font-size:1.8rem;margin-bottom:1.2rem;">
-        Coach / Team Registration</h2>
+        Player / Captain Info</h2>
       <form id="teamForm">
-        <label for="teamName">Team Name</label>
-        <input type="text" id="teamName" name="teamName" placeholder="Enter your team name" required>
-        <label for="coachName">Coach Name</label>
-        <input type="text" id="coachName" name="coachName" placeholder="Coach full name" required>
-        <label for="email">Coach Email</label>
-        <input type="email" id="email" name="email" placeholder="coach@email.com" required>
-        <label for="rosterSize">Roster Size</label>
-        <input type="number" id="rosterSize" name="rosterSize" placeholder="Number of players" min="1" max="20"
-          required>
-        <label for="season">Season</label>
-        <select id="season" name="season" value="" required>
-          <option value="" selected disabled hidden>Select Season</option>
-          <option value="">Attrition</option>
-          <option value="">Dominion</option>
+        <label for="teamName">Full Name</label>
+        <input type="text" id="teamName" name="teamName" placeholder="Enter your full name" required>
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+        <label for="phone">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender" value="" required>
+          <option value="" selected disabled hidden>Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <label for="division">Preferred Division</label>
+        <select id="division" name="division" value="" required>
+          <option value="" selected disabled hidden>Select your preferred division</option>
+          <option value="north">North</option>
+          <option value="south">South</option>
         </select>
 
         <p class="note">💡 Every player registers and pays separately. Custom sizing (different jersey and shorts sizes)
