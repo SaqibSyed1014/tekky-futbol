@@ -60,6 +60,24 @@
       animation: fadeIn 0.6s ease forwards;
     }
 
+    textarea:focus {
+      outline: none;
+      border-color: var(--tekky-blue);
+      box-shadow: 0 0 8px var(--tekky-blue)
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px
+    }
+
+    .step h2{
+      font-family:'Bebas Neue',sans-serif;
+      color:var(--tekky-blue);
+      font-size:1.8rem;
+      margin-bottom:1.2rem;
+    }
+
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -164,82 +182,194 @@
     </div>
 
     <section id="mensRegistration">
-      <h2
-        style="font-family:'Bebas Neue',sans-serif;color:var(--tekky-blue);font-size:1.8rem;margin-bottom:1.2rem;">
-        Player / Captain Info</h2>
-      <form id="teamForm">
-        <label for="teamName">Full Name</label>
-        <input type="text" id="teamName" name="teamName" placeholder="Enter your full name" required>
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-        <label for="phone">Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-        <label for="gender">Gender</label>
-        <select id="gender" name="gender" value="" required>
-          <option value="" selected disabled hidden>Select Gender</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select>
-        <label for="division">Preferred Division</label>
-        <select id="division" name="division" value="" required>
-          <option value="" selected disabled hidden>Select your preferred division</option>
-          <option value="north">North</option>
-          <option value="south">South</option>
-        </select>
+<!--      <h2-->
+<!--        style="font-family:'Bebas Neue',sans-serif;color:var(&#45;&#45;tekky-blue);font-size:1.8rem;margin-bottom:1.2rem;">-->
+<!--        Player / Captain Info</h2>-->
+<!--      <form id="teamForm">-->
+<!--        <label for="teamName">Full Name</label>-->
+<!--        <input type="text" id="teamName" name="teamName" placeholder="Enter your full name" required>-->
+<!--        <label for="phone">Phone Number</label>-->
+<!--        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>-->
+<!--        <label for="phone">Email</label>-->
+<!--        <input type="email" id="email" name="email" placeholder="Enter your email" required>-->
+<!--        <label for="gender">Gender</label>-->
+<!--        <select id="gender" name="gender" value="" required>-->
+<!--          <option value="" selected disabled hidden>Select Gender</option>-->
+<!--          <option value="male">Male</option>-->
+<!--          <option value="female">Female</option>-->
+<!--        </select>-->
+<!--        <label for="division">Preferred Division</label>-->
+<!--        <select id="division" name="division" value="" required>-->
+<!--          <option value="" selected disabled hidden>Select your preferred division</option>-->
+<!--          <option value="north">North</option>-->
+<!--          <option value="south">South</option>-->
+<!--        </select>-->
 
-        <p class="note">💡 Every player registers and pays separately. Custom sizing (different jersey and shorts sizes)
-          may incur an extra charge.</p>
-        <button type="button" class="cta coming-soon-registration">Register Team</button>
+<!--        <p class="note">💡 Every player registers and pays separately. Custom sizing (different jersey and shorts sizes)-->
+<!--          may incur an extra charge.</p>-->
+<!--        <button type="button" class="cta coming-soon-registration">Register Team</button>-->
+<!--      </form>-->
+
+      <form id="registrationForm">
+
+        <!-- STEP 1 -->
+        <div class="step" data-step="1">
+          <h2>Player / Captain Info</h2>
+
+          <label>Full Name</label>
+          <input type="text" name="fullName" required>
+
+          <label>Phone Number</label>
+          <input type="tel" name="phone" required>
+
+          <label>Email</label>
+          <input type="email" name="email" required>
+
+          <label>Gender</label>
+          <select name="gender" required>
+            <option value="">Select</option>
+            <option value="Men">Men</option>
+            <option value="Women">Women</option>
+          </select>
+
+          <label>Preferred Division</label>
+          <select name="division" required>
+            <option value="">Select</option>
+            <option value="North">North</option>
+            <option value="South">South</option>
+          </select>
+
+          <label>Instagram (optional)</label>
+          <input type="text" name="instagram">
+
+          <button type="button" class="cta" onclick="nextStep()">Next</button>
+        </div>
+
+
+        <!-- STEP 2 -->
+        <div class="step" data-step="2" hidden>
+          <h2>Registration Type</h2>
+
+          <label>
+            <input type="radio" name="registrationType" value="Free Agent" required>
+            Free Agent
+          </label>
+
+          <label>
+            <input type="radio" name="registrationType" value="Full Team">
+            Full Team Registration
+          </label>
+
+          <div id="teamFields" hidden>
+
+            <label>Team Name</label>
+            <input type="text" name="teamName">
+
+            <label>Estimated Roster Size</label>
+            <input type="number" name="rosterSize">
+
+            <label>Logo Upload</label>
+            <input type="file" name="logo">
+
+            <small>
+              By submitting a logo, you confirm you own the rights or have authorization to use it.
+              TekkyFutbol reserves the right to reject or modify any branding that infringes on intellectual property.
+            </small>
+
+          </div>
+
+          <button type="button" class="cta" onclick="prevStep()">Back</button>
+          <button type="button" class="cta" onclick="nextStep()">Next</button>
+        </div>
+
+
+        <!-- STEP 3 -->
+        <div class="step" data-step="3" hidden>
+          <h2>Competitive Intent</h2>
+
+          <label>Why do you want to compete in TekkyFutbol?</label>
+          <textarea name="intent" required></textarea>
+
+          <button type="button" class="cta" onclick="prevStep()">Back</button>
+          <button type="button" class="cta" onclick="nextStep()">Next</button>
+        </div>
+
+
+        <!-- STEP 4 -->
+        <div class="step" data-step="4" hidden>
+          <h2>Mandatory Confirmation</h2>
+
+          <label>
+            <input type="checkbox" name="confirm1" required>
+            I confirm that my team name and logo are original or authorized for use.
+          </label>
+
+          <label>
+            <input type="checkbox" name="confirm2" required>
+            I understand that application does not guarantee acceptance.
+          </label>
+
+          <label>
+            <input type="checkbox" name="confirm3" required>
+            I agree to follow league rules and code of conduct if approved.
+          </label>
+
+          <button type="button" class="cta" onclick="prevStep()">Back</button>
+          <button type="submit" class="cta">Submit Application</button>
+        </div>
+
       </form>
+
+
       <div id="teamConfirm" class="confirmation">✅ Your team has been registered successfully!</div>
     </section>
 
     <div class="glow-divider"></div>
 
-    <section>
-      <h2
-        style="font-family:'Bebas Neue',sans-serif;color:var(--tekky-blue);font-size:1.8rem;margin-bottom:1.2rem;">
-        Player Registration</h2>
-      <form id="playerForm">
-        <label for="playerName">Player Name</label>
-        <input type="text" id="playerName" name="playerName" placeholder="Your full name" required>
-        <label for="playerEmail">Email</label>
-        <input type="email" id="playerEmail" name="playerEmail" placeholder="player@email.com" required>
-        <!-- <label for="teamSelect">Team Name</label>
-        <input type="text" id="teamSelect" name="teamSelect" placeholder="Your approved team" required> -->
-        <label for="season">Season</label>
-        <select id="season" name="season" value="" required>
-          <option value="" selected disabled hidden>Select Season</option>
-          <option value="">Attrition</option>
-          <option value="">Dominion</option>
-        </select>
-        <div class="form-group">
-          <p class="label-heading">Registration Type?</p>
-          <div class="checkbox-group">
-            <label>
-              <input type="radio" name="interest" value="free"> Free Agent
-            </label>
-            <label>
-              <input type="radio" name="interest" value="team"> Team
-            </label>
-          </div>
-        </div>
-        <div id="teamField">
-          <label for="shortsSize">Team</label>
-          <select id="shortsSize" name="shortsSize" required>
-            <option value="">Select Team</option>
-          </select>
-        </div>
+<!--    <section>-->
+<!--      <h2-->
+<!--        style="font-family:'Bebas Neue',sans-serif;color:var(&#45;&#45;tekky-blue);font-size:1.8rem;margin-bottom:1.2rem;">-->
+<!--        Player Registration</h2>-->
+<!--      <form id="playerForm">-->
+<!--        <label for="playerName">Player Name</label>-->
+<!--        <input type="text" id="playerName" name="playerName" placeholder="Your full name" required>-->
+<!--        <label for="playerEmail">Email</label>-->
+<!--        <input type="email" id="playerEmail" name="playerEmail" placeholder="player@email.com" required>-->
+<!--        &lt;!&ndash; <label for="teamSelect">Team Name</label>-->
+<!--        <input type="text" id="teamSelect" name="teamSelect" placeholder="Your approved team" required> &ndash;&gt;-->
+<!--        <label for="season">Season</label>-->
+<!--        <select id="season" name="season" value="" required>-->
+<!--          <option value="" selected disabled hidden>Select Season</option>-->
+<!--          <option value="">Attrition</option>-->
+<!--          <option value="">Dominion</option>-->
+<!--        </select>-->
+<!--        <div class="form-group">-->
+<!--          <p class="label-heading">Registration Type?</p>-->
+<!--          <div class="checkbox-group">-->
+<!--            <label>-->
+<!--              <input type="radio" name="interest" value="free"> Free Agent-->
+<!--            </label>-->
+<!--            <label>-->
+<!--              <input type="radio" name="interest" value="team"> Team-->
+<!--            </label>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div id="teamField">-->
+<!--          <label for="shortsSize">Team</label>-->
+<!--          <select id="shortsSize" name="shortsSize" required>-->
+<!--            <option value="">Select Team</option>-->
+<!--          </select>-->
+<!--        </div>-->
 
 
-        <p class="note">💡 Every player registers and pays separately. Custom sizing (different jersey and shorts sizes)
-          may incur an extra charge.</p>
-        <button type="button" class="cta coming-soon-registration">Register Player</button>
-      </form>
-      <div id="playerConfirm" class="confirmation">✅ Player registration received successfully!</div>
-    </section>
+<!--        <p class="note">💡 Every player registers and pays separately. Custom sizing (different jersey and shorts sizes)-->
+<!--          may incur an extra charge.</p>-->
+<!--        <button type="button" class="cta coming-soon-registration">Register Player</button>-->
+<!--      </form>-->
+<!--      <div id="playerConfirm" class="confirmation">✅ Player registration received successfully!</div>-->
+<!--    </section>-->
 
-    <div class="glow-divider"></div>
+<!--    <div class="glow-divider"></div>-->
 
     <div class="sec-cta" style="margin-top:2rem;">
 <!--       <a class="cta" href="Request-access.html">Request Access</a> -->
@@ -389,6 +519,64 @@
       }, 400);
     });
 
+  </script>
+
+
+  <script>
+    let currentStep = 1
+    const steps = document.querySelectorAll(".step")
+
+    function showStep(step) {
+      steps.forEach(s => {
+        s.hidden = s.dataset.step != step
+      })
+    }
+
+    function nextStep() {
+      const current = document.querySelector(`.step[data-step="${currentStep}"]`)
+      const inputs = current.querySelectorAll("input, select, textarea")
+
+      for (let input of inputs) {
+        if (!input.checkValidity()) {
+          input.reportValidity()
+          return
+        }
+      }
+
+      currentStep++
+      showStep(currentStep)
+    }
+
+    function prevStep() {
+      currentStep--
+      showStep(currentStep)
+    }
+
+
+    /* Toggle team fields */
+    document.querySelectorAll('input[name="registrationType"]').forEach(radio => {
+      radio.addEventListener("change", () => {
+        const teamFields = document.getElementById("teamFields")
+        teamFields.hidden = radio.value !== "Full Team"
+      })
+    })
+
+
+    /* Form submission */
+    document.getElementById("registrationForm").addEventListener("submit", function(e) {
+
+      e.preventDefault()
+
+      const formData = new FormData(this)
+
+      const data = Object.fromEntries(formData.entries())
+
+      console.log("Form Data:", data)
+
+      /* Send email here using backend or service */
+
+      alert("Application submitted successfully")
+    })
   </script>
 </body>
 

@@ -321,7 +321,7 @@ navElement.innerHTML = `
                 <input type="text" id="name" name="name" placeholder="Enter your name" required>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 <div style="display: flex; flex-direction: column; align-items: center; gap: 14px;">
-                    <button type="submit" class="cta close-overlay" style="width: fit-content;">Get Partner Updates</button>
+                    <button type="submit" class="cta close-overlay" style="width: fit-content; margin-top: 1rem;">Get Partner Updates</button>
                     <small>No spam. Only major partner announcements.</small>
                 </div>
           </form>
