@@ -645,3 +645,7 @@ button:disabled {
   cursor: not-allowed;
   pointer-events: none;
 }
+
+.tabs{
+  margin-bottom: 2rem;
+}
