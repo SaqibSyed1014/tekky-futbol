@@ -327,10 +327,20 @@
           <button type="submit" class="cta">Submit Application</button>
         </div>
 
+        <!-- STEP 5 -->
+        <div class="step" data-step="5" hidden>
+          <h2>TekkyFutbol Application Received</h2>
+
+          <p style="margin-bottom: 1.5rem;">Your application has been received and is under review.
+            Selected players and teams will be contacted directly with next steps, payment instructions, and onboarding details.</p>
+
+          <button type="button" class="cta" onclick="prevStep()">Back</button>
+        </div>
+
       </form>
 
 
-      <div id="teamConfirm" class="confirmation">✅ Your team has been registered successfully!</div>
+<!--      <div id="teamConfirm" class="confirmation">✅ Your team has been registered successfully!</div>-->
     </section>
 
     <div class="glow-divider"></div>
@@ -580,11 +590,9 @@
 
       const data = Object.fromEntries(formData.entries())
 
+      nextStep()
+
       console.log("Form Data:", data)
-
-      /* Send email here using backend or service */
-
-      alert("Application submitted successfully")
     })
   </script>
 </body>
