@@ -313,8 +313,8 @@ navElement.innerHTML = `
           <h3>Official Partners — Coming Soon</h3>
           <p>TekkyFutbol partners help power the league experience — from matchday venues and performance training to street culture and media production.</p>
           <p>Our first official partners will be announced soon.</p>
-          <p>Join the Partner Announcements List to be notified when new brands join the movement.</p>
-          <form onsubmit="handleFormSubmit(event, 'successTeamsPopup', 'officialPartnersPopup')" id="officialPartnersForm">
+          <p style="margin-bottom: 1rem;">Join the Partner Announcements List to be notified when new brands join the movement.</p>
+          <form onsubmit="handleFormSubmit(event, 'officialPartnersSuccessPopup', 'officialPartnersPopup')" id="officialPartnersForm">
                <input type="hidden" name="access_key" value="">
                <input type="checkbox" name="botcheck" id="" style="display: none;">
 
