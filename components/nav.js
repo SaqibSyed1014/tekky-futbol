@@ -314,14 +314,14 @@ navElement.innerHTML = `
           <p>TekkyFutbol partners help power the league experience — from matchday venues and performance training to street culture and media production.</p>
           <p>Our first official partners will be announced soon.</p>
           <p style="margin-bottom: 1rem;">Join the Partner Announcements List to be notified when new brands join the movement.</p>
-          <form onsubmit="handleFormSubmit(event, 'officialPartnersSuccessPopup', 'officialPartnersPopup')" id="officialPartnersForm">
+          <form id="officialPartnersForm">
                <input type="hidden" name="access_key" value="">
                <input type="checkbox" name="botcheck" id="" style="display: none;">
 
                 <input type="text" id="name" name="name" placeholder="Enter your name" required>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 <div style="display: flex; flex-direction: column; align-items: center; gap: 14px;">
-                    <button type="submit" class="cta close-overlay" style="width: fit-content; margin-top: 1rem;">Get Partner Updates</button>
+                    <button type="button" class="cta close-overlay" style="width: fit-content; margin-top: 1rem;">Get Partner Updates</button>
                     <small>No spam. Only major partner announcements.</small>
                 </div>
           </form>
@@ -411,6 +411,14 @@ closeTeamsSuccessTrigger.addEventListener('click', () => {
 closePartnersSuccessTrigger.addEventListener('click', () => {
     officialPartnersSuccessPopup.style.display = 'none';
 });
+
+const partnerSubmitButton = document.querySelector("#officialPartnersForm button.cta")
+partnerSubmitButton.addEventListener('click', () => {
+    const partnerForm = document.getElementById("officialPartnersForm");
+    partnerForm.reset();
+    officialPartnersPopup.style.display = 'none';
+    officialPartnersSuccessPopup.style.display = 'flex';
+})
 
 const closePopups = document.querySelectorAll('.cross-icon');
 closePopups.forEach(icon => {
