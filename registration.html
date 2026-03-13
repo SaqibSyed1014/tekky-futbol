@@ -42,7 +42,8 @@
       max-width: 800px;
       margin: 3rem auto 5rem;
       padding: 0 1.25rem;
-      text-align: center
+      text-align: center;
+      flex: 1;
     }
 
     form#teamForm, form#playerForm {
@@ -220,36 +221,38 @@
 <!--      </form>-->
 
       <form id="registrationForm">
+        <input type="hidden" name="access_key" value="f91205be-f6c8-49cf-961a-ac2de2adca7f">
+        <input type="checkbox" name="botcheck" id="" style="display: none;">
 
         <!-- STEP 1 -->
         <div class="step" data-step="1">
           <h2>Player / Captain Info</h2>
 
-          <label>Full Name</label>
-          <input type="text" name="fullName" required>
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required>
 
-          <label>Phone Number</label>
-          <input type="tel" name="phone" required>
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required>
 
-          <label>Email</label>
-          <input type="email" name="email" required>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
 
-          <label>Gender</label>
-          <select name="gender" required>
+          <label for="gender">Gender</label>
+          <select name="gender" id="gender" required>
             <option value="">Select</option>
             <option value="Men">Men</option>
             <option value="Women">Women</option>
           </select>
 
-          <label>Preferred Division</label>
-          <select name="division" required>
+          <label for="division">Preferred Division</label>
+          <select name="preferredDivision" id="division" required>
             <option value="">Select</option>
             <option value="North">North</option>
             <option value="South">South</option>
           </select>
 
-          <label>Instagram (optional)</label>
-          <input type="text" name="instagram">
+          <label for="Instagram">Instagram (optional)</label>
+          <input type="text" id="Instagram" name="instagram">
 
           <button type="button" class="cta" onclick="nextStep()">Next</button>
         </div>
@@ -271,14 +274,14 @@
 
           <div id="teamFields" hidden>
 
-            <label>Team Name</label>
-            <input type="text" name="teamName">
+            <label for="teamName">Team Name</label>
+            <input type="text" id="teamName" name="teamName">
 
-            <label>Estimated Roster Size</label>
-            <input type="number" name="rosterSize">
+            <label for="rosterSize">Estimated Roster Size</label>
+            <input type="number" id="rosterSize" name="rosterSize">
 
-            <label>Logo Upload</label>
-            <input type="file" name="logo">
+            <label for="logo">Logo Upload</label>
+            <input type="file" id="logo" name="logoAttachment">
 
             <small>
               By submitting a logo, you confirm you own the rights or have authorization to use it.
@@ -296,8 +299,8 @@
         <div class="step" data-step="3" hidden>
           <h2>Competitive Intent</h2>
 
-          <label>Why do you want to compete in TekkyFutbol?</label>
-          <textarea name="intent" required></textarea>
+          <label for="intent">Why do you want to compete in TekkyFutbol?</label>
+          <textarea name="reasonForCompeting" id="intent" required></textarea>
 
           <button type="button" class="cta" onclick="prevStep()">Back</button>
           <button type="button" class="cta" onclick="nextStep()">Next</button>
@@ -309,17 +312,17 @@
           <h2>Mandatory Confirmation</h2>
 
           <label>
-            <input type="checkbox" name="confirm1" required>
+            <input type="checkbox" name="Name & Logo Confirmation" value="Checked" required>
             I confirm that my team name and logo are original or authorized for use.
           </label>
 
           <label>
-            <input type="checkbox" name="confirm2" required>
+            <input type="checkbox" name="Non-guarantee of Acceptance" value="Checked" required>
             I understand that application does not guarantee acceptance.
           </label>
 
           <label>
-            <input type="checkbox" name="confirm3" required>
+            <input type="checkbox" name="Code of Conduct Confirmation" value="Checked" required>
             I agree to follow league rules and code of conduct if approved.
           </label>
 
@@ -334,7 +337,7 @@
           <p style="margin-bottom: 1.5rem;">Your application has been received and is under review.
             Selected players and teams will be contacted directly with next steps, payment instructions, and onboarding details.</p>
 
-          <button type="button" class="cta" onclick="prevStep()">Back</button>
+          <button type="button" class="cta" onclick="gotToFirstStep()">Back</button>
         </div>
 
       </form>
@@ -416,49 +419,49 @@
    <div id="footer"></div>
 
 
-   <div id="comingSoonRegistrationPopup" class="coming-soon-overlay">
-         <div class="overlay-content">
-           <h3>Season starts Before You Think</h3>
-           <p class="subtext">Get notified when registration opens, teams fill, and spots go live.</p>
-           <form onsubmit="handleFormSubmit(event, 'successPopup', 'comingSoonRegistrationPopup')" id="rsvpForm">
-               <input type="hidden" name="access_key" value="cf369021-4c0c-41c7-9ea3-4ad3815a0d43">
-               <input type="checkbox" name="botcheck" id="" style="display: none;">
+<!--   <div id="comingSoonRegistrationPopup" class="coming-soon-overlay">-->
+<!--         <div class="overlay-content">-->
+<!--           <h3>Season starts Before You Think</h3>-->
+<!--           <p class="subtext">Get notified when registration opens, teams fill, and spots go live.</p>-->
+<!--           <form onsubmit="handleFormSubmit(event, 'successPopup', 'comingSoonRegistrationPopup')" id="rsvpForm">-->
+<!--               <input type="hidden" name="access_key" value="cf369021-4c0c-41c7-9ea3-4ad3815a0d43">-->
+<!--               <input type="checkbox" name="botcheck" id="" style="display: none;">-->
 
-               <input type="text" id="name" name="name" placeholder="Enter your name" required>
-               <input type="email" id="email" name="email" placeholder="Enter your email" required>
-               <button type="submit" class="cta open-success-popup">Notify Me</button>
-           </form>
+<!--               <input type="text" id="name" name="name" placeholder="Enter your name" required>-->
+<!--               <input type="email" id="email" name="email" placeholder="Enter your email" required>-->
+<!--               <button type="submit" class="cta open-success-popup">Notify Me</button>-->
+<!--           </form>-->
 
-             <svg
-                 xmlns="http://www.w3.org/2000/svg"
-                 class="cross-icon"
-                 style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
-                 viewBox="0 0 1024 1024"
-                 version="1.1"
-             >
-                 <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>
-             </svg>
-         </div>
-     </div>
+<!--             <svg-->
+<!--                 xmlns="http://www.w3.org/2000/svg"-->
+<!--                 class="cross-icon"-->
+<!--                 style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"-->
+<!--                 viewBox="0 0 1024 1024"-->
+<!--                 version="1.1"-->
+<!--             >-->
+<!--                 <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>-->
+<!--             </svg>-->
+<!--         </div>-->
+<!--     </div>-->
 
 
-     <div id="successPopup" class="coming-soon-overlay">
-         <div class="overlay-content">
-           <h3>You're on the list</h3>
-           <p class="subtext">You will be the first to know when registration opens, teams start filling, and limited spots go live.</p>
-           <button class="cta close-overlay close-success-popup">Explore the TekkyFutbol</button>
+<!--     <div id="successPopup" class="coming-soon-overlay">-->
+<!--         <div class="overlay-content">-->
+<!--           <h3>You're on the list</h3>-->
+<!--           <p class="subtext">You will be the first to know when registration opens, teams start filling, and limited spots go live.</p>-->
+<!--           <button class="cta close-overlay close-success-popup">Explore the TekkyFutbol</button>-->
 
-           <svg
-               xmlns="http://www.w3.org/2000/svg"
-               class="cross-icon close-success-popup"
-               style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
-               viewBox="0 0 1024 1024"
-               version="1.1"
-           >
-               <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>
-           </svg>
-         </div>
-     </div>
+<!--           <svg-->
+<!--               xmlns="http://www.w3.org/2000/svg"-->
+<!--               class="cross-icon close-success-popup"-->
+<!--               style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"-->
+<!--               viewBox="0 0 1024 1024"-->
+<!--               version="1.1"-->
+<!--           >-->
+<!--               <path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/>-->
+<!--           </svg>-->
+<!--         </div>-->
+<!--     </div>-->
 
     <script>
       const teamCheckbox = document.querySelector('input[value="team"]');
@@ -500,7 +503,7 @@
       })
     </script>
 
-  <script>
+    <script>
     // Handle overlay popup for Women's button
 //     const womensBtn = document.getElementById('womensBtn');
 //     const overlay = document.getElementById('comingSoonOverlay');
@@ -571,6 +574,11 @@
       showStep(currentStep)
     }
 
+    function gotToFirstStep() {
+      currentStep = 1;
+      showStep(currentStep);
+    }
+
 
     /* Toggle team fields */
     document.querySelectorAll('input[name="registrationType"]').forEach(radio => {
@@ -580,19 +588,53 @@
       })
     })
 
-
     /* Form submission */
     document.getElementById("registrationForm").addEventListener("submit", function(e) {
+      e.preventDefault();
 
-      e.preventDefault()
+      const form = e.target;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnHTML = submitBtn.innerHTML;
 
-      const formData = new FormData(this)
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+        <span class="spinner"></span>
+        Submitting
+     `;
 
-      const data = Object.fromEntries(formData.entries())
+      const formData = new FormData(form);
+      const file = document.getElementById("logo");
+      if (file.files.length !== 0) {
+        const filesize = file.files[0].size / 1024;
 
-      nextStep()
+        if (filesize > 5000) {
+          alert("Please upload file less than 5 MB");
+          return;
+        }
+      }
 
-      console.log("Form Data:", data)
+      // const object = Object.fromEntries(formData);
+      // const json = JSON.stringify(object);
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      }).then(async (response) => {
+        console.log('response', response);
+        if (response.status == 200) {
+          nextStep();
+          form.reset();
+          const teamFields = document.getElementById("teamFields")
+          teamFields.hidden = true;
+        } else {
+          console.log('error')
+        }
+      }).catch(error => {
+        console.error("Form Error:", error);
+      }).finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHTML;
+      });
     })
   </script>
 </body>

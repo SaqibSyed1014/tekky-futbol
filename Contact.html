@@ -233,7 +233,9 @@ form .cta{
            contactForm.addEventListener('submit', e => {
                e.preventDefault();
 
+
                const form = event.target;
+               const submitBtn = form.querySelector('button[type="submit"]');
                const originalBtnHTML = submitBtn.innerHTML;
 
                submitBtn.disabled = true;

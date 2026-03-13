@@ -38,41 +38,41 @@ navElement.innerHTML = `
 <!--            <li>-->
 <!--               <a href="index.html">Home</a>-->
 <!--            </li>-->
-            <li>
-               <a href="Shop.html">Merchandise</a>
-            </li>
-<!--            <li class="dropdown-menu">-->
-<!--              <div class="nav-dropdown-trigger">-->
-<!--                <span>Shop</span>-->
-<!--                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24">-->
-<!--                  <path fill="currentColor"-->
-<!--                    d="M18.53 9.53a.75.75 0 0 0 0-1.06H5.47a.75.75 0 0 0 0 1.06l6 6a.75.75 0 0 0 1.06 0z" />-->
-<!--                </svg>-->
-<!--              </div>-->
-<!--              &lt;!&ndash; dropdown &ndash;&gt;-->
-<!--              <div class="nav-links-dropdown">-->
-<!--                <ul>-->
-<!--                  <li>-->
-<!--                    <a href="Shop.html">Merchandise</a>-->
-<!--                  </li>-->
-<!--                  <li>-->
-<!--                    <a href="Season-pass-checkout.html">Season Pass</a>-->
-<!--                  </li>-->
-<!--                  <li>-->
-<!--                    <a href="supporter-bundle-checkout.html">Supporter Bundle</a>-->
-<!--                  </li>-->
-<!--                  <li>-->
-<!--                    <a href="Playoff-ticket-checkout.html">Playoff Ticket</a>-->
-<!--                  </li>-->
-<!--                  <li>-->
-<!--                    <a href="Single-ticket-checkout.html">Single Ticket</a>-->
-<!--                  </li>-->
-<!--&lt;!&ndash;                  <li>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <div class="coming-soon nav-link">Finale Ticket</div>&ndash;&gt;-->
-<!--&lt;!&ndash;                  </li>&ndash;&gt;-->
-<!--                </ul>-->
-<!--              </div>-->
+<!--            <li>-->
+<!--               <a href="Shop.html">Merchandise</a>-->
 <!--            </li>-->
+            <li class="dropdown-menu">
+              <div class="nav-dropdown-trigger">
+                <span>Shop</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24">
+                  <path fill="currentColor"
+                    d="M18.53 9.53a.75.75 0 0 0 0-1.06H5.47a.75.75 0 0 0 0 1.06l6 6a.75.75 0 0 0 1.06 0z" />
+                </svg>
+              </div>
+              <!-- dropdown -->
+              <div class="nav-links-dropdown">
+                <ul>
+                  <li>
+                    <a href="Shop.html">Shop</a>
+                  </li>
+                  <li>
+                    <a href="North-Division-Shop.html">North Division</a>
+                  </li>
+                  <li>
+                    <a href="South-Division-Shop.html">South Division</a>
+                  </li>
+                  <li>
+                    <a href="Finale-Collection-Shop.html">Finale Collection</a>
+                  </li>
+                  <li>
+                    <a href="Signature-Drops.html">Signature Drops</a>
+                  </li>
+<!--                  <li>-->
+<!--                    <div class="coming-soon nav-link">Finale Ticket</div>-->
+<!--                  </li>-->
+                </ul>
+              </div>
+            </li>
             
             <li class="dropdown-menu">
               <div class="nav-dropdown-trigger">
@@ -314,14 +314,14 @@ navElement.innerHTML = `
           <p>TekkyFutbol partners help power the league experience — from matchday venues and performance training to street culture and media production.</p>
           <p>Our first official partners will be announced soon.</p>
           <p style="margin-bottom: 1rem;">Join the Partner Announcements List to be notified when new brands join the movement.</p>
-          <form id="officialPartnersForm">
-               <input type="hidden" name="access_key" value="">
+          <form onsubmit="handleFormSubmit(event, 'officialPartnersSuccessPopup', 'officialPartnersPopup')" id="officialPartnersForm">
+               <input type="hidden" name="access_key" value="f7916cb4-e9e6-4afb-b91b-88b3b6b42d83">
                <input type="checkbox" name="botcheck" id="" style="display: none;">
 
                 <input type="text" id="name" name="name" placeholder="Enter your name" required>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 <div style="display: flex; flex-direction: column; align-items: center; gap: 14px;">
-                    <button type="button" class="cta close-overlay" style="width: fit-content; margin-top: 1rem;">Get Partner Updates</button>
+                    <button type="submit" class="cta close-overlay" style="width: fit-content; margin-top: 1rem;">Get Partner Updates</button>
                     <small>No spam. Only major partner announcements.</small>
                 </div>
           </form>
@@ -411,14 +411,6 @@ closeTeamsSuccessTrigger.addEventListener('click', () => {
 closePartnersSuccessTrigger.addEventListener('click', () => {
     officialPartnersSuccessPopup.style.display = 'none';
 });
-
-const partnerSubmitButton = document.querySelector("#officialPartnersForm button.cta")
-partnerSubmitButton.addEventListener('click', () => {
-    const partnerForm = document.getElementById("officialPartnersForm");
-    partnerForm.reset();
-    officialPartnersPopup.style.display = 'none';
-    officialPartnersSuccessPopup.style.display = 'flex';
-})
 
 const closePopups = document.querySelectorAll('.cross-icon');
 closePopups.forEach(icon => {

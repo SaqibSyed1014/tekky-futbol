@@ -296,6 +296,9 @@ table{
 .cta.focused:focus{
   background: var(--tekky-blue);
 }
+.cta.active{
+  background: var(--tekky-blue);
+}
 .social a:focus .fab{
   color: #dfe7ff !important;
 }
