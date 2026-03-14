@@ -53,9 +53,6 @@ navElement.innerHTML = `
               <div class="nav-links-dropdown">
                 <ul>
                   <li>
-                    <a href="Shop.html">Shop</a>
-                  </li>
-                  <li>
                     <a href="North-Division-Shop.html">North Division</a>
                   </li>
                   <li>
