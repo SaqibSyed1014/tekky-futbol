@@ -135,6 +135,10 @@ navElement.innerHTML = `
                <a href="Venues.html">Venues</a>
             </li>
             
+            <li>
+               <a href="Season-1-Kits.html">Season 1 Kits</a>
+            </li>
+            
              <li class="logo-desktop">
               <a class="logo" href="index.html" aria-label="TekkyFutbol Home">
                 <img src="images/logo.webp" alt="TekkyFutbol Logo">
