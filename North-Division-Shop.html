@@ -198,6 +198,13 @@
     <section id="north">
       <h2>NORTH DIVISION COLLECTION</h2>
       <p class="subtext">Control. Precision. Composure. Built for structured football under the lights.</p>
+
+        <!--    Toggle Tabs    -->
+        <div class="tabs top-spaced">
+            <div class="cta active">Activewear</div>
+            <div class="cta streetwear">Streetwear</div>
+        </div>
+
       <div class="grid">
         <div class="card">
             <div class="img-placeholder real">
@@ -397,6 +404,7 @@
       // Triggers
       const comingSoonTrigger = document.getElementById('comingSoonUpdates');
       const earlyAccessTriggers = document.querySelectorAll('.card .cta.old');
+      const earlyAccessTriggerForStreetwear = document.querySelector('.tabs .cta.streetwear');
       const earlyNewAccessTrigger = document.querySelectorAll('.card .cta.new');
       const openNewSuccessTrigger = document.querySelector('.open-new-success-popup');
       const closeNewSuccessTrigger = document.querySelector('.close-new-success-popup');
@@ -416,6 +424,9 @@
         btn.addEventListener('click', () => {
           openPopup(earlyAccessPopup);
         });
+      });
+      earlyAccessTriggerForStreetwear.addEventListener('click', () => {
+          openPopup(earlyAccessPopup);
       });
 
       // New Early Access (single button)

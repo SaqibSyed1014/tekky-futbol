@@ -652,3 +652,6 @@ button:disabled {
 .tabs{
   margin-bottom: 2rem;
 }
+.tabs.top-spaced{
+  margin-top: 2rem;
+}
