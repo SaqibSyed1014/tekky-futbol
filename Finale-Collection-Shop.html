@@ -199,7 +199,13 @@
       <h2 class="main-heading">SEASON 01 DIVISION DROPS</h2>
       <h2>FINALE COLLECTION</h2>
       <p class="subtext">Worn by those who reach the final stage. Championship energy only. Limited release.</p>
-      <div class="grid">
+        <!--    Toggle Tabs    -->
+        <div class="tabs top-spaced">
+            <div class="cta active">Activewear</div>
+            <div class="cta streetwear">Streetwear</div>
+        </div>
+
+        <div class="grid">
         <div class="card">
             <div class="img-placeholder real">
               <img src="images/shop/finale-hoodie.webp" alt="Jacket" fetchpriority="high">
@@ -398,6 +404,7 @@
       // Triggers
       const comingSoonTrigger = document.getElementById('comingSoonUpdates');
       const earlyAccessTriggers = document.querySelectorAll('.card .cta.old');
+      const earlyAccessTriggerForStreetwear = document.querySelector('.tabs .cta.streetwear');
       const earlyNewAccessTrigger = document.querySelectorAll('.card .cta.new');
       const openNewSuccessTrigger = document.querySelector('.open-new-success-popup');
       const closeNewSuccessTrigger = document.querySelector('.close-new-success-popup');
@@ -417,6 +424,10 @@
         btn.addEventListener('click', () => {
           openPopup(earlyAccessPopup);
         });
+      });
+
+      earlyAccessTriggerForStreetwear.addEventListener('click', () => {
+          openPopup(earlyAccessPopup);
       });
 
       // New Early Access (single button)

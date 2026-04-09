@@ -199,6 +199,12 @@
       <h2 class="main-heading">Signature Drops</h2>
       <h2>SIGNATURE COLLECTION</h2>
       <p>Designed once. Released once. No restocks.</p>
+        <!--    Toggle Tabs    -->
+        <div class="tabs top-spaced">
+            <div class="cta active">Activewear</div>
+            <div class="cta streetwear">Streetwear</div>
+        </div>
+
         <div class="grid two-columns">
             <div class="card drop">
                 <div class="img-placeholder show">
@@ -389,6 +395,7 @@
       // Triggers
       const comingSoonTrigger = document.getElementById('comingSoonUpdates');
       const earlyAccessTriggers = document.querySelectorAll('.card .cta.old');
+      const earlyAccessTriggerForStreetwear = document.querySelector('.tabs .cta.streetwear');
       const earlyNewAccessTrigger = document.querySelectorAll('.card .cta.new');
       const openNewSuccessTrigger = document.querySelector('.open-new-success-popup');
       const closeNewSuccessTrigger = document.querySelector('.close-new-success-popup');
@@ -408,6 +415,10 @@
         btn.addEventListener('click', () => {
           openPopup(earlyAccessPopup);
         });
+      });
+
+      earlyAccessTriggerForStreetwear.addEventListener('click', () => {
+          openPopup(earlyAccessPopup);
       });
 
       // New Early Access (single button)
